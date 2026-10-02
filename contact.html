@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Linda Chirwa Attorneys — Attorneys, Conveyancers &amp; Notaries</title>
+<meta name="description" content="Contact Linda Chirwa Attorneys. Head office in Modderfontein, Johannesburg, plus offices in KwaZulu-Natal, North West and Western Cape. WhatsApp, call, or send a confidential enquiry — response within 24 hours.">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #1A4A2E;
+  --primary-light: #2D6B45;
+  --primary-dark: #0E2E1A;
+  --primary-rich: #1C5C38;
+  --accent: #A8D5B5;
+  --white: #FFFFFF;
+  --off-white: #F5F7F2;
+  --charcoal: #1A1A1A;
+  --warm-gray: #4A4A4A;
+  --border: #E2E6DE;
+  --font-display: 'Raleway', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --red: #C53030;
+  --green-bg: #F0FFF4;
+  --green-border: #9AE6B4;
+  --shadow-sm: 0 2px 8px rgba(26,74,46,0.06);
+  --shadow-md: 0 6px 24px rgba(26,74,46,0.08);
+  --shadow-lg: 0 16px 48px rgba(26,74,46,0.12);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  line-height: 1.6;
+  background: var(--off-white);
+  overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 1000;
+  background: var(--primary);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+.navbar-left { display: flex; align-items: center; gap: 16px; }
+.navbar-logo { height: 48px; width: auto; display: block; filter: brightness(0) invert(1); }
+.navbar-right { display: flex; align-items: center; gap: 24px; }
+.navbar-right a {
+  font-family: var(--font-display);
+  font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.navbar-right a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px; background: var(--accent);
+  transition: width 0.3s ease;
+}
+.navbar-right a:hover { color: var(--white); }
+.navbar-right a:hover::after { width: 100%; }
+.navbar-right a.active { color: var(--accent); }
+.navbar-right a.active::after { width: 100%; }
+.mobile-toggle {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; background: none; border: none; padding: 8px;
+}
+.mobile-toggle span {
+  display: block; width: 24px; height: 1.5px;
+  background: var(--white);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 5px); }
+.mobile-toggle.active span:nth-child(2) { opacity: 0; }
+.mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); }
+.mobile-nav {
+  display: none; position: fixed; inset: 0;
+  background: rgba(14, 46, 26, 0.98);
+  z-index: 999;
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: 28px; opacity: 0; visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.mobile-nav.open { opacity: 1; visibility: visible; }
+.mobile-nav a {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 300; letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white); text-decoration: none;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease;
+}
+.mobile-nav.open a { opacity: 1; transform: translateY(0); }
+.mobile-nav.open a:nth-child(1) { transition-delay: 0.05s; }
+.mobile-nav.open a:nth-child(2) { transition-delay: 0.10s; }
+.mobile-nav.open a:nth-child(3) { transition-delay: 0.15s; }
+.mobile-nav.open a:nth-child(4) { transition-delay: 0.20s; }
+.mobile-nav.open a:nth-child(5) { transition-delay: 0.25s; }
+.mobile-nav.open a:nth-child(6) { transition-delay: 0.30s; }
+.mobile-nav a:hover { color: var(--accent); }
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
+  padding: 72px 40px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 30%, rgba(168,213,181,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 80% at 10% 70%, rgba(168,213,181,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.page-header > * { position: relative; z-index: 1; }
+.page-header h1 {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: clamp(32px, 5vw, 56px);
+  color: var(--white);
+  letter-spacing: 0.03em;
+  margin-bottom: 14px;
+  animation: fadeUp 0.9s ease both;
+}
+.page-header p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  max-width: 620px;
+  margin: 0 auto;
+  animation: fadeUp 0.9s ease 0.15s both;
+}
+.breadcrumb {
+  display: flex; justify-content: center; gap: 8px;
+  margin-top: 22px; font-size: 12px;
+  animation: fadeUp 0.9s ease 0.3s both;
+}
+.breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb span { color: rgba(255,255,255,0.3); }
+.breadcrumb .current { color: rgba(255,255,255,0.75); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== REVEAL ON SCROLL ===== */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(.2,.7,.3,1), transform 0.7s cubic-bezier(.2,.7,.3,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left {
+  opacity: 0; transform: translateX(-32px);
+  transition: opacity 0.7s cubic-bezier(.2,.7,.3,1), transform 0.7s cubic-bezier(.2,.7,.3,1);
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right {
+  opacity: 0; transform: translateX(32px);
+  transition: opacity 0.7s cubic-bezier(.2,.7,.3,1), transform 0.7s cubic-bezier(.2,.7,.3,1);
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+.reveal[data-delay="1"] { transition-delay: 0.08s; }
+.reveal[data-delay="2"] { transition-delay: 0.16s; }
+.reveal[data-delay="3"] { transition-delay: 0.24s; }
+.reveal[data-delay="4"] { transition-delay: 0.32s; }
+.reveal[data-delay="5"] { transition-delay: 0.40s; }
+.reveal[data-delay="6"] { transition-delay: 0.48s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-left, .reveal-right,
+  .page-header h1, .page-header p, .breadcrumb {
+    opacity: 1 !important; transform: none !important;
+    transition: none !important; animation: none !important;
+  }
+  .testimonial-card::before { animation: none !important; }
+}
+
+/* ===== QUICK CONTACT BAR ===== */
+.quick-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 24px 40px;
+}
+.quick-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.quick-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  text-decoration: none; color: var(--charcoal);
+  background: var(--white);
+}
+.quick-item:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+.quick-icon {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--off-white);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; color: var(--primary);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.quick-item:hover .quick-icon {
+  background: var(--primary);
+  color: var(--white);
+  transform: rotate(-6deg) scale(1.05);
+}
+.quick-item strong {
+  font-family: var(--font-display);
+  font-size: 13px; font-weight: 600;
+  display: block; margin-bottom: 2px;
+}
+.quick-item small { font-size: 12px; color: var(--warm-gray); }
+
+/* ===== MAIN LAYOUT ===== */
+.contact-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 40px;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* ===== FORM SECTION ===== */
+.form-section { min-width: 0; }
+.form-section h2 {
+  font-family: var(--font-display);
+  font-weight: 600; font-size: 26px;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.form-section > p {
+  font-size: 14px; color: var(--warm-gray);
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.form-progress {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+.form-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+  transition: width 0.4s ease;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-group { margin-bottom: 20px; }
+.form-group.full { grid-column: 1 / -1; }
+
+.form-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  margin-bottom: 7px;
+}
+.form-label .required { color: var(--red); margin-left: 2px; }
+.form-label .optional {
+  font-weight: 400; color: var(--warm-gray);
+  text-transform: none; letter-spacing: 0;
+  font-size: 11px; font-style: italic;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--charcoal);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  background: var(--white);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  appearance: none;
+}
+.form-input:hover, .form-select:hover, .form-textarea:hover {
+  border-color: #c8cfc3;
+}
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26,74,46,0.08);
+}
+.form-input.error,
+.form-textarea.error,
+.form-select.error {
+  border-color: var(--red);
+  animation: shake 0.35s ease;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%234A4A4A' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+.form-textarea { min-height: 130px; resize: vertical; }
+.form-hint {
+  font-size: 12px; color: var(--warm-gray);
+  margin-top: 6px; line-height: 1.5;
+}
+
+/* Radio / chip group */
+.chip-group {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.chip {
+  position: relative;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 24px;
+  background: var(--white);
+  font-size: 13px;
+  color: var(--warm-gray);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+.chip:hover { border-color: var(--primary); color: var(--charcoal); }
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip input:checked + span { color: var(--primary-dark); font-weight: 600; }
+.chip:has(input:checked) {
+  border-color: var(--primary);
+  background: rgba(168,213,181,0.18);
+  color: var(--primary-dark);
+}
+.chip span { pointer-events: none; }
+
+/* Honeypot */
+.hp-field {
+  position: absolute;
+  left: -9999px; opacity: 0;
+  height: 0; width: 0; overflow: hidden;
+}
+
+/* Consent */
+.consent-row {
+  display: flex; align-items: flex-start; gap: 10px;
+  margin: 6px 0 22px;
+  font-size: 13px; color: var(--warm-gray);
+  line-height: 1.6;
+}
+.consent-row input[type="checkbox"] {
+  margin-top: 3px; width: 16px; height: 16px;
+  accent-color: var(--primary);
+  cursor: pointer; flex-shrink: 0;
+}
+.consent-row label { cursor: pointer; }
+.consent-row a { color: var(--primary); text-decoration: underline; }
+
+.form-submit {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-display);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 15px 40px;
+  border-radius: 4px; border: none;
+  background: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.form-submit::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.18) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+.form-submit:hover::before { transform: translateX(120%); }
+.form-submit:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(26,74,46,0.22);
+}
+.form-submit:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+.form-submit .spinner {
+  display: none; width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: var(--white);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+.form-submit.loading .spinner { display: block; }
+.form-submit.loading .btn-text { display: none; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Form messages */
+.form-message {
+  padding: 14px 18px; border-radius: 6px;
+  font-size: 14px; margin-bottom: 24px;
+  display: none; animation: fadeUp 0.4s ease both;
+}
+.form-message.success {
+  display: block;
+  background: var(--green-bg);
+  border: 1px solid var(--green-border);
+  color: #276749;
+}
+.form-message.error {
+  display: block;
+  background: #FFF5F5;
+  border: 1px solid #FEB2B2;
+  color: #9B2C2C;
+}
+
+/* ===== INFO SIDEBAR ===== */
+.info-section h2 {
+  font-family: var(--font-display);
+  font-weight: 600; font-size: 24px;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+.info-section > p {
+  font-size: 14px; color: var(--warm-gray);
+  margin-bottom: 24px;
+}
+
+.office-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px 24px;
+  margin-bottom: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.office-card::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s ease;
+}
+.office-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.office-card:hover::before { transform: scaleY(1); }
+.office-card-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 10px; gap: 12px;
+}
+.office-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600; font-size: 15px;
+  color: var(--charcoal); margin: 0;
+}
+.office-badge {
+  font-family: var(--font-display);
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  background: var(--accent);
+  color: var(--primary-dark);
+  padding: 3px 10px; border-radius: 20px;
+  white-space: nowrap;
+}
+.office-card p {
+  font-size: 13px; color: var(--warm-gray);
+  margin: 0 0 6px; line-height: 1.55;
+}
+.office-card p:last-child { margin-bottom: 0; }
+.office-card a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.office-card a:hover { color: var(--primary-light); }
+.office-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px;
+  color: var(--primary);
+  background: rgba(168,213,181,0.22);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.info-box {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  border-radius: 8px;
+  padding: 26px;
+  margin-top: 20px;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.info-box::before {
+  content: ''; position: absolute;
+  top: -40%; right: -20%;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168,213,181,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.info-box h3 {
+  font-family: var(--font-display);
+  font-weight: 600; font-size: 15px;
+  color: var(--white); margin-bottom: 12px;
+  position: relative;
+}
+.info-box p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 8px; line-height: 1.65;
+  position: relative;
+}
+.info-box strong { color: rgba(255,255,255,0.95); }
+.info-box .info-note {
+  margin-top: 14px; padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  font-size: 12px; opacity: 0.75;
+}
+
+.map-container {
+  margin-top: 20px;
+  border-radius: 8px; overflow: hidden;
+  border: 1px solid var(--border);
+  height: 260px;
+  background: var(--off-white);
+  transition: box-shadow 0.3s ease;
+}
+.map-container:hover { box-shadow: var(--shadow-md); }
+.map-container iframe {
+  width: 100%; height: 100%; border: 0;
+  display: block;
+  filter: grayscale(0.15) contrast(1.02);
+  transition: filter 0.5s ease;
+}
+.map-container:hover iframe { filter: grayscale(0); }
+
+/* Department emails */
+.dept-list { list-style: none; padding: 0; margin: 0; }
+.dept-list li {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.dept-list li:last-child { border-bottom: none; }
+.dept-list .dept-name {
+  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 13px; color: var(--charcoal);
+}
+.dept-list a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.3s ease;
+  word-break: break-all;
+  text-align: right;
+}
+.dept-list a:hover { color: var(--primary-light); }
+
+/* Trust badges strip */
+.trust-strip {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin-top: 20px;
+}
+.trust-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 8px 14px;
+  border-radius: 24px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--warm-gray);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.trust-badge:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+.trust-badge svg { color: var(--primary); flex-shrink: 0; }
+
+/* ===== WHAT HAPPENS NEXT ===== */
+.next-steps {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+}
+.next-steps-inner {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 48px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.next-steps-inner::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 50%, var(--primary) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 4s linear infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+.next-steps h2 {
+  font-family: var(--font-display);
+  font-weight: 600; font-size: 24px;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+  text-align: center;
+}
+.next-steps .sub {
+  text-align: center;
+  font-size: 14px; color: var(--warm-gray);
+  margin-bottom: 40px;
+}
+.next-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.next-step {
+  text-align: center;
+  padding: 8px;
+  position: relative;
+}
+.next-step-num {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--off-white);
+  border: 2px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+  font-family: var(--font-display);
+  font-weight: 700; font-size: 20px;
+  color: var(--primary);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.next-step:hover .next-step-num {
+  background: var(--primary);
+  color: var(--white);
+  transform: scale(1.08) rotate(-4deg);
+}
+.next-step h3 {
+  font-family: var(--font-display);
+  font-weight: 600; font-size: 15px;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+.next-step p {
+  font-size: 13px; color: var(--warm-gray);
+  line-height: 1.7;
+  max-width: 280px; margin: 0 auto;
+}
+
+/* ===== TESTIMONIAL STRIP ===== */
+.contact-testimonial {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+}
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 40px 44px 40px 96px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+.testimonial-card::before {
+  content: '\201C';
+  font-family: Georgia, serif;
+  font-size: 90px;
+  color: var(--accent);
+  position: absolute;
+  top: 8px; left: 32px;
+  line-height: 1;
+  animation: floatQuote 5s ease-in-out infinite;
+}
+@keyframes floatQuote {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.testimonial-card blockquote {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--charcoal);
+  margin-bottom: 14px;
+}
+.testimonial-card cite {
+  font-style: normal;
+  font-family: var(--font-display);
+  font-weight: 600; font-size: 13px;
+  color: var(--primary);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--charcoal);
+  padding: 44px 40px 32px;
+  text-align: center;
+}
+.footer p { font-size: 12px; color: rgba(255,255,255,0.35); }
+.footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer a:hover { color: var(--accent); }
+
+/* ===== FLOATING WHATSAPP ===== */
+.wa-float {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  z-index: 950;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white);
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: waPulse 2.4s ease-in-out infinite;
+}
+.wa-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 32px rgba(37,211,102,0.55);
+  animation-play-state: paused;
+}
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 8px 24px rgba(37,211,102,0.4), 0 0 0 14px rgba(37,211,102,0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .navbar-right { display: none; }
+  .mobile-toggle { display: flex; }
+  .mobile-nav { display: flex; }
+  .quick-bar-inner { grid-template-columns: 1fr 1fr; }
+  .next-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+    gap: 48px;
+  }
+  .form-row { grid-template-columns: 1fr; }
+  .page-header { padding: 56px 24px 44px; }
+  .quick-bar { padding: 20px 24px; }
+  .quick-bar-inner { grid-template-columns: 1fr; gap: 12px; }
+  .navbar { padding: 0 20px; }
+  .navbar-logo { height: 38px; }
+  .footer { padding: 32px 24px; }
+  .next-steps, .contact-testimonial { padding-left: 24px; padding-right: 24px; }
+  .next-steps-inner { padding: 32px 24px; }
+  .testimonial-card { padding: 32px 28px 32px 72px; }
+  .testimonial-card::before { font-size: 72px; left: 20px; }
+  .testimonial-card blockquote { font-size: 16px; }
+  .wa-float { bottom: 18px; right: 18px; width: 50px; height: 50px; }
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar" role="banner">
+  <div class="navbar-left">
+    <a href="index.html" aria-label="Linda Chirwa Attorneys Home">
+      <img src="logo.png" alt="Linda Chirwa Attorneys" class="navbar-logo">
+    </a>
+  </div>
+  <nav class="navbar-right" role="navigation" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="criminal-law.html">Criminal Law</a>
+    <a href="wills-estates.html">Estates</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="criminal-law.html">Criminal Law</a>
+  <a href="wills-estates.html">Estates</a>
+  <a href="resources.html">Resources</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- Page Header -->
+<section class="page-header">
+  <h1>Let's Talk About Your Matter</h1>
+  <p>Tell us what's happening. We'll give you an honest assessment, a clear plan, and a realistic picture of the costs — before you commit to anything.</p>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <span class="current">Contact</span>
+  </div>
+</section>
+
+<!-- Quick Contact Bar -->
+<div class="quick-bar">
+  <div class="quick-bar-inner">
+    <a href="https://wa.me/27749905872" class="quick-item" target="_blank" rel="noopener">
+      <div class="quick-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1.5a8.5 8.5 0 00-7.4 12.7L1.5 18.5l4.4-1.1A8.5 8.5 0 1010 1.5z" stroke="currentColor" stroke-width="1.3"/><path d="M7.5 6.5c.2-.5.5-.5.7-.5s.5 0 .7.4l.8 2c.1.2 0 .4-.1.6l-.5.5s-.1.2.2.6c.4.5.8.9 1.3 1.1.2.1.4.1.5-.1l.5-.6c.2-.2.3-.2.5-.1l1.5.8c.2.1.3.2.3.4s0 .7-.4 1c-.4.4-.9.5-1.5.5-1-.1-2.5-.8-3.7-2.3-1-1.2-1.4-2.5-1.4-3.2 0-.5.2-.8.5-1.1z" fill="currentColor"/></svg>
+      </div>
+      <div>
+        <strong>WhatsApp</strong>
+        <small>074 990 5872 — fastest response</small>
+      </div>
+    </a>
+    <a href="tel:+27100855185" class="quick-item">
+      <div class="quick-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16 12.5v2a1.5 1.5 0 01-1.6 1.5A14.5 14.5 0 013 4.6 1.5 1.5 0 014.5 3H6.5l1 3.5-1.5 1a10 10 0 005.5 5.5l1-1.5 3.5 1z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <strong>Head Office</strong>
+        <small>+27 (10) 085 5185</small>
+      </div>
+    </a>
+    <a href="mailto:admin@lindachirwaattorneys.co.za" class="quick-item">
+      <div class="quick-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M2 6l8 5 8-5" stroke="currentColor" stroke-width="1.3"/></svg>
+      </div>
+      <div>
+        <strong>Email</strong>
+        <small>admin@lindachirwaattorneys.co.za</small>
+      </div>
+    </a>
+    <a href="https://maps.google.com/?q=Block+C+Stoneridge+Office+Park+Greenstone+Modderfontein+Johannesburg" class="quick-item" target="_blank" rel="noopener">
+      <div class="quick-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C6.7 2 4 4.7 4 8c0 5 6 10 6 10s6-5 6-10c0-3.3-2.7-6-6-6z" stroke="currentColor" stroke-width="1.3"/><circle cx="10" cy="8" r="2" stroke="currentColor" stroke-width="1.3"/></svg>
+      </div>
+      <div>
+        <strong>Visit Us</strong>
+        <small>Stoneridge Office Park, Modderfontein</small>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- Main Contact Layout -->
+<div class="contact-layout">
+
+  <!-- Form -->
+  <div class="form-section reveal-left">
+    <h2>Tell Us About Your Matter</h2>
+    <p>The more detail you give us now, the more useful our first response will be. All information is treated as strictly confidential and protected by attorney-client privilege.</p>
+
+    <div class="form-progress"><div class="form-progress-bar" id="formProgress"></div></div>
+
+    <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+
+    <form id="contactForm" action="contact-handler.php" method="POST" novalidate>
+
+      <!-- Honeypot -->
+      <div class="hp-field" aria-hidden="true">
+        <label for="website_url">Leave blank</label>
+        <input type="text" name="website_url" id="website_url" tabindex="-1" autocomplete="off">
+      </div>
+
+      <!-- Section: About you -->
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="name">Full Name <span class="required">*</span></label>
+          <input type="text" name="name" id="name" class="form-input" placeholder="e.g. Nomvula Khumalo" autocomplete="name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address <span class="required">*</span></label>
+          <input type="email" name="email" id="email" class="form-input" placeholder="you@example.com" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone Number <span class="required">*</span></label>
+          <input type="tel" name="phone" id="phone" class="form-input" placeholder="074 000 0000" autocomplete="tel" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="contact_pref">Preferred Contact Method</label>
+          <select name="contact_pref" id="contact_pref" class="form-select">
+            <option value="">No preference</option>
+            <option value="Phone call">Phone call</option>
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="Email">Email</option>
+            <option value="In-person meeting">In-person meeting</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Section: Matter -->
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="service">Area of Law <span class="required">*</span></label>
+          <select name="service" id="service" class="form-select" required>
+            <option value="">Select the area that fits best…</option>
+            <optgroup label="For Individuals">
+              <option value="Family Law">Family Law (Divorce, Custody, Maintenance)</option>
+              <option value="Estate Planning">Wills, Estates &amp; Trusts</option>
+              <option value="Property Conveyancing">Property Conveyancing</option>
+              <option value="Personal Injury">Motor Vehicle / Workplace Injury</option>
+              <option value="Criminal Defense">Criminal Defense</option>
+              <option value="Labour Law">CCMA / Employment Disputes</option>
+              <option value="Immigration">Immigration &amp; Permits</option>
+            </optgroup>
+            <optgroup label="For Businesses">
+              <option value="Company Formation">Company Formation &amp; Governance</option>
+              <option value="Commercial Contracts">Contracts &amp; Transactions</option>
+              <option value="Mergers & Acquisitions">Mergers &amp; Acquisitions</option>
+              <option value="Debt Collection">Debt Collection &amp; Litigation</option>
+              <option value="Business Rescue">Insolvency &amp; Business Rescue</option>
+              <option value="IP Protection">Intellectual Property</option>
+              <option value="Employment & HR">Employment &amp; HR Compliance</option>
+            </optgroup>
+            <option value="Other">Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="matter_type">Are you…</label>
+          <select name="matter_type" id="matter_type" class="form-select">
+            <option value="">Select one…</option>
+            <option value="Seeking advice for myself">Seeking advice for myself</option>
+            <option value="Seeking advice for my business">Seeking advice for my business</option>
+            <option value="Seeking advice for a family member">Seeking advice for a family member</option>
+            <option value="Already in a legal dispute">Already in a legal dispute</option>
+            <option value="Planning ahead / preventative">Planning ahead / preventative</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="office">Preferred Office</label>
+          <select name="office" id="office" class="form-select">
+            <option value="">Select nearest office…</option>
+            <option value="Gauteng (Head Office - Modderfontein)">Gauteng — Head Office (Modderfontein, JHB)</option>
+            <option value="Gauteng (West Rand - Randfontein)">Gauteng — West Rand (Randfontein)</option>
+            <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+            <option value="North West">North West</option>
+            <option value="Western Cape">Western Cape</option>
+            <option value="Any / Not sure">Any / Not sure</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="urgency">How Urgent Is This?</label>
+          <select name="urgency" id="urgency" class="form-select">
+            <option value="">Select urgency…</option>
+            <option value="Urgent - need help today">Urgent — I need help today</option>
+            <option value="This week">This week</option>
+            <option value="This month">This month</option>
+            <option value="Not urgent - planning ahead">Not urgent — planning ahead</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="incident_date">Date of Incident / Key Event <span class="optional">(if applicable)</span></label>
+          <input type="date" name="incident_date" id="incident_date" class="form-input">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="opposing_party">Is There an Opposing Party? <span class="optional">(optional)</span></label>
+          <input type="text" name="opposing_party" id="opposing_party" class="form-input" placeholder="e.g. employer, spouse, insurer, company name">
+        </div>
+      </div>
+
+      <div class="form-group full">
+        <label class="form-label">Do You Have Any of the Following? <span class="optional">(select all that apply)</span></label>
+        <div class="chip-group" role="group" aria-label="Documents available">
+          <label class="chip"><input type="checkbox" name="documents_available[]" value="Contract / agreement"><span>Contract / agreement</span></label>
+          <label class="chip"><input type="checkbox" name="documents_available[]" value="Court / summons papers"><span>Court / summons papers</span></label>
+          <label class="chip"><input type="checkbox" name="documents_available[]" value="Correspondence with other party"><span>Correspondence</span></label>
+          <label class="chip"><input type="checkbox" name="documents_available[]" value="Witnesses"><span>Witnesses</span></label>
+          <label class="chip"><input type="checkbox" name="documents_available[]" value="Photos / evidence"><span>Photos / evidence</span></label>
+          <label class="chip"><input type="checkbox" name="documents_available[]" value="Medical / police reports"><span>Medical / police reports</span></label>
+          <label class="chip"><input type="checkbox" name="documents_available[]" value="Nothing yet"><span>Nothing yet</span></label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="budget_range">Budget Range <span class="optional">(optional)</span></label>
+          <select name="budget_range" id="budget_range" class="form-select">
+            <option value="">Prefer not to say</option>
+            <option value="Under R10,000">Under R10,000</option>
+            <option value="R10,000 - R25,000">R10,000 – R25,000</option>
+            <option value="R25,000 - R50,000">R25,000 – R50,000</option>
+            <option value="R50,000 - R100,000">R50,000 – R100,000</option>
+            <option value="Over R100,000">Over R100,000</option>
+            <option value="Need guidance">I need guidance on costs</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="referral">How Did You Hear About Us?</label>
+          <select name="referral" id="referral" class="form-select">
+            <option value="">Select one…</option>
+            <option value="Google search">Google search</option>
+            <option value="Referred by a friend / family">Referred by a friend / family</option>
+            <option value="Referred by another attorney">Referred by another attorney</option>
+            <option value="Social media">Social media</option>
+            <option value="Walked past / saw office">Walked past / saw office</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group full">
+        <label class="form-label" for="message">Describe Your Situation <span class="required">*</span></label>
+        <textarea name="message" id="message" class="form-textarea" placeholder="Briefly tell us what happened, what outcome you're hoping for, and anything you think is important. The more context you give, the more useful our first response will be." required></textarea>
+        <p class="form-hint">Please don't include sensitive ID or banking details here — we'll request those securely if needed. Your information is protected by attorney-client privilege.</p>
+      </div>
+
+      <div class="consent-row">
+        <input type="checkbox" name="consent" id="consent" value="yes" required>
+        <label for="consent">
+          I consent to Linda Chirwa Attorneys contacting me about this enquiry, and I understand that submitting this form does not create an attorney-client relationship.
+        </label>
+      </div>
+
+      <button type="submit" class="form-submit" id="submitBtn">
+        <span class="btn-text">Send Confidential Enquiry</span>
+        <span class="spinner" aria-hidden="true"></span>
+      </button>
+    </form>
+  </div>
+
+  <!-- Info Sidebar -->
+  <aside class="info-section reveal-right">
+    <h2>Our Offices</h2>
+    <p>Four provinces. One standard of service.</p>
+
+    <div class="office-card">
+      <div class="office-card-header">
+        <h3>Gauteng — Head Office</h3>
+        <span class="office-badge">Head Office</span>
+      </div>
+      <p>Block C, Stoneridge Office Park<br>Greenstone, Modderfontein<br>Johannesburg, Gauteng, 1609</p>
+      <p><a href="tel:+27100855185">+27 (10) 085 5185</a></p>
+      <span class="office-tag">
+        <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M10 2C6.7 2 4 4.7 4 8c0 5 6 10 6 10s6-5 6-10c0-3.3-2.7-6-6-6z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
+        Walk-ins welcome Mon–Fri
+      </span>
+    </div>
+
+    <div class="office-card">
+      <div class="office-card-header">
+        <h3>Gauteng — West Rand</h3>
+      </div>
+      <p>25 Drakenstein Street<br>Culemborg Park, Randfontein</p>
+      <p><a href="mailto:admin@lindachirwaattorneys.co.za">admin@lindachirwaattorneys.co.za</a></p>
+    </div>
+
+    <div class="office-card">
+      <div class="office-card-header">
+        <h3>KwaZulu-Natal</h3>
+      </div>
+      <p><a href="tel:0331085203">033 108 5203</a></p>
+    </div>
+
+    <div class="office-card">
+      <div class="office-card-header">
+        <h3>North West</h3>
+      </div>
+      <p><a href="tel:0181085352">018 108 5352</a></p>
+    </div>
+
+    <div class="office-card">
+      <div class="office-card-header">
+        <h3>Western Cape</h3>
+      </div>
+      <p><a href="tel:0210544906">021 054 4906</a></p>
+    </div>
+
+    <div class="office-card">
+      <div class="office-card-header">
+        <h3>Department Emails</h3>
+      </div>
+      <ul class="dept-list">
+        <li><span class="dept-name">General Enquiries</span><a href="mailto:info@lindachirwaattorneys.co.za">info@lindachirwaattorneys.co.za</a></li>
+        <li><span class="dept-name">Litigation</span><a href="mailto:Litigation@lindachirwaattorneys.co.za">Litigation@lindachirwaattorneys.co.za</a></li>
+        <li><span class="dept-name">Accounts</span><a href="mailto:Accounts@lindachirwaattorneys.co.za">Accounts@lindachirwaattorneys.co.za</a></li>
+        <li><span class="dept-name">Administration</span><a href="mailto:Admin@lindachirwaattorneys.co.za">Admin@lindachirwaattorneys.co.za</a></li>
+        <li><span class="dept-name">Conveyancing</span><a href="mailto:Conveyancing@lindachirwaattorneys.co.za">Conveyancing@lindachirwaattorneys.co.za</a></li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <h3>Office Hours</h3>
+      <p><strong>Monday – Friday:</strong> 08:00 – 17:00</p>
+      <p><strong>Saturday – Sunday:</strong> Closed (WhatsApp monitored for urgent matters)</p>
+      <p class="info-note">Initial consultations are obligation-free. You'll get an honest assessment and a clear cost estimate before you commit to anything.</p>
+    </div>
+
+    <!-- Google Map — Stoneridge Office Park -->
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps?q=Stoneridge+Office+Park,+Greenstone,+Modderfontein,+Johannesburg,+1609&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Linda Chirwa Attorneys Head Office — Stoneridge Office Park, Modderfontein"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="trust-strip">
+      <span class="trust-badge">
+        <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M10 2l7 3v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V5l7-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Confidential
+      </span>
+      <span class="trust-badge">
+        <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        24-hour response
+      </span>
+      <span class="trust-badge">
+        <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M3 10l4 4 10-10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        No obligation
+      </span>
+    </div>
+  </aside>
+
+</div>
+
+<!-- What Happens Next -->
+<section class="next-steps">
+  <div class="next-steps-inner reveal">
+    <h2>What Happens After You Send</h2>
+    <p class="sub">No automated black holes. No sales calls. Just a clear path forward.</p>
+    <div class="next-grid">
+      <div class="next-step reveal" data-delay="1">
+        <div class="next-step-num">1</div>
+        <h3>We Read &amp; Route</h3>
+        <p>Your enquiry goes to the right attorney for your area of law — usually within a few hours during office hours.</p>
+      </div>
+      <div class="next-step reveal" data-delay="2">
+        <div class="next-step-num">2</div>
+        <h3>We Contact You</h3>
+        <p>We'll reach out via your preferred method, ask any clarifying questions, and explain your options and likely costs.</p>
+      </div>
+      <div class="next-step reveal" data-delay="3">
+        <div class="next-step-num">3</div>
+        <h3>You Decide</h3>
+        <p>No pressure, no obligation. If we're the right fit, we'll set up a consultation. If not, we'll point you to someone who is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial -->
+<section class="contact-testimonial">
+  <div class="testimonial-card reveal">
+    <blockquote>The first call already gave me clarity I'd been missing for months. They asked the right questions, told me honestly what was likely, and didn't try to sell me a fight I didn't need.</blockquote>
+    <cite>— Sipho N., Pretoria</cite>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 Linda Chirwa Attorneys. All rights reserved. | <a href="index.html">Back to Home</a></p>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/27749905872" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 20 20" fill="none"><path d="M10 1.5a8.5 8.5 0 00-7.4 12.7L1.5 18.5l4.4-1.1A8.5 8.5 0 1010 1.5z" stroke="currentColor" stroke-width="1.3"/><path d="M7.5 6.5c.2-.5.5-.5.7-.5s.5 0 .7.4l.8 2c.1.2 0 .4-.1.6l-.5.5s-.1.2.2.6c.4.5.8.9 1.3 1.1.2.1.4.1.5-.1l.5-.6c.2-.2.3-.2.5-.1l1.5.8c.2.1.3.2.3.4s0 .7-.4 1c-.4.4-.9.5-1.5.5-1-.1-2.5-.8-3.7-2.3-1-1.2-1.4-2.5-1.4-3.2 0-.5.2-.8.5-1.1z" fill="currentColor"/></svg>
+</a>
+
+<script>
+(function() {
+  'use strict';
+
+  // ---------- Mobile nav ----------
+  var toggle = document.getElementById('mobileToggle');
+  var mobileNav = document.getElementById('mobileNav');
+  if (toggle && mobileNav) {
+    toggle.addEventListener('click', function() {
+      var open = mobileNav.classList.contains('open');
+      mobileNav.classList.toggle('open');
+      toggle.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', !open);
+      mobileNav.setAttribute('aria-hidden', open);
+      document.body.style.overflow = open ? '' : 'hidden';
+    });
+    mobileNav.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        mobileNav.classList.remove('open');
+        toggle.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+        mobileNav.classList.remove('open');
+        toggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  // ---------- Reveal on scroll ----------
+  var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  if ('IntersectionObserver' in window) {
+    var ro = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          ro.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function(el) { ro.observe(el); });
+  } else {
+    revealEls.forEach(function(el) { el.classList.add('visible'); });
+  }
+
+  // ---------- Form ----------
+  var form = document.getElementById('contactForm');
+  var msgEl = document.getElementById('formMessage');
+  var submitBtn = document.getElementById('submitBtn');
+  var progressBar = document.getElementById('formProgress');
+
+  if (form) {
+    // Progress bar — tracks how many required fields are filled
+    var requiredFields = form.querySelectorAll('[required]');
+    function updateProgress() {
+      var filled = 0;
+      requiredFields.forEach(function(f) {
+        if (f.type === 'checkbox') {
+          if (f.checked) filled++;
+        } else if (f.value.trim() !== '') {
+          filled++;
+        }
+      });
+      var pct = requiredFields.length ? (filled / requiredFields.length) * 100 : 0;
+      progressBar.style.width = pct + '%';
+    }
+    form.addEventListener('input', updateProgress);
+    form.addEventListener('change', updateProgress);
+    updateProgress();
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      msgEl.className = 'form-message';
+      msgEl.style.display = 'none';
+      msgEl.textContent = '';
+
+      var name = form.querySelector('#name');
+      var email = form.querySelector('#email');
+      var phone = form.querySelector('#phone');
+      var message = form.querySelector('#message');
+      var service = form.querySelector('#service');
+      var consent = form.querySelector('#consent');
+      var errors = [];
+
+      [name, email, phone, message, service].forEach(function(f) { f.classList.remove('error'); });
+
+      if (!name.value.trim()) { errors.push('Full name is required.'); name.classList.add('error'); }
+      if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        errors.push('A valid email is required.'); email.classList.add('error');
+      }
+      if (!phone.value.trim()) { errors.push('Phone number is required.'); phone.classList.add('error'); }
+      if (!service.value) { errors.push('Please select an area of law.'); service.classList.add('error'); }
+      if (!message.value.trim()) { errors.push('Please describe your situation.'); message.classList.add('error'); }
+      if (consent && !consent.checked) { errors.push('Please confirm your consent to be contacted.'); }
+
+      if (errors.length > 0) {
+        msgEl.className = 'form-message error';
+        msgEl.textContent = errors.join(' ');
+        msgEl.style.display = 'block';
+        msgEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      submitBtn.classList.add('loading');
+      submitBtn.disabled = true;
+
+      fetch(form.action, { method: 'POST', body: new FormData(form) })
+        .then(function(res) {
+          return res.json().then(function(data) { return { ok: res.ok, data: data }; });
+        })
+        .then(function(result) {
+          submitBtn.classList.remove('loading');
+          submitBtn.disabled = false;
+
+          if (result.data.success) {
+            msgEl.className = 'form-message success';
+            msgEl.textContent = result.data.message;
+            msgEl.style.display = 'block';
+            form.reset();
+            updateProgress();
+          } else {
+            msgEl.className = 'form-message error';
+            msgEl.textContent = result.data.message || 'Something went wrong. Please try again.';
+            msgEl.style.display = 'block';
+          }
+          msgEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .catch(function() {
+          submitBtn.classList.remove('loading');
+          submitBtn.disabled = false;
+          msgEl.className = 'form-message error';
+          msgEl.textContent = 'Network error. Please check your connection, or contact us directly at admin@lindachirwaattorneys.co.za.';
+          msgEl.style.display = 'block';
+          msgEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    });
+  }
+})();
+</script>
+</body>
+</html>

@@ -146,6 +146,6 @@ if ($sent) {
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'message' => 'We could not send your message at this time. Please call us on +27 (10) 085 5185 or email info@lindachirwaattorneys.co.za.'
+        'message' => 'We could not send your message at this time. Please call us on +27 (10) 085 5185 or email admin@lindachirwaattorneys.co.za.'
     ]);
 }
