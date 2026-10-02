@@ -68,7 +68,7 @@ PAGES['family-law.html'] = dict(
              'Registering and proving customary marriages',
              'Civil union agreements',
              'Applications to change the matrimonial property system',
-             'Wills and estate planning that fit your family structure, through our <a href="wills-estates.html">Wills &amp; Estates</a> team'])],
+             'Wills and estate planning that fit your family structure, through our <a href="wills-estates.html#estate-planning">Wills &amp; Estates</a> team'])],
          ''),
     ],
     steps=[
@@ -539,7 +539,7 @@ PAGES['mergers-acquisitions.html'] = dict(
          [('What we advise on', [
              'The transfer of employees on the same terms when a business is sold as a going concern',
              'VAT, capital gains tax, transfer duty and securities transfer tax',
-             'Transferring immovable property, with our <a href="conveyancing.html">conveyancing team</a>',
+             'Transferring immovable property, with our <a href="conveyancing.html#commercial">conveyancing team</a>',
              'Structuring the price, including deferred and earn-out payments'])],
          ''),
         ('closing', 'Closing & After',
