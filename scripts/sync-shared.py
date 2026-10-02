@@ -5,7 +5,7 @@ Usage (from the repository root):  python3 scripts/sync-shared.py
 
 Each page marks the blocks it shares with comment markers:
 
-    <!-- ICONS:START --> ... <!-- ICONS:END -->   favicon + manifest tags
+    <!-- ICONS:START --> ... <!-- ICONS:END -->   canonical URL, favicon + manifest tags
     <!-- LEGAL:START --> ... <!-- LEGAL:END -->   footer links to the legal pages
     <!-- CONSENT:START --> ... <!-- CONSENT:END -->   cookie consent script
     <!-- NAV:START -->   ... <!-- NAV:END -->     desktop nav + mobile nav
@@ -17,6 +17,8 @@ when any page is out of date, e.g. in CI.
 import pathlib
 import re
 import sys
+
+from site_config import BASE
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
@@ -35,6 +37,11 @@ LEGAL_LINKS = [
     ('Terms of Use', 'terms-of-use.html'),
     ('Whistleblower', 'whistleblower.html'),
 ]
+
+
+def build_icons(page):
+    url = BASE + '/' if page == 'index.html' else f'{BASE}/{page}'
+    return f'<link rel="canonical" href="{url}">\n' + ICONS
 
 
 def build_legal(page):
@@ -161,7 +168,7 @@ def main():
     for path in sorted(ROOT.glob('*.html')):
         text = path.read_text(encoding='utf-8')
         new, ok_nav = replace_block(text, 'NAV', build_nav(path.name))
-        new, ok_icons = replace_block(new, 'ICONS', ICONS)
+        new, ok_icons = replace_block(new, 'ICONS', build_icons(path.name))
         new, ok_legal = replace_block(new, 'LEGAL', build_legal(path.name))
         new, ok_consent = replace_block(new, 'CONSENT', CONSENT)
         if not (ok_nav and ok_icons and ok_legal and ok_consent):
