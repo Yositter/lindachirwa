@@ -1049,6 +1049,12 @@ a:focus-visible, button:focus-visible {
   outline-offset: 2px;
 }
 
+.service-card h3 a { color: inherit; text-decoration: none; transition: color 0.25s ease; }
+.service-card h3 a:hover { color: var(--primary); }
+.service-card li a { color: inherit; text-decoration: none; background-image: linear-gradient(var(--accent), var(--accent)); background-size: 0 1.5px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size 0.3s ease, color 0.25s ease; }
+.service-card li a:hover, .service-card li a:focus-visible { color: var(--primary); background-size: 100% 1.5px; }
+.services-more { margin-top: 36px; }
+
 /* Shared nav on a transparent, fixed header */
 .navbar { background: transparent; box-shadow: none; }
 .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.15); }
@@ -1292,51 +1298,51 @@ a:focus-visible, button:focus-visible {
       <div class="services-grid">
         <div class="service-card reveal" data-delay="1">
           <svg class="service-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M22 8c-3 0-5 2-5 5s2 5 5 5 5-2 5-5-2-5-5-5zM12 32c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <h3>Family and Personal Matters</h3>
+          <h3><a href="family-law.html">Family and Personal Matters</a></h3>
           <ul>
-            <li>Divorce and separation agreements</li>
-            <li>Child custody, maintenance &amp; parenting plans</li>
-            <li>Domestic partnership agreements</li>
-            <li>Protection orders</li>
+            <li><a href="family-law.html#divorce">Divorce and separation agreements</a></li>
+            <li><a href="family-law.html#children">Child custody, maintenance &amp; parenting plans</a></li>
+            <li><a href="family-law.html#agreements">Domestic partnership agreements</a></li>
+            <li><a href="family-law.html#protection">Protection orders</a></li>
           </ul>
         </div>
         <div class="service-card reveal" data-delay="2">
           <svg class="service-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><rect x="8" y="10" width="28" height="24" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 16h28M16 10V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M28 10V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <h3>Planning for the Future</h3>
+          <h3><a href="wills-estates.html">Planning for the Future</a></h3>
           <ul>
-            <li>Will drafting and estate planning</li>
-            <li>Administration of deceased estates</li>
-            <li>Executorships and trust formation</li>
+            <li><a href="wills-estates.html">Will drafting and estate planning</a></li>
+            <li><a href="wills-estates.html">Administration of deceased estates</a></li>
+            <li><a href="wills-estates.html">Executorships and trust formation</a></li>
           </ul>
         </div>
         <div class="service-card reveal" data-delay="3">
           <svg class="service-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M10 34V18l12-8 12 8v16H10z" stroke="currentColor" stroke-width="1.5"/><rect x="18" y="24" width="8" height="10" stroke="currentColor" stroke-width="1.5"/></svg>
-          <h3>Property Transactions</h3>
+          <h3><a href="conveyancing.html">Property Transactions</a></h3>
           <ul>
-            <li>Residential conveyancing and transfers</li>
-            <li>Bond registrations</li>
-            <li>Sectional title matters</li>
+            <li><a href="conveyancing.html">Residential conveyancing and transfers</a></li>
+            <li><a href="conveyancing.html">Bond registrations</a></li>
+            <li><a href="conveyancing.html">Sectional title matters</a></li>
           </ul>
         </div>
         <div class="service-card reveal" data-delay="1">
           <svg class="service-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle cx="22" cy="22" r="12" stroke="currentColor" stroke-width="1.5"/><path d="M22 16v6l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <h3>When Things Go Wrong</h3>
+          <h3><a href="practice-areas.html">When Things Go Wrong</a></h3>
           <ul>
-            <li>Motor vehicle accident claims</li>
-            <li>Workplace injury compensation</li>
-            <li>Medical negligence claims</li>
-            <li>Criminal defense and bail applications</li>
-            <li>Traffic offense representation</li>
+            <li><a href="civil-law.html#delictual">Motor vehicle accident claims</a></li>
+            <li><a href="civil-law.html#delictual">Workplace injury compensation</a></li>
+            <li><a href="civil-law.html#delictual">Medical negligence claims</a></li>
+            <li><a href="criminal-law.html">Criminal defense and bail applications</a></li>
+            <li><a href="criminal-law.html">Traffic offense representation</a></li>
           </ul>
         </div>
         <div class="service-card reveal" data-delay="2">
           <svg class="service-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><rect x="6" y="12" width="22" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M28 18h8a2 2 0 012 2v12a2 2 0 01-2 2H28" stroke="currentColor" stroke-width="1.5"/><path d="M12 20h10M12 26h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <h3>Work and Immigration</h3>
+          <h3><a href="labour-law.html">Work and Immigration</a></h3>
           <ul>
-            <li>Unfair dismissal and CCMA representation</li>
-            <li>Employment contract disputes</li>
-            <li>Visa and permit applications</li>
-            <li>Permanent residence and citizenship</li>
+            <li><a href="labour-law.html#dismissal">Unfair dismissal and CCMA representation</a></li>
+            <li><a href="labour-law.html#wages">Employment contract disputes</a></li>
+            <li><a href="immigration.html#visas">Visa and permit applications</a></li>
+            <li><a href="immigration.html#permanent">Permanent residence and citizenship</a></li>
           </ul>
         </div>
       </div>
@@ -1347,60 +1353,61 @@ a:focus-visible, button:focus-visible {
       <div class="services-grid">
         <div class="service-card reveal" data-delay="1">
           <svg class="service-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><rect x="10" y="6" width="24" height="32" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M16 14h12M16 20h12M16 26h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <h3>Formation and Structure</h3>
+          <h3><a href="company-formation.html">Formation and Structure</a></h3>
           <ul>
-            <li>Company registrations and formations</li>
-            <li>Shareholder agreements</li>
-            <li>Corporate governance and compliance</li>
+            <li><a href="company-formation.html#registration">Company registrations and formations</a></li>
+            <li><a href="company-formation.html#shareholders">Shareholder agreements</a></li>
+            <li><a href="company-formation.html#governance">Corporate governance and compliance</a></li>
           </ul>
         </div>
         <div class="service-card reveal" data-delay="2">
           <svg class="service-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M10 34l8-12 6 6 10-16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 12h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <h3>Transactions and Growth</h3>
+          <h3><a href="mergers-acquisitions.html">Transactions and Growth</a></h3>
           <ul>
-            <li>Mergers, acquisitions, and business sales</li>
-            <li>Due diligence investigations</li>
-            <li>Commercial contract drafting and negotiation</li>
+            <li><a href="mergers-acquisitions.html">Mergers, acquisitions, and business sales</a></li>
+            <li><a href="mergers-acquisitions.html#due-diligence">Due diligence investigations</a></li>
+            <li><a href="commercial-contracts.html#drafting">Commercial contract drafting and negotiation</a></li>
           </ul>
         </div>
         <div class="service-card reveal" data-delay="3">
           <svg class="service-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><rect x="8" y="18" width="28" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 24h28M14 8l8 10 8-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <h3>Property and Development</h3>
+          <h3><a href="commercial-contracts.html">Property and Development</a></h3>
           <ul>
-            <li>Commercial lease agreements</li>
-            <li>Property development and zoning</li>
-            <li>Construction contracts and disputes</li>
+            <li><a href="commercial-contracts.html#leases">Commercial lease agreements</a></li>
+            <li><a href="conveyancing.html">Property development and zoning</a></li>
+            <li><a href="civil-law.html#contract">Construction contracts and disputes</a></li>
           </ul>
         </div>
         <div class="service-card reveal" data-delay="1">
           <svg class="service-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M22 10v24M16 16l6-6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="8" y="28" width="28" height="8" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
-          <h3>Protection and Recovery</h3>
+          <h3><a href="civil-law.html">Protection and Recovery</a></h3>
           <ul>
-            <li>Debt collection and litigation</li>
-            <li>Insolvency and business rescue</li>
-            <li>Intellectual property registration &amp; enforcement</li>
+            <li><a href="civil-law.html#debt">Debt collection and litigation</a></li>
+            <li><a href="civil-law.html#insolvency">Insolvency and business rescue</a></li>
+            <li><a href="intellectual-property.html">Intellectual property registration &amp; enforcement</a></li>
           </ul>
         </div>
         <div class="service-card reveal" data-delay="2">
           <svg class="service-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle cx="16" cy="14" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="28" cy="14" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M6 34c0-5.5 4.5-10 10-10M28 24c5.5 0 10 4.5 10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <h3>Employment and HR</h3>
+          <h3><a href="employment-hr.html">Employment and HR</a></h3>
           <ul>
-            <li>Policy development and compliance</li>
-            <li>Disciplinary procedures</li>
-            <li>Labour dispute resolution</li>
+            <li><a href="employment-hr.html#contracts">Policy development and compliance</a></li>
+            <li><a href="employment-hr.html#discipline">Disciplinary procedures</a></li>
+            <li><a href="employment-hr.html#representation">Labour dispute resolution</a></li>
           </ul>
         </div>
         <div class="service-card reveal" data-delay="3">
           <svg class="service-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M22 8l-14 8v12l14 8 14-8V16L22 8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M22 20v16M8 16l14 4 14-4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
           <h3>Specialized Industries</h3>
           <ul>
-            <li>Agricultural and farm transactions</li>
-            <li>Water rights and rural property matters</li>
-            <li>Regulatory compliance across sectors</li>
+            <li><a href="contact.html#contactForm">Agricultural and farm transactions</a></li>
+            <li><a href="contact.html#contactForm">Water rights and rural property matters</a></li>
+            <li><a href="contact.html#contactForm">Regulatory compliance across sectors</a></li>
           </ul>
         </div>
       </div>
     </div>
+    <p class="services-more reveal"><a href="practice-areas.html" class="about-link">View all practice areas <span aria-hidden="true">&rarr;</span></a></p>
   </div>
 </section>
 
