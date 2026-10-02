@@ -70,8 +70,9 @@ NAV_ITEMS = [
 PRACTICE_AREAS = {
     'For Individuals': [
         ('Family Law', 'family-law.html'),
-        ('Wills, Estates &amp; Trusts', 'wills-estates.html'),
-        ('Property Conveyancing', 'conveyancing.html'),
+        ('Wills, Estates &amp; Trusts', 'wills-estates.html#will-drafting'),
+        ('Estate Administration', 'wills-estates.html#administration'),
+        ('Property Conveyancing', 'conveyancing.html#residential'),
         ('Notarial Services (ANCs, Bonds, Apostille)', 'notarial-services.html'),
         ('Motor Vehicle &amp; Workplace Injury', 'civil-law.html#delictual'),
         ('Criminal Defence', 'criminal-law.html'),
@@ -85,6 +86,7 @@ PRACTICE_AREAS = {
         ('Debt Collection &amp; Litigation', 'civil-law.html#debt'),
         ('Insolvency &amp; Business Rescue', 'civil-law.html#insolvency'),
         ('Intellectual Property', 'intellectual-property.html'),
+        ('Commercial Property', 'conveyancing.html#commercial'),
         ('Employment &amp; HR Compliance', 'employment-hr.html'),
     ],
 }
