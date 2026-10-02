@@ -25,17 +25,18 @@ ICONS = '''<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#1A4A2E">'''
 
-# (label, href, submenu key or None)
+# (mobile label, href, submenu key or None, short desktop label or None)
 NAV_ITEMS = [
-    ('Home', 'index.html', None),
-    ('About', 'about.html', None),
-    ('Practice Areas', 'practice-areas.html', 'practice'),
-    ('Criminal Law', 'criminal-law.html', None),
-    ('Civil Litigation', 'civil-law.html', None),
-    ('Estates', 'wills-estates.html', None),
-    ('Conveyancing', 'conveyancing.html', None),
-    ('Resources', 'resources.html', None),
-    ('Contact', 'contact.html', 'offices'),
+    ('Home', 'index.html', None, None),
+    ('About', 'about.html', None, None),
+    ('Practice Areas', 'practice-areas.html', 'practice', None),
+    ('Criminal Law', 'criminal-law.html', None, 'Criminal'),
+    ('Civil Litigation', 'civil-law.html', None, 'Civil'),
+    ('Estates', 'wills-estates.html', None, None),
+    ('Conveyancing', 'conveyancing.html', None, None),
+    ('Notarial Services', 'notarial-services.html', None, 'Notarial'),
+    ('Resources', 'resources.html', None, None),
+    ('Contact', 'contact.html', 'offices', None),
 ]
 
 PRACTICE_AREAS = {
@@ -43,6 +44,7 @@ PRACTICE_AREAS = {
         ('Family Law', 'family-law.html'),
         ('Wills, Estates &amp; Trusts', 'wills-estates.html'),
         ('Property Conveyancing', 'conveyancing.html'),
+        ('Notarial Services (ANCs, Bonds, Apostille)', 'notarial-services.html'),
         ('Motor Vehicle &amp; Workplace Injury', 'civil-law.html#delictual'),
         ('Criminal Defence', 'criminal-law.html'),
         ('CCMA &amp; Employment Disputes', 'labour-law.html'),
@@ -76,12 +78,13 @@ def links(items, indent):
 
 def build_nav(page):
     desktop, mobile = [], []
-    for label, href, sub in NAV_ITEMS:
+    for label, href, sub, short in NAV_ITEMS:
         active = href == page
+        dlabel = short or label
         cls = 'nav-link active' if active else 'nav-link'
         cur = ' aria-current="page"' if active else ''
         if sub is None:
-            desktop.append(f'    <div class="nav-item"><a class="{cls}" href="{href}"{cur}>{label}</a></div>')
+            desktop.append(f'    <div class="nav-item"><a class="{cls}" href="{href}"{cur}>{dlabel}</a></div>')
             m_cls = ' class="active"' if active else ''
             mobile.append(f'  <a href="{href}"{m_cls}>{label}</a>')
             continue
@@ -98,7 +101,7 @@ def build_nav(page):
             msub = f'      <a href="{href}">Contact Overview</a>\n{links(OFFICES, "      ")}'
         desktop.append(
             f'    <div class="nav-item has-sub">\n'
-            f'      <a class="{cls}" href="{href}" aria-haspopup="true"{cur}>{label}<span class="caret" aria-hidden="true"></span></a>\n'
+            f'      <a class="{cls}" href="{href}" aria-haspopup="true"{cur}>{dlabel}<span class="caret" aria-hidden="true"></span></a>\n'
             f'{panel}\n    </div>')
         open_attr = ' open' if active else ''
         mobile.append(f'  <details{open_attr}>\n    <summary>{label}</summary>\n    <div class="mobile-sub">\n{msub}\n    </div>\n  </details>')

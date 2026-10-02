@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resources | Linda Chirwa Attorneys — Courts, Constitution &amp; Legislation</title>
+<title>Resources | Linda Chirwa Attorneys</title>
 <meta name="description" content="Court addresses in Gauteng, KwaZulu-Natal, North West and Western Cape, the Constitution of South Africa, and the key Acts of Parliament for the fields Linda Chirwa Attorneys serves.">
 <!-- ICONS:START -->
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -50,6 +50,163 @@
   .court-grid, .act-grid { grid-template-columns: 1fr; }
   .constitution-box { padding: 28px 24px; }
 }
+/* ===== SECTION HEADINGS ===== */
+.section-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 26px;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+  padding-bottom: 14px;
+  position: relative;
+}
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 60px; height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 3px;
+}
+.section-subtext {
+  font-size: 14px;
+  color: var(--warm-gray);
+  margin-bottom: 36px;
+  max-width: 620px;
+  line-height: 1.7;
+}
+
+/* ===== VIDEO RESOURCES ===== */
+.video-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 28px;
+  transition: box-shadow 0.4s ease, transform 0.4s ease, border-color 0.4s ease;
+  position: relative;
+}
+.video-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: 2;
+}
+.video-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+.video-card:hover::before { transform: scaleX(1); }
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+  transition: transform 0.6s ease;
+}
+.video-card:hover .video-wrapper iframe {
+  transform: scale(1.015);
+}
+
+/* ===== HELPFUL GUIDES ===== */
+.guides-section { margin-top: 64px; margin-bottom: 64px; }
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.guide-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 10px;
+  padding: 28px 24px;
+  text-decoration: none;
+  color: var(--charcoal);
+  transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease, border-left-color 0.35s ease;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.guide-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.guide-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  border-left-color: var(--primary-light);
+}
+.guide-card:hover::after { transform: scaleX(1); }
+.guide-icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--off-white);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+  color: var(--primary);
+  transition: background 0.35s ease, color 0.35s ease, transform 0.4s ease;
+}
+.guide-card:hover .guide-icon {
+  background: var(--primary);
+  color: var(--white);
+  transform: scale(1.08) rotate(-5deg);
+}
+.guide-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: var(--charcoal);
+  transition: color 0.3s ease;
+}
+.guide-card:hover h3 { color: var(--primary); }
+.guide-card p {
+  font-size: 13px;
+  color: var(--warm-gray);
+  line-height: 1.6;
+}
+
+
+/* ===== CTA ===== */
+.cta-section {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  padding: 64px 44px; text-align: center; margin-top: 64px;
+  border-radius: 12px; position: relative; overflow: hidden;
+}
+.cta-section > * { position: relative; z-index: 1; }
+.cta-section h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3vw, 32px); color: var(--white); margin-bottom: 12px; }
+.cta-section p { font-size: 15px; color: rgba(255,255,255,0.75); margin: 0 auto 32px; max-width: 500px; line-height: 1.7; }
+.cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.cta-btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 15px 34px; border-radius: 4px; text-decoration: none; transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.22); }
+.cta-btn-whatsapp { background: #25D366; color: var(--white); }
+.cta-btn-whatsapp:hover { background: #20bd5a; }
+.cta-btn-contact { background: var(--white); color: var(--primary); }
+.cta-btn-contact:hover { background: var(--off-white); }
+@media (max-width: 768px) {
+  .guides-grid { grid-template-columns: 1fr; }
+  .cta-section { padding: 44px 26px; margin-top: 44px; border-radius: 8px; }
+  .cta-section h2 { font-size: 22px; }
+  .section-heading { font-size: 22px; }
+}
 </style>
 </head>
 <body>
@@ -72,6 +229,7 @@
           <a href="family-law.html">Family Law</a>
           <a href="wills-estates.html">Wills, Estates &amp; Trusts</a>
           <a href="conveyancing.html">Property Conveyancing</a>
+          <a href="notarial-services.html">Notarial Services (ANCs, Bonds, Apostille)</a>
           <a href="civil-law.html#delictual">Motor Vehicle &amp; Workplace Injury</a>
           <a href="criminal-law.html">Criminal Defence</a>
           <a href="labour-law.html">CCMA &amp; Employment Disputes</a>
@@ -89,10 +247,11 @@
         </div>
       </div>
     </div>
-    <div class="nav-item"><a class="nav-link" href="criminal-law.html">Criminal Law</a></div>
-    <div class="nav-item"><a class="nav-link" href="civil-law.html">Civil Litigation</a></div>
+    <div class="nav-item"><a class="nav-link" href="criminal-law.html">Criminal</a></div>
+    <div class="nav-item"><a class="nav-link" href="civil-law.html">Civil</a></div>
     <div class="nav-item"><a class="nav-link" href="wills-estates.html">Estates</a></div>
     <div class="nav-item"><a class="nav-link" href="conveyancing.html">Conveyancing</a></div>
+    <div class="nav-item"><a class="nav-link" href="notarial-services.html">Notarial</a></div>
     <div class="nav-item"><a class="nav-link active" href="resources.html" aria-current="page">Resources</a></div>
     <div class="nav-item has-sub">
       <a class="nav-link" href="contact.html" aria-haspopup="true">Contact<span class="caret" aria-hidden="true"></span></a>
@@ -124,6 +283,7 @@
       <a href="family-law.html">Family Law</a>
       <a href="wills-estates.html">Wills, Estates &amp; Trusts</a>
       <a href="conveyancing.html">Property Conveyancing</a>
+      <a href="notarial-services.html">Notarial Services (ANCs, Bonds, Apostille)</a>
       <a href="civil-law.html#delictual">Motor Vehicle &amp; Workplace Injury</a>
       <a href="criminal-law.html">Criminal Defence</a>
       <a href="labour-law.html">CCMA &amp; Employment Disputes</a>
@@ -142,6 +302,7 @@
   <a href="civil-law.html">Civil Litigation</a>
   <a href="wills-estates.html">Estates</a>
   <a href="conveyancing.html">Conveyancing</a>
+  <a href="notarial-services.html">Notarial Services</a>
   <a href="resources.html" class="active">Resources</a>
   <details>
     <summary>Contact</summary>
@@ -161,8 +322,8 @@
 
 <!-- Page Header -->
 <section class="page-header">
-  <h1>Legal Resources</h1>
-  <p>Court addresses in the provinces we serve, the Constitution, and the key legislation behind the work we do.</p>
+  <h1>Resources</h1>
+  <p>Plain-language legal insights, video guides, court addresses, the Constitution, and the legislation behind our work.</p>
   <div class="breadcrumb">
     <a href="index.html">Home</a>
     <span>/</span>
@@ -171,6 +332,75 @@
 </section>
 
 <main class="res-wrap">
+  <!-- Video Resources Section -->
+  <div class="reveal">
+    <h2 class="section-heading">Video Resources</h2>
+    <p class="section-subtext">Short, practical videos on the questions clients ask us most — watch at your own pace, no sign-up required.</p>
+  </div>
+
+  <div class="video-card reveal" data-delay="1">
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fv%2F17Z4LgeKs4%2F&show_text=true&width=560"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        loading="lazy"
+        title="Linda Chirwa Attorneys — Video 1"
+      ></iframe>
+    </div>
+  </div>
+
+  <div class="video-card reveal" data-delay="2">
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fv%2F1AqKkxjmY3%2F&show_text=true&width=560"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        loading="lazy"
+        title="Linda Chirwa Attorneys — Video 2"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- Helpful Guides Section -->
+  <div class="guides-section">
+    <div class="reveal">
+      <h2 class="section-heading">Helpful Guides</h2>
+      <p class="section-subtext">Quick access to the legal information our clients ask about most — grouped so you can find what you need fast.</p>
+    </div>
+
+    <div class="guides-grid">
+      <a href="criminal-law.html" class="guide-card reveal" data-delay="1">
+        <div class="guide-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 6v2h14V6L10 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5 8v7M10 8v7M15 8v7M3 15h14v2H3v-2z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Your Rights When Arrested</h3>
+        <p>Understand your constitutional rights during arrest and detention — and how to protect yourself legally from the first moment.</p>
+      </a>
+
+      <a href="wills-estates.html" class="guide-card reveal" data-delay="2">
+        <div class="guide-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2z" stroke="currentColor" stroke-width="1.4"/><path d="M7 6h6M7 9h6M7 12h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Estate Planning Checklist</h3>
+        <p>The essential steps and documents you need to secure your family's future — with common mistakes to avoid.</p>
+      </a>
+
+      <a href="contact.html" class="guide-card reveal" data-delay="3">
+        <div class="guide-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16 12.5v2a1.5 1.5 0 01-1.6 1.5A14.5 14.5 0 013 4.6 1.5 1.5 0 014.5 3H6.5l1 3.5-1.5 1a10 10 0 005.5 5.5l1-1.5 3.5 1z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Contact Our Team</h3>
+        <p>Get in touch with our experienced legal team for a confidential, obligation-free consultation. Response within 24 hours.</p>
+      </a>
+    </div>
+  </div>
+
+
 
   <section class="res-section" id="courts">
     <h2>Courts in the Areas We Serve</h2>
@@ -245,6 +475,22 @@
     </div>
     <div class="callout">Find consolidated, current versions on <a href="https://www.justice.gov.za/legislation/acts/" target="_blank" rel="noopener">justice.gov.za</a> and <a href="https://www.saflii.org/za/legis/consol_act/" target="_blank" rel="noopener">SAFLII</a>. This list is a reference, not legal advice. <a href="contact.html#contactForm">Send us your matter</a> for advice on how the law applies to you.</div>
   </section>
+
+  <!-- CTA Section -->
+  <div class="cta-section reveal">
+    <h2>Need Legal Assistance?</h2>
+    <p>Our team is ready to help with your matter — with straight answers and clear next steps.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/27749905872" class="cta-btn cta-btn-whatsapp" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 1.5a8.5 8.5 0 00-7.4 12.7L1.5 18.5l4.4-1.1A8.5 8.5 0 1010 1.5z" stroke="currentColor" stroke-width="1.3"/><path d="M7.5 6.5c.2-.5.5-.5.7-.5s.5 0 .7.4l.8 2c.1.2 0 .4-.1.6l-.5.5s-.1.2.2.6c.4.5.8.9 1.3 1.1.2.1.4.1.5-.1l.5-.6c.2-.2.3-.2.5-.1l1.5.8c.2.1.3.2.3.4s0 .7-.4 1c-.4.4-.9.5-1.5.5-1-.1-2.5-.8-3.7-2.3-1-1.2-1.4-2.5-1.4-3.2 0-.5.2-.8.5-1.1z" fill="currentColor"/></svg>
+        WhatsApp Us
+      </a>
+      <a href="contact.html" class="cta-btn cta-btn-contact">
+        Contact Us
+      </a>
+    </div>
+  </div>
+
 
 </main>
 

@@ -59,14 +59,16 @@
           counterDone = true;
           counters.forEach(function(c) {
             var target = parseFloat(c.getAttribute('data-target')) || 0;
+            var decimals = (String(c.getAttribute('data-target')).indexOf('.') !== -1) ? 1 : 0;
             var start = null;
             var duration = 1600;
             function step(ts) {
               if (!start) start = ts;
               var p = Math.min((ts - start) / duration, 1);
-              c.textContent = Math.round(target * easeOutCubic(p));
+              var v = target * easeOutCubic(p);
+              c.textContent = decimals ? v.toFixed(decimals) : Math.round(v);
               if (p < 1) requestAnimationFrame(step);
-              else c.textContent = target;
+              else c.textContent = decimals ? target.toFixed(decimals) : target;
             }
             requestAnimationFrame(step);
           });

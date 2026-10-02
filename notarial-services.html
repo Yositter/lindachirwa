@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notarial Services | Linda Chirwa Attorneys — Notaries</title>
+<meta name="description" content="Notarial services from Linda Chirwa Attorneys. Antenuptial contracts, notarial bonds, notarial leases, servitudes, donations, authentication and apostille coordination across South Africa.">
+<!-- ICONS:START -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1A4A2E">
+<!-- ICONS:END -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="service-page.css">
+<style>
+/* Notarial page only */
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+.timeline-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 30px 28px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.timeline-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.timeline-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+.timeline-card:hover::before { transform: scaleX(1); }
+.timeline-badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(168,213,181,0.25);
+  color: var(--primary-dark);
+  margin-bottom: 14px;
+}
+.timeline-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--charcoal);
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+.timeline-card p {
+  font-size: 14px;
+  color: var(--warm-gray);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.timeline-card p:last-child { margin-bottom: 0; }
+.timeline-card strong { color: var(--charcoal); font-weight: 600; }
+@media (max-width: 1024px) {
+  .timeline-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .timeline-card { padding: 26px 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV:START -->
+<header class="navbar" role="banner">
+  <div class="navbar-left">
+    <a href="index.html" aria-label="Linda Chirwa Attorneys Home">
+      <img src="logo.png" alt="Linda Chirwa Attorneys" class="navbar-logo">
+    </a>
+  </div>
+  <nav class="navbar-right" role="navigation" aria-label="Main navigation">
+    <div class="nav-item"><a class="nav-link" href="index.html">Home</a></div>
+    <div class="nav-item"><a class="nav-link" href="about.html">About</a></div>
+    <div class="nav-item has-sub">
+      <a class="nav-link" href="practice-areas.html" aria-haspopup="true">Practice Areas<span class="caret" aria-hidden="true"></span></a>
+      <div class="submenu wide">
+        <div class="submenu-group">
+          <h4>For Individuals</h4>
+          <a href="family-law.html">Family Law</a>
+          <a href="wills-estates.html">Wills, Estates &amp; Trusts</a>
+          <a href="conveyancing.html">Property Conveyancing</a>
+          <a href="notarial-services.html">Notarial Services (ANCs, Bonds, Apostille)</a>
+          <a href="civil-law.html#delictual">Motor Vehicle &amp; Workplace Injury</a>
+          <a href="criminal-law.html">Criminal Defence</a>
+          <a href="labour-law.html">CCMA &amp; Employment Disputes</a>
+          <a href="immigration.html">Immigration &amp; Permits</a>
+        </div>
+        <div class="submenu-group">
+          <h4>For Businesses</h4>
+          <a href="company-formation.html">Company Formation &amp; Governance</a>
+          <a href="commercial-contracts.html">Contracts &amp; Transactions</a>
+          <a href="mergers-acquisitions.html">Mergers &amp; Acquisitions</a>
+          <a href="civil-law.html#debt">Debt Collection &amp; Litigation</a>
+          <a href="civil-law.html#insolvency">Insolvency &amp; Business Rescue</a>
+          <a href="intellectual-property.html">Intellectual Property</a>
+          <a href="employment-hr.html">Employment &amp; HR Compliance</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item"><a class="nav-link" href="criminal-law.html">Criminal</a></div>
+    <div class="nav-item"><a class="nav-link" href="civil-law.html">Civil</a></div>
+    <div class="nav-item"><a class="nav-link" href="wills-estates.html">Estates</a></div>
+    <div class="nav-item"><a class="nav-link" href="conveyancing.html">Conveyancing</a></div>
+    <div class="nav-item"><a class="nav-link active" href="notarial-services.html" aria-current="page">Notarial</a></div>
+    <div class="nav-item"><a class="nav-link" href="resources.html">Resources</a></div>
+    <div class="nav-item has-sub">
+      <a class="nav-link" href="contact.html" aria-haspopup="true">Contact<span class="caret" aria-hidden="true"></span></a>
+      <div class="submenu align-right">
+        <a href="contact.html#office-gauteng">Gauteng: Head Office</a>
+        <a href="contact.html#office-west-rand">Gauteng: West Rand</a>
+        <a href="contact.html#office-kzn">KwaZulu-Natal</a>
+        <a href="contact.html#office-north-west">North West</a>
+        <a href="contact.html#office-western-cape">Western Cape</a>
+        <a href="contact.html#office-departments">Department Emails</a>
+        <a href="contact.html#contactForm">Send an Enquiry</a>
+      </div>
+    </div>
+  </nav>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <details>
+    <summary>Practice Areas</summary>
+    <div class="mobile-sub">
+      <a href="practice-areas.html">All Practice Areas</a>
+      <h4>For Individuals</h4>
+      <a href="family-law.html">Family Law</a>
+      <a href="wills-estates.html">Wills, Estates &amp; Trusts</a>
+      <a href="conveyancing.html">Property Conveyancing</a>
+      <a href="notarial-services.html">Notarial Services (ANCs, Bonds, Apostille)</a>
+      <a href="civil-law.html#delictual">Motor Vehicle &amp; Workplace Injury</a>
+      <a href="criminal-law.html">Criminal Defence</a>
+      <a href="labour-law.html">CCMA &amp; Employment Disputes</a>
+      <a href="immigration.html">Immigration &amp; Permits</a>
+      <h4>For Businesses</h4>
+      <a href="company-formation.html">Company Formation &amp; Governance</a>
+      <a href="commercial-contracts.html">Contracts &amp; Transactions</a>
+      <a href="mergers-acquisitions.html">Mergers &amp; Acquisitions</a>
+      <a href="civil-law.html#debt">Debt Collection &amp; Litigation</a>
+      <a href="civil-law.html#insolvency">Insolvency &amp; Business Rescue</a>
+      <a href="intellectual-property.html">Intellectual Property</a>
+      <a href="employment-hr.html">Employment &amp; HR Compliance</a>
+    </div>
+  </details>
+  <a href="criminal-law.html">Criminal Law</a>
+  <a href="civil-law.html">Civil Litigation</a>
+  <a href="wills-estates.html">Estates</a>
+  <a href="conveyancing.html">Conveyancing</a>
+  <a href="notarial-services.html" class="active">Notarial Services</a>
+  <a href="resources.html">Resources</a>
+  <details>
+    <summary>Contact</summary>
+    <div class="mobile-sub">
+      <a href="contact.html">Contact Overview</a>
+      <a href="contact.html#office-gauteng">Gauteng: Head Office</a>
+      <a href="contact.html#office-west-rand">Gauteng: West Rand</a>
+      <a href="contact.html#office-kzn">KwaZulu-Natal</a>
+      <a href="contact.html#office-north-west">North West</a>
+      <a href="contact.html#office-western-cape">Western Cape</a>
+      <a href="contact.html#office-departments">Department Emails</a>
+      <a href="contact.html#contactForm">Send an Enquiry</a>
+    </div>
+  </details>
+</div>
+<!-- NAV:END -->
+
+<!-- Page Header -->
+<section class="page-header">
+  <h1>Notarial Services</h1>
+  <p>Antenuptial contracts, notarial bonds, servitudes, and documents for use abroad — prepared, attested, and registered by a qualified Notary.</p>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <span>Services</span>
+    <span>/</span>
+    <span class="current">Notarial Services</span>
+  </div>
+</section>
+
+<!-- Main Content -->
+<div class="content-wrap">
+
+  <!-- Intro -->
+  <p class="intro-text reveal">
+    Some documents carry more legal weight than others. A notarial deed is one of them — it requires a qualified Notary Public to draft, attest, and, in many cases, register the document in a Deeds Office before it has full legal effect. <strong>As registered Notaries, Linda Chirwa Attorneys prepare, attest, and register notarial deeds and instruments — including antenuptial contracts, notarial bonds, notarial leases, servitudes, and the authentication of documents for use abroad.</strong> If your matter involves an agreement that must be notarially executed, or a document that needs to be recognised outside South Africa, we handle it properly the first time.
+  </p>
+
+</div>
+
+<!-- Stat Band -->
+<section class="stat-band" id="stats">
+  <div class="stat-band-inner">
+    <div class="stat-item-band reveal" data-delay="1">
+      <div class="stat-number-band"><span class="counter" data-target="3">0</span><span>mo</span></div>
+      <div class="stat-label-band">ANC Registration<br>Window</div>
+    </div>
+    <div class="stat-item-band reveal" data-delay="2">
+      <div class="stat-number-band"><span class="counter" data-target="100">0</span>%</div>
+      <div class="stat-label-band">Deeds Office<br>Registration</div>
+    </div>
+    <div class="stat-item-band reveal" data-delay="3">
+      <div class="stat-number-band">Apostille</div>
+      <div class="stat-label-band">DIRCO<br>Coordination</div>
+    </div>
+    <div class="stat-item-band reveal" data-delay="4">
+      <div class="stat-number-band">All</div>
+      <div class="stat-label-band">SA Deeds<br>Offices</div>
+    </div>
+  </div>
+</section>
+
+<div class="content-wrap" style="padding-top: 0;">
+
+  <!-- ===== SERVICES ACCORDIONS ===== -->
+  <h2 class="section-title reveal">What We Handle</h2>
+
+  <div class="accordion-group">
+
+    <!-- 1. Antenuptial Contracts -->
+    <details class="accordion reveal" id="anc">
+      <summary>Antenuptial Contracts (ANCs)</summary>
+      <div class="accordion-body">
+        <p>An antenuptial contract determines how your assets will be treated during your marriage and how they will be divided if the marriage ends. Without one, you are automatically married in community of property — meaning everything either spouse owns or owes is shared. For many couples, that is not what they intend.</p>
+
+        <h4>Types of Marriage Regimes</h4>
+        <ul>
+          <li>Marriage in community of property (the default — no ANC)</li>
+          <li>Marriage out of community of property without accrual</li>
+          <li>Marriage out of community of property with accrual</li>
+          <li>Marriage out of community of property with accrual and specific exclusions</li>
+        </ul>
+
+        <h4>What We Do</h4>
+        <ul>
+          <li>Advise on the appropriate marital regime for your circumstances</li>
+          <li>Draft the antenuptial contract</li>
+          <li>Attend to signing with both parties and witnesses</li>
+          <li>Register the ANC in the Deeds Office within three months of signing</li>
+          <li>Advise on accrual calculations and the protections accrual offers</li>
+          <li>Deal with specific exclusions (inheritance, existing assets, business interests)</li>
+          <li>Handle post-marriage ANC variations and amendments</li>
+        </ul>
+
+        <h4>Why Timing Matters</h4>
+        <p>An ANC must be signed <strong>before the marriage</strong>. There is a common misconception that it can be signed on the wedding day — it cannot. The contract must be executed before a Notary, and the parties must also sign it before two competent witnesses. Registration at the Deeds Office must then take place within three months of signing. Missing these deadlines has serious consequences.</p>
+      </div>
+    </details>
+
+    <!-- 2. Notarial Bonds -->
+    <details class="accordion reveal" data-delay="1" id="notarial-bonds">
+      <summary>Notarial Bonds</summary>
+      <div class="accordion-body">
+        <p>A notarial bond is a form of security registered over movable property — as opposed to a mortgage bond, which is registered over immovable property. It gives the creditor a secured claim over the debtor's movable assets, which is significantly stronger than an unsecured claim.</p>
+
+        <h4>Types of Notarial Bonds</h4>
+        <ul>
+          <li><strong>Notarial bond (general):</strong> covers all movable property of the debtor without specifying individual items</li>
+          <li><strong>Notarial bond (special):</strong> specifies the individual movable items over which security is held — also called a "covering bond"</li>
+          <li><strong>Notarial covering bond:</strong> secures a fluctuating debt (such as a running overdraft) up to a specified maximum amount</li>
+        </ul>
+
+        <h4>What We Handle</h4>
+        <ul>
+          <li>Drafting the notarial bond deed</li>
+          <li>Advising on whether a general, special, or covering bond is appropriate</li>
+          <li>Attending to execution and attestation before a Notary</li>
+          <li>Registration in the relevant Deeds Office</li>
+          <li>Perfecting the bond (obtaining a court order to take possession of the secured property)</li>
+          <li>Discharge and cancellation of notarial bonds on repayment</li>
+        </ul>
+
+        <h4>When Notarial Bonds Are Used</h4>
+        <ul>
+          <li>Securing commercial loans and overdraft facilities</li>
+          <li>Securing rental obligations where movables are used as security</li>
+          <li>Securing finance for vehicles, equipment, or livestock</li>
+          <li>Securing debts where immovable property security is not available</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 3. Notarial Leases -->
+    <details class="accordion reveal" data-delay="2" id="notarial-leases">
+      <summary>Notarial Leases</summary>
+      <div class="accordion-body">
+        <p>A lease longer than ten years — or a lease for the natural life of the lessee, or a lease with a renewal right that brings the total period above ten years — must be executed notarially and registered in the Deeds Office. Without registration, the lease does not bind third parties who acquire the property.</p>
+
+        <h4>What We Handle</h4>
+        <ul>
+          <li>Drafting the notarial lease deed</li>
+          <li>Attending to execution and attestation</li>
+          <li>Registering the lease in the Deeds Office</li>
+          <li>Notarial cancellation of registered leases on termination or expiry</li>
+          <li>Advising on the commercial terms that affect registration</li>
+        </ul>
+
+        <h4>Why Registration Matters</h4>
+        <p>If a property with a long-term lease is sold, an unregistered lease does not automatically bind the new owner. A registered notarial lease is a real right — it runs with the land and binds successors in title. For commercial tenants with long leaseholds, registration is essential protection.</p>
+      </div>
+    </details>
+
+    <!-- 4. Notarial Servitudes -->
+    <details class="accordion reveal" data-delay="3" id="servitudes">
+      <summary>Notarial Servitudes</summary>
+      <div class="accordion-body">
+        <p>Servitudes are rights over someone else's property — such as a right of way, a right to draw water, or a right to run pipelines or cables across land. Personal servitudes (usufruct, habitatio) must be created by notarial deed and registered in the Deeds Office to be enforceable against third parties.</p>
+
+        <h4>Types of Servitudes</h4>
+        <ul>
+          <li><strong>Praedial servitudes:</strong> rights benefiting one piece of land at the expense of another (rights of way, water, support)</li>
+          <li><strong>Personal servitudes:</strong> rights benefiting a specific person for life or a fixed period (usufruct, usus, habitatio)</li>
+          <li><strong>Road servitudes:</strong> rights of way over neighbouring land</li>
+          <li><strong>Pipeline and services servitudes:</strong> rights to run municipal services, electricity, water, or fibre across a property</li>
+        </ul>
+
+        <h4>What We Handle</h4>
+        <ul>
+          <li>Drafting notarial servitude deeds</li>
+          <li>Attending to execution and attestation</li>
+          <li>Registration in the Deeds Office</li>
+          <li>Cancellation and amendment of registered servitudes</li>
+          <li>Removal of restrictive conditions of title</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 5. Notarial Donations -->
+    <details class="accordion reveal" data-delay="4" id="donations">
+      <summary>Notarial Donations</summary>
+      <div class="accordion-body">
+        <p>A donation is a gift — but for legal and tax purposes, donations are treated seriously. Certain donations must be made by notarial deed to be legally valid and to have effect against third parties.</p>
+
+        <h4>What We Handle</h4>
+        <ul>
+          <li>Notarial donations between spouses</li>
+          <li>Donations of future property or rights</li>
+          <li>Donations subject to conditions or modus</li>
+          <li>Structured donations for estate planning purposes</li>
+          <li>Advising on donation tax and estate duty implications</li>
+        </ul>
+
+        <h4>Donation Tax Considerations</h4>
+        <p>Donations above the annual R100,000 exemption (for individuals) attract donation tax at 20%. Where donations form part of an estate planning strategy, the interaction with estate duty, capital gains tax, and the anti-avoidance provisions of the Income Tax Act must be carefully considered. We work with you and your financial advisor to structure donations correctly.</p>
+      </div>
+    </details>
+
+    <!-- 6. Authentication & Apostille -->
+    <details class="accordion reveal" data-delay="5" id="apostille">
+      <summary>Authentication &amp; Apostille</summary>
+      <div class="accordion-body">
+        <p>Documents signed in South Africa often need to be recognised and accepted abroad — for immigration, marriage, business, education, or legal proceedings. Authentication (sometimes called "legalisation") confirms the signature and capacity of the person who signed the document. An apostille is a simplified form of authentication used between countries that are parties to the Hague Apostille Convention.</p>
+
+        <h4>What We Handle</h4>
+        <ul>
+          <li>Notarial certification of original documents</li>
+          <li>Certified copies of passports, IDs, and academic certificates</li>
+          <li>Powers of attorney for use overseas</li>
+          <li>Authentication of company documents (director resolutions, MOIs, share certificates)</li>
+          <li>Apostille coordination through DIRCO (Department of International Relations and Cooperation)</li>
+          <li>Legalisation through the relevant embassy or consulate for non-apostille countries</li>
+          <li>Translation coordination with sworn translators where required</li>
+        </ul>
+
+        <h4>Common Uses</h4>
+        <ul>
+          <li>Emigration and permanent residence applications</li>
+          <li>Marriage abroad</li>
+          <li>Study and university admission</li>
+          <li>Foreign business registration and banking</li>
+          <li>Overseas property purchases</li>
+          <li>Litigation support for foreign court proceedings</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 7. Other Notarial Work -->
+    <details class="accordion reveal" data-delay="6" id="other-instruments">
+      <summary>Other Notarial Instruments</summary>
+      <div class="accordion-body">
+        <p>Beyond the categories above, there are several other instruments that require notarial execution or attestation. If your matter doesn't fit neatly into a heading above, contact us — the chances are we handle it.</p>
+
+        <h4>Additional Services</h4>
+        <ul>
+          <li>Notarial deeds of cession</li>
+          <li>Notarial leases of mineral rights</li>
+          <li>Notarial arbitration agreements where parties require notarial form</li>
+          <li>Antenuptial contract variations and post-nuptial amendments</li>
+          <li>Notarial certificates of identity</li>
+          <li>Notarial protests of bills of exchange</li>
+        </ul>
+
+        <h4>Foreign-Related Notarial Work</h4>
+        <ul>
+          <li>Notarial certification for foreign embassies and consulates</li>
+          <li>Attendance on documents required by foreign courts</li>
+          <li>Notarial affidavits for cross-border matters</li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+
+  <!-- ===== TIMELINE CARDS ===== -->
+  <div class="section-block" style="margin-bottom: 56px;">
+    <h2 class="section-title reveal">Two Common Journeys</h2>
+    <p class="reveal" style="font-size: 15px; color: var(--warm-gray); line-height: 1.8; margin-bottom: 8px; max-width: 780px;">The two matters clients ask about most — an antenuptial contract and authentication of documents for use abroad — follow very different timelines. Here's what to expect in each.</p>
+
+    <div class="timeline-grid">
+      <div class="timeline-card reveal-left">
+        <span class="timeline-badge">Timeline 1</span>
+        <h3>Antenuptial Contract (ANC)</h3>
+        <p><strong>Before the wedding:</strong> We advise on the marital regime, draft the ANC, and arrange signing before a Notary.</p>
+        <p><strong>On signing:</strong> Both parties execute the ANC before the Notary and two competent witnesses. If either party is abroad, arrangements can be made for signature abroad and the contract must be sent to South Africa before the wedding.</p>
+        <p><strong>Within 3 months of signing:</strong> The ANC must be registered in a South African Deeds Office. The original must be lodged with the Registrar of Deeds, and a copy is returned to the parties.</p>
+        <p><strong>After registration:</strong> The registered ANC governs the couple's marital regime for the duration of the marriage. Variations are possible by court application in limited circumstances.</p>
+      </div>
+
+      <div class="timeline-card reveal-right">
+        <span class="timeline-badge">Timeline 2</span>
+        <h3>Authentication &amp; Apostille</h3>
+        <p><strong>Step 1 — Notarial certification:</strong> The document is certified by a Notary Public, who confirms the identity and capacity of the signatory.</p>
+        <p><strong>Step 2 — DIRCO:</strong> Where an apostille is required, the certified document is submitted to DIRCO for an apostille certificate. Turnaround is typically 5–15 working days, depending on volumes.</p>
+        <p><strong>Step 3 — Embassy or consulate:</strong> For countries that are not parties to the Hague Apostille Convention, the document must be legalised by the relevant embassy or consulate in South Africa — which can add further weeks.</p>
+        <p><strong>Step 4 — Translation:</strong> If the destination country requires the document in another language, it must be translated by a sworn translator and the translation may itself need to be certified.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <div class="section-block" style="margin-bottom: 56px;">
+    <h2 class="section-title reveal">Why Work With Us</h2>
+
+    <div class="feature-grid">
+      <div class="feature-card reveal" data-delay="1">
+        <div class="feature-dot"></div>
+        <h4>Registered Notaries</h4>
+      </div>
+      <div class="feature-card reveal" data-delay="2">
+        <div class="feature-dot"></div>
+        <h4>Deeds Office Registration</h4>
+      </div>
+      <div class="feature-card reveal" data-delay="3">
+        <div class="feature-dot"></div>
+        <h4>DIRCO &amp; Embassy Coordination</h4>
+      </div>
+      <div class="feature-card reveal" data-delay="4">
+        <div class="feature-dot"></div>
+        <h4>Sworn Translator Network</h4>
+      </div>
+      <div class="feature-card reveal" data-delay="5">
+        <div class="feature-dot"></div>
+        <h4>Deadline Management</h4>
+      </div>
+      <div class="feature-card reveal" data-delay="6">
+        <div class="feature-dot"></div>
+        <h4>Multi-Provincial Coverage</h4>
+      </div>
+      <div class="feature-card reveal" data-delay="1">
+        <div class="feature-dot"></div>
+        <h4>Confidential Handling</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CALLOUT ===== -->
+  <div class="callout reveal">
+    <h3>Deadlines That Cannot Be Missed</h3>
+    <p>Some notarial deadlines are absolute. An ANC signed after the wedding date is invalid. A long lease that isn't registered doesn't bind a new owner. An apostilled document that arrives late can derail a visa or immigration application.</p>
+    <p>If you have a deadline on the horizon — a wedding date, an overseas submission, a bond registration — <a href="https://wa.me/27749905872">contact us early</a> so we can plan the process properly. Email <a href="mailto:admin@lindachirwaattorneys.co.za">admin@lindachirwaattorneys.co.za</a> or call <a href="tel:+27100855185">+27 (10) 085 5185</a>.</p>
+  </div>
+
+  <!-- ===== CHECKLIST ===== -->
+  <div class="checklist-section" style="margin-top: 56px;">
+    <h2 class="section-title reveal">What to Bring</h2>
+    <p class="reveal" style="font-size: 15px; color: var(--warm-gray); line-height: 1.8; margin-bottom: 8px; max-width: 780px;">Documents and details to have ready for your first consultation. Requirements vary by matter — we'll confirm exactly what's needed once we understand your situation.</p>
+
+    <ul class="checklist">
+      <li class="reveal">Valid ID or passport for every party involved</li>
+      <li class="reveal" data-delay="1">Marriage certificate or wedding date confirmation (for ANCs)</li>
+      <li class="reveal" data-delay="2">Details of any existing antenuptial contract or previous marriage</li>
+      <li class="reveal" data-delay="3">Description of the property, movable assets, or rights affected</li>
+      <li class="reveal" data-delay="4">Any existing title deeds or prior notarial documents</li>
+      <li class="reveal" data-delay="5">The destination country and its specific document requirements (for apostille matters)</li>
+      <li class="reveal">The original documents requiring authentication</li>
+      <li class="reveal" data-delay="1">Any embassy or consulate instructions you've already received</li>
+      <li class="reveal" data-delay="2">Deadlines that must be met</li>
+      <li class="reveal" data-delay="3">Details of any trust or legal entity involved</li>
+      <li class="reveal" data-delay="4">Your contact details and preferred signing location (if not our offices)</li>
+      <li class="reveal" data-delay="5">For corporate matters: company registration documents and director details</li>
+    </ul>
+  </div>
+
+  <!-- ===== FAQs ===== -->
+  <div class="faq-section">
+    <h2 class="section-title reveal">Notarial Services FAQs</h2>
+
+    <div class="accordion-group">
+
+      <details class="accordion reveal">
+        <summary>Can I sign an antenuptial contract on the day of my wedding?</summary>
+        <div class="accordion-body">
+          <p>No. An ANC must be signed before the wedding takes place — this is a legal requirement, not a technicality. If the contract is signed on or after the wedding date, it is invalid and the marriage defaults to community of property. We recommend starting the ANC process at least 4–6 weeks before the wedding to allow time for drafting, signing, and any travel arrangements for parties signing abroad.</p>
+        </div>
+      </details>
+
+      <details class="accordion reveal" data-delay="1">
+        <summary>What happens if I don't register my ANC within three months?</summary>
+        <div class="accordion-body">
+          <p>Failing to register the ANC within three months of signing has serious consequences. The contract remains valid between the parties, but it does not bind third parties — creditors, the Receiver of Revenue, or a trustee in insolvency. This means that a third party dealing with either spouse could treat the marriage as one in community of property, exposing assets that the ANC was meant to protect. We lodge the ANC for registration promptly to avoid this outcome.</p>
+        </div>
+      </details>
+
+      <details class="accordion reveal" data-delay="2">
+        <summary>What's the difference between an apostille and legalisation?</summary>
+        <div class="accordion-body">
+          <p>An apostille is a certificate issued under the Hague Apostille Convention. It applies only between countries that have signed the Convention, and it simplifies authentication — the apostille replaces the old chain of embassy legalisations. Legalisation is the broader process for countries that are <em>not</em> parties to the Convention: the document must be legalised by the destination country's embassy or consulate in South Africa. We advise which applies to your destination country.</p>
+        </div>
+      </details>
+
+      <details class="accordion reveal" data-delay="3">
+        <summary>How long does the apostille process take?</summary>
+        <div class="accordion-body">
+          <p>Typically 5–15 working days from the date the certified document is lodged with DIRCO. Turnaround depends on DIRCO's current volumes, which can vary significantly. If embassy legalisation is also required (for non-Convention countries), add 1–4 weeks depending on the embassy. If translation is required, add time for the sworn translator and, where necessary, certification of the translation. We always build a realistic timeline into the plan and advise on priority handling where it's available.</p>
+        </div>
+      </details>
+
+      <details class="accordion reveal" data-delay="4">
+        <summary>Do I need a notarial bond or a mortgage bond?</summary>
+        <div class="accordion-body">
+          <p>It depends on what you're using as security. A mortgage bond is registered over immovable property (land, buildings). A notarial bond is registered over movable property (vehicles, equipment, livestock, inventory, or a general body of movables). If you don't have immovable property available as security — or if you want to avoid mortgaging your home — a notarial bond may be appropriate. If you have immovable property, a mortgage bond is usually preferred because it gives the creditor stronger enforcement rights.</p>
+        </div>
+      </details>
+
+      <details class="accordion reveal" data-delay="5">
+        <summary>Can I change my antenuptial contract after marriage?</summary>
+        <div class="accordion-body">
+          <p>Generally no, not without a court application. The High Court has the power to vary the matrimonial property regime in limited circumstances under the Matrimonial Property Act, but the requirements are strict and the application is expensive. In practice, the better approach is to get the ANC right before the marriage — which is why we spend time at the outset understanding your circumstances and future plans. If you're already married and have concerns about your regime, contact us to discuss your options.</p>
+        </div>
+      </details>
+
+      <details class="accordion reveal" data-delay="6">
+        <summary>Do you work with clients who are overseas?</summary>
+        <div class="accordion-body">
+          <p>Yes. A significant part of our notarial work involves clients who are abroad — either signing ANCs before emigrating, authenticating documents for use overseas, or dealing with South African notarial matters remotely. In many cases we can arrange signing through a notary in the client's country of residence, with the document then sent to South Africa for registration. We also handle video consultation and electronic document exchange for preliminary work. Contact us to discuss your situation.</p>
+        </div>
+      </details>
+
+      <details class="accordion reveal" data-delay="1">
+        <summary>What does a notary actually do that an attorney doesn't?</summary>
+        <div class="accordion-body">
+          <p>A notary is an attorney who has completed additional qualifications and been admitted as a Notary Public by the High Court. Notaries are authorised to prepare, attest, and register certain documents — notarial deeds — that ordinary attorneys cannot. These include antenuptial contracts, notarial bonds, notarial leases, and servitudes. A Notary also authenticates documents for use abroad. Not all attorneys are notaries, and not all notaries hold the additional qualification to register notarial deeds in the Deeds Office.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- ===== CTA ===== -->
+  <div class="cta-section reveal">
+    <h2>Need a Notarial Service?</h2>
+    <p>From antenuptial contracts to documents for overseas use, we prepare, attest, and register notarial instruments properly — with clear timelines and realistic cost estimates upfront.</p>
+    <p>Call <strong>+27 (10) 085 5185</strong> &nbsp;&middot;&nbsp; WhatsApp <strong>074 990 5872</strong> &nbsp;&middot;&nbsp; Email <strong>admin@lindachirwaattorneys.co.za</strong></p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/27749905872" class="cta-btn cta-btn-primary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 1.5a8.5 8.5 0 00-7.4 12.7L1.5 18.5l4.4-1.1A8.5 8.5 0 1010 1.5z" stroke="currentColor" stroke-width="1.3"/><path d="M7.5 6.5c.2-.5.5-.5.7-.5s.5 0 .7.4l.8 2c.1.2 0 .4-.1.6l-.5.5s-.1.2.2.6c.4.5.8.9 1.3 1.1.2.1.4.1.5-.1l.5-.6c.2-.2.3-.2.5-.1l1.5.8c.2.1.3.2.3.4s0 .7-.4 1c-.4.4-.9.5-1.5.5-1-.1-2.5-.8-3.7-2.3-1-1.2-1.4-2.5-1.4-3.2 0-.5.2-.8.5-1.1z" fill="currentColor"/></svg>
+        WhatsApp Us
+      </a>
+      <a href="contact.html" class="cta-btn cta-btn-outline">
+        Send Us a Message
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 Linda Chirwa Attorneys. All rights reserved. | <a href="index.html">Back to Home</a></p>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/27749905872" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 20 20" fill="none"><path d="M10 1.5a8.5 8.5 0 00-7.4 12.7L1.5 18.5l4.4-1.1A8.5 8.5 0 1010 1.5z" stroke="currentColor" stroke-width="1.3"/><path d="M7.5 6.5c.2-.5.5-.5.7-.5s.5 0 .7.4l.8 2c.1.2 0 .4-.1.6l-.5.5s-.1.2.2.6c.4.5.8.9 1.3 1.1.2.1.4.1.5-.1l.5-.6c.2-.2.3-.2.5-.1l1.5.8c.2.1.3.2.3.4s0 .7-.4 1c-.4.4-.9.5-1.5.5-1-.1-2.5-.8-3.7-2.3-1-1.2-1.4-2.5-1.4-3.2 0-.5.2-.8.5-1.1z" fill="currentColor"/></svg>
+</a>
+
+<script src="site.js"></script>
+</body>
+</html>

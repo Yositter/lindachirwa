@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wills &amp; Estate Planning | Linda Chirwa Attorneys</title>
+<meta name="description" content="Comprehensive wills and estate planning services from Linda Chirwa Attorneys. Will drafting, estate administration, trusts, powers of attorney, and estate litigation across South Africa.">
+<!-- ICONS:START -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1A4A2E">
+<!-- ICONS:END -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="service-page.css">
+<style>
+/* Page-specific styles */
+.navbar-right a {
+  font-family: var(--font-display);
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-right a::after {
+  content: ''; position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.navbar-right a:hover { color: var(--white); }
+
+.navbar-right a:hover::after { width: 100%; }
+
+.navbar-right a.active { color: var(--accent); }
+
+.navbar-right a.active::after { width: 100%; }
+
+.mobile-nav a {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 300;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--white); text-decoration: none;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease;
+}
+
+.mobile-nav.open a { opacity: 1; transform: translateY(0); }
+
+.mobile-nav.open a:nth-child(1) { transition-delay: 0.05s; }
+
+.mobile-nav.open a:nth-child(2) { transition-delay: 0.10s; }
+
+.mobile-nav.open a:nth-child(3) { transition-delay: 0.15s; }
+
+.mobile-nav.open a:nth-child(4) { transition-delay: 0.20s; }
+
+.mobile-nav.open a:nth-child(5) { transition-delay: 0.25s; }
+
+.mobile-nav.open a:nth-child(6) { transition-delay: 0.30s; }
+
+.mobile-nav a:hover { color: var(--accent); }
+
+@keyframes heroShift {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.06) translate(-2%, -1%); }
+}
+
+.section-subtitle {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--charcoal);
+  margin: 24px 0 12px;
+}
+
+.comparison-section { margin-bottom: 56px; }
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.comparison-card {
+  background: var(--white);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.comparison-card.negative {
+  border-left: 4px solid var(--red);
+}
+
+.comparison-card.positive {
+  border-left: 4px solid var(--primary);
+}
+
+.comparison-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.comparison-card.negative:hover { border-color: var(--red); }
+
+.comparison-card.positive:hover { border-color: var(--primary); }
+
+.comparison-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--charcoal);
+  margin-bottom: 18px;
+}
+
+.comparison-card ul { list-style: none; padding: 0; }
+
+.comparison-card ul li {
+  font-size: 14px;
+  color: var(--warm-gray);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.6;
+}
+
+.comparison-card ul li:last-child { border-bottom: none; }
+
+.comparison-card.negative ul li::before {
+  content: '\2717';
+  color: var(--red);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.comparison-card.positive ul li::before {
+  content: '\2713';
+  color: var(--primary);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+@media (max-width: 768px) {
+  .comparison-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV:START -->
+<header class="navbar" role="banner">
+  <div class="navbar-left">
+    <a href="index.html" aria-label="Linda Chirwa Attorneys Home">
+      <img src="logo.png" alt="Linda Chirwa Attorneys" class="navbar-logo">
+    </a>
+  </div>
+  <nav class="navbar-right" role="navigation" aria-label="Main navigation">
+    <div class="nav-item"><a class="nav-link" href="index.html">Home</a></div>
+    <div class="nav-item"><a class="nav-link" href="about.html">About</a></div>
+    <div class="nav-item has-sub">
+      <a class="nav-link" href="practice-areas.html" aria-haspopup="true">Practice Areas<span class="caret" aria-hidden="true"></span></a>
+      <div class="submenu wide">
+        <div class="submenu-group">
+          <h4>For Individuals</h4>
+          <a href="family-law.html">Family Law</a>
+          <a href="wills-estates.html">Wills, Estates &amp; Trusts</a>
+          <a href="conveyancing.html">Property Conveyancing</a>
+          <a href="notarial-services.html">Notarial Services (ANCs, Bonds, Apostille)</a>
+          <a href="civil-law.html#delictual">Motor Vehicle &amp; Workplace Injury</a>
+          <a href="criminal-law.html">Criminal Defence</a>
+          <a href="labour-law.html">CCMA &amp; Employment Disputes</a>
+          <a href="immigration.html">Immigration &amp; Permits</a>
+        </div>
+        <div class="submenu-group">
+          <h4>For Businesses</h4>
+          <a href="company-formation.html">Company Formation &amp; Governance</a>
+          <a href="commercial-contracts.html">Contracts &amp; Transactions</a>
+          <a href="mergers-acquisitions.html">Mergers &amp; Acquisitions</a>
+          <a href="civil-law.html#debt">Debt Collection &amp; Litigation</a>
+          <a href="civil-law.html#insolvency">Insolvency &amp; Business Rescue</a>
+          <a href="intellectual-property.html">Intellectual Property</a>
+          <a href="employment-hr.html">Employment &amp; HR Compliance</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item"><a class="nav-link" href="criminal-law.html">Criminal</a></div>
+    <div class="nav-item"><a class="nav-link" href="civil-law.html">Civil</a></div>
+    <div class="nav-item"><a class="nav-link active" href="wills-estates.html" aria-current="page">Estates</a></div>
+    <div class="nav-item"><a class="nav-link" href="conveyancing.html">Conveyancing</a></div>
+    <div class="nav-item"><a class="nav-link" href="notarial-services.html">Notarial</a></div>
+    <div class="nav-item"><a class="nav-link" href="resources.html">Resources</a></div>
+    <div class="nav-item has-sub">
+      <a class="nav-link" href="contact.html" aria-haspopup="true">Contact<span class="caret" aria-hidden="true"></span></a>
+      <div class="submenu align-right">
+        <a href="contact.html#office-gauteng">Gauteng: Head Office</a>
+        <a href="contact.html#office-west-rand">Gauteng: West Rand</a>
+        <a href="contact.html#office-kzn">KwaZulu-Natal</a>
+        <a href="contact.html#office-north-west">North West</a>
+        <a href="contact.html#office-western-cape">Western Cape</a>
+        <a href="contact.html#office-departments">Department Emails</a>
+        <a href="contact.html#contactForm">Send an Enquiry</a>
+      </div>
+    </div>
+  </nav>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <details>
+    <summary>Practice Areas</summary>
+    <div class="mobile-sub">
+      <a href="practice-areas.html">All Practice Areas</a>
+      <h4>For Individuals</h4>
+      <a href="family-law.html">Family Law</a>
+      <a href="wills-estates.html">Wills, Estates &amp; Trusts</a>
+      <a href="conveyancing.html">Property Conveyancing</a>
+      <a href="notarial-services.html">Notarial Services (ANCs, Bonds, Apostille)</a>
+      <a href="civil-law.html#delictual">Motor Vehicle &amp; Workplace Injury</a>
+      <a href="criminal-law.html">Criminal Defence</a>
+      <a href="labour-law.html">CCMA &amp; Employment Disputes</a>
+      <a href="immigration.html">Immigration &amp; Permits</a>
+      <h4>For Businesses</h4>
+      <a href="company-formation.html">Company Formation &amp; Governance</a>
+      <a href="commercial-contracts.html">Contracts &amp; Transactions</a>
+      <a href="mergers-acquisitions.html">Mergers &amp; Acquisitions</a>
+      <a href="civil-law.html#debt">Debt Collection &amp; Litigation</a>
+      <a href="civil-law.html#insolvency">Insolvency &amp; Business Rescue</a>
+      <a href="intellectual-property.html">Intellectual Property</a>
+      <a href="employment-hr.html">Employment &amp; HR Compliance</a>
+    </div>
+  </details>
+  <a href="criminal-law.html">Criminal Law</a>
+  <a href="civil-law.html">Civil Litigation</a>
+  <a href="wills-estates.html" class="active">Estates</a>
+  <a href="conveyancing.html">Conveyancing</a>
+  <a href="notarial-services.html">Notarial Services</a>
+  <a href="resources.html">Resources</a>
+  <details>
+    <summary>Contact</summary>
+    <div class="mobile-sub">
+      <a href="contact.html">Contact Overview</a>
+      <a href="contact.html#office-gauteng">Gauteng: Head Office</a>
+      <a href="contact.html#office-west-rand">Gauteng: West Rand</a>
+      <a href="contact.html#office-kzn">KwaZulu-Natal</a>
+      <a href="contact.html#office-north-west">North West</a>
+      <a href="contact.html#office-western-cape">Western Cape</a>
+      <a href="contact.html#office-departments">Department Emails</a>
+      <a href="contact.html#contactForm">Send an Enquiry</a>
+    </div>
+  </details>
+</div>
+<!-- NAV:END -->
+
+<!-- Page Header -->
+<section class="page-header">
+  <h1>Wills &amp; Estate Planning</h1>
+  <p>Protect your legacy. Provide for the people you love. Plan with clarity — not guesswork.</p>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <span>Services</span>
+    <span>/</span>
+    <span class="current">Wills &amp; Estates</span>
+  </div>
+</section>
+
+<!-- Main Content -->
+<div class="content-wrap">
+
+  <!-- Intro -->
+  <p class="intro-text reveal">
+    Estate planning isn't just for the wealthy — it's for anyone who wants to ensure their loved ones are cared for, their wishes are honoured, and their assets are distributed according to their intentions. <strong>Without proper planning, your estate could face unnecessary taxes, legal disputes, delays, and costs that diminish what you leave behind.</strong> Linda Chirwa Attorneys provides comprehensive estate planning services that give you peace of mind knowing your legacy is protected and your family's future is secure.
+  </p>
+
+</div>
+
+<!-- Stat Band -->
+<section class="stat-band" id="stats">
+  <div class="stat-band-inner">
+    <div class="stat-item-band reveal" data-delay="1">
+      <div class="stat-number-band">R<span class="counter" data-target="3.5">0</span>m</div>
+      <div class="stat-label-band">Estate Duty<br>Threshold</div>
+    </div>
+    <div class="stat-item-band reveal" data-delay="2">
+      <div class="stat-number-band"><span class="counter" data-target="20">0</span>%</div>
+      <div class="stat-label-band">Standard Estate<br>Duty Rate</div>
+    </div>
+    <div class="stat-item-band reveal" data-delay="3">
+      <div class="stat-number-band"><span class="counter" data-target="5">0</span>yr</div>
+      <div class="stat-label-band">Recommended<br>Review Cycle</div>
+    </div>
+    <div class="stat-item-band reveal" data-delay="4">
+      <div class="stat-number-band"><span class="counter" data-target="100">0</span>%</div>
+      <div class="stat-label-band">Confidential<br>Consultations</div>
+    </div>
+  </div>
+</section>
+
+<div class="content-wrap" style="padding-top: 0;">
+
+  <!-- ===== SERVICES ACCORDIONS ===== -->
+  <h2 class="section-title reveal">Our Estate Planning Services</h2>
+
+  <div class="accordion-group">
+
+    <!-- 1. Last Will and Testament -->
+    <details class="accordion reveal">
+      <summary>Last Will and Testament Drafting</summary>
+      <div class="accordion-body">
+        <p>Your will is the cornerstone of your estate plan. We prepare comprehensive, legally sound wills tailored to your unique circumstances — ensuring your wishes are clearly expressed and legally enforceable.</p>
+
+        <h4>Asset Distribution</h4>
+        <ul>
+          <li>Real property (homes, land, investment properties)</li>
+          <li>Financial assets (bank accounts, investments, policies)</li>
+          <li>Personal property (vehicles, jewellery, art, collectibles)</li>
+          <li>Business interests (shares, partnerships, sole proprietorships)</li>
+          <li>Digital assets (online accounts, cryptocurrency, digital media)</li>
+          <li>Sentimental items with specific bequests</li>
+        </ul>
+
+        <h4>Guardian Appointments</h4>
+        <ul>
+          <li>Guardians for minor children</li>
+          <li>Care arrangements for dependents with disabilities</li>
+          <li>Pet care provisions and trusts</li>
+          <li>Educational trusts for children and grandchildren</li>
+        </ul>
+
+        <h4>Executor Appointment</h4>
+        <ul>
+          <li>Selecting trustworthy and capable executors</li>
+          <li>Backup executor designation</li>
+          <li>Professional vs family executor considerations</li>
+          <li>Defining executor powers and limitations</li>
+        </ul>
+
+        <h4>Special Provisions</h4>
+        <ul>
+          <li>Conditions on inheritance (age, milestones, behaviour)</li>
+          <li>Trusts for vulnerable or spendthrift beneficiaries</li>
+          <li>Charitable bequests and legacy giving</li>
+          <li>Funeral and burial wishes</li>
+          <li>Specific bequests of particular items</li>
+        </ul>
+
+        <h4>Tax Planning</h4>
+        <ul>
+          <li>Estate duty minimisation strategies</li>
+          <li>Capital gains tax on death considerations</li>
+          <li>Donation tax planning</li>
+          <li>Marital property regime implications</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 2. Will Updates and Amendments -->
+    <details class="accordion reveal" data-delay="1">
+      <summary>Will Updates and Amendments</summary>
+      <div class="accordion-body">
+        <p>Your will should evolve as your life changes. We help you keep your estate plan current and effective — ensuring it always reflects your latest wishes and circumstances.</p>
+
+        <h4>When to Update Your Will</h4>
+        <ul>
+          <li>Marriage or divorce</li>
+          <li>Birth or adoption of children or grandchildren</li>
+          <li>Death of a beneficiary or executor</li>
+          <li>Significant changes in financial circumstances</li>
+          <li>Acquisition or disposal of major assets</li>
+          <li>Changes in tax laws affecting your estate</li>
+          <li>Relocation to a different province or country</li>
+        </ul>
+
+        <h4>Codicils vs New Wills</h4>
+        <p>A codicil is a formal amendment to an existing will, suitable for minor changes. For significant revisions, we typically recommend drafting an entirely new will to avoid confusion and potential challenges. We'll advise you on the most appropriate approach for your situation.</p>
+      </div>
+    </details>
+
+    <!-- 3. Estate Planning Strategies -->
+    <details class="accordion reveal" data-delay="2">
+      <summary>Estate Planning Strategies</summary>
+      <div class="accordion-body">
+        <p>Beyond your will, a comprehensive estate plan uses multiple tools and strategies to protect your wealth, minimise taxes, and ensure smooth transfer of assets.</p>
+
+        <h4>Inter Vivos Trusts</h4>
+        <p>A trust established during your lifetime can provide significant benefits:</p>
+        <ul>
+          <li>Asset protection from creditors and litigation</li>
+          <li>Estate duty reduction through strategic asset transfer</li>
+          <li>Probate avoidance for faster asset distribution</li>
+          <li>Privacy — trust assets are not part of the public estate record</li>
+          <li>Continuity of asset management if you become incapacitated</li>
+          <li>Protection for vulnerable beneficiaries</li>
+        </ul>
+        <p><strong>Types of trusts we establish:</strong></p>
+        <ul>
+          <li>Family trusts for wealth preservation</li>
+          <li>Business trusts for commercial asset protection</li>
+          <li>Special needs trusts for dependents with disabilities</li>
+          <li>Charitable trusts for philanthropic goals</li>
+          <li>Testamentary trusts (created through your will)</li>
+        </ul>
+
+        <h4>Life Insurance Planning</h4>
+        <ul>
+          <li>Adequate coverage assessment</li>
+          <li>Beneficiary designation review</li>
+          <li>Insurance trusts to manage policy proceeds</li>
+          <li>Estate duty funding through insurance</li>
+        </ul>
+
+        <h4>Retirement Fund Nominations</h4>
+        <ul>
+          <li>Pension and provident fund beneficiary nominations</li>
+          <li>Tax-efficient distribution planning</li>
+          <li>Minor children's share management</li>
+        </ul>
+
+        <h4>Business Succession Planning</h4>
+        <ul>
+          <li>Ownership transition strategies</li>
+          <li>Buy-sell agreements between partners</li>
+          <li>Key person insurance arrangements</li>
+          <li>Family business continuity planning</li>
+        </ul>
+
+        <h4>Donation and Gift Planning</h4>
+        <ul>
+          <li>Lifetime giving strategies to reduce estate size</li>
+          <li>Donation tax exemptions and planning</li>
+          <li>Annual R100,000 donation tax exemption utilisation</li>
+          <li>Spousal rollover provisions</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 4. Estate Administration and Executorship -->
+    <details class="accordion reveal" data-delay="3">
+      <summary>Estate Administration and Executorship</summary>
+      <div class="accordion-body">
+        <p>When a loved one passes, the estate administration process can be overwhelming. We provide professional executorship and estate administration services to ensure the deceased's wishes are carried out efficiently and lawfully.</p>
+
+        <h4>Estate Reporting</h4>
+        <ul>
+          <li>Death notification to the Master of the High Court</li>
+          <li>Inventory and valuation of all estate assets</li>
+          <li>Preparation of the liquidation and distribution account</li>
+          <li>Beneficiary notifications and communications</li>
+        </ul>
+
+        <h4>Asset Identification and Valuation</h4>
+        <ul>
+          <li>Real property appraisals and valuations</li>
+          <li>Business interest valuations</li>
+          <li>Personal property inventories</li>
+          <li>Financial account identification and statements</li>
+          <li>Debt verification and assessment</li>
+        </ul>
+
+        <h4>Creditor and Tax Management</h4>
+        <ul>
+          <li>Creditor notification and publication</li>
+          <li>Claims assessment and payment</li>
+          <li>Estate duty returns</li>
+          <li>Income tax returns for the deceased</li>
+          <li>Capital gains tax on deemed disposals</li>
+          <li>SARS clearances</li>
+        </ul>
+
+        <h4>Asset Liquidation</h4>
+        <ul>
+          <li>Sale of immovable property</li>
+          <li>Business interest transfers</li>
+          <li>Investment liquidation</li>
+          <li>Debt collection on amounts owed to the estate</li>
+        </ul>
+
+        <h4>Distribution to Beneficiaries</h4>
+        <ul>
+          <li>Distribution according to the will or intestate succession</li>
+          <li>Management of minor children's inheritances</li>
+          <li>Trust establishment where required</li>
+          <li>Final distribution and estate closure</li>
+        </ul>
+
+        <h4>Intestate Estates</h4>
+        <p>When someone dies without a valid will, the Intestate Succession Act determines how assets are distributed. We guide families through this process — ensuring compliance with the law while protecting the interests of all heirs.</p>
+      </div>
+    </details>
+
+    <!-- 5. Deceased Estate Property Transfers -->
+    <details class="accordion reveal" data-delay="4">
+      <summary>Deceased Estate Property Transfers</summary>
+      <div class="accordion-body">
+        <p>Transferring property from a deceased estate involves specific legal procedures. Our conveyancing team handles these transfers with expertise and care.</p>
+
+        <h4>Property from Deceased Estates</h4>
+        <ul>
+          <li>Executor authority and Letters of Executorship</li>
+          <li>Transfer of property to heirs and legatees</li>
+          <li>Estate duty clearance certificates</li>
+          <li>Rates clearance and compliance certificates</li>
+          <li>Registration at the Deeds Office</li>
+        </ul>
+
+        <h4>Survivorship Transfers</h4>
+        <ul>
+          <li>Joint ownership property transfers</li>
+          <li>Automatic transfer to surviving co-owner</li>
+          <li>Simplified transfer process</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 6. Living Wills and Healthcare Directives -->
+    <details class="accordion reveal" data-delay="5">
+      <summary>Living Wills and Healthcare Directives</summary>
+      <div class="accordion-body">
+        <p>A living will ensures your healthcare wishes are known and respected if you become unable to communicate them yourself.</p>
+
+        <h4>Living Will</h4>
+        <ul>
+          <li>Life support preferences and end-of-life decisions</li>
+          <li>Pain management and palliative care instructions</li>
+          <li>Organ donation preferences</li>
+          <li>Specific medical intervention decisions</li>
+        </ul>
+
+        <h4>Healthcare Power of Attorney</h4>
+        <p>Appoint a trusted person to make medical decisions on your behalf if you become incapacitated. We ensure your healthcare proxy understands your values and wishes, and that the document is legally enforceable.</p>
+      </div>
+    </details>
+
+    <!-- 7. Powers of Attorney -->
+    <details class="accordion reveal" data-delay="6">
+      <summary>Powers of Attorney</summary>
+      <div class="accordion-body">
+        <p>A power of attorney allows someone you trust to act on your behalf in legal and financial matters. We draft powers of attorney that are clear, specific, and legally sound.</p>
+
+        <h4>General Power of Attorney</h4>
+        <ul>
+          <li>Managing bank accounts and financial affairs</li>
+          <li>Handling property transactions</li>
+          <li>Signing legal documents</li>
+          <li>Managing business operations</li>
+        </ul>
+
+        <h4>Special Power of Attorney</h4>
+        <ul>
+          <li>Selling a specific property</li>
+          <li>Collecting a specific pension or benefit</li>
+          <li>Registering or transferring a vehicle</li>
+          <li>Representing you in a specific court matter</li>
+        </ul>
+
+        <h4>Enduring Power of Attorney</h4>
+        <p>An enduring power of attorney continues to be effective even if you become mentally incapacitated. This is a critical document for ensuring your affairs are managed by someone you trust if you lose the ability to make decisions for yourself.</p>
+      </div>
+    </details>
+
+    <!-- 8. Trust Administration -->
+    <details class="accordion reveal">
+      <summary>Trust Administration</summary>
+      <div class="accordion-body">
+        <p>Ongoing trust management requires diligence, compliance, and expertise. We provide comprehensive trust administration services to ensure your trust operates effectively and in compliance with the law.</p>
+        <ul>
+          <li>Preparation of annual financial statements</li>
+          <li>Trustee meetings and minute-keeping</li>
+          <li>Beneficiary distributions and record-keeping</li>
+          <li>Trust deed amendments and variations</li>
+          <li>Trustee appointments, resignations, and removals</li>
+          <li>Trust asset management and investment oversight</li>
+          <li>Regulatory compliance (Master of the High Court, SARS, FICA)</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 9. Estate and Trust Litigation -->
+    <details class="accordion reveal" data-delay="1">
+      <summary>Estate and Trust Litigation</summary>
+      <div class="accordion-body">
+        <p>When disputes arise in the context of estates or trusts, we provide experienced litigation support to protect your rights and interests.</p>
+
+        <h4>Will Challenges</h4>
+        <ul>
+          <li>Testamentary capacity disputes</li>
+          <li>Undue influence claims</li>
+          <li>Fraud and forgery allegations</li>
+          <li>Improper execution challenges</li>
+        </ul>
+
+        <h4>Executor Disputes</h4>
+        <ul>
+          <li>Executor misconduct complaints</li>
+          <li>Removal of executors</li>
+          <li>Executor accounting disputes</li>
+          <li>Breach of fiduciary duty claims</li>
+        </ul>
+
+        <h4>Beneficiary Disputes</h4>
+        <ul>
+          <li>Distribution disagreements</li>
+          <li>Will interpretation disputes</li>
+          <li>Disinheritance challenges</li>
+          <li>Maintenance claims under the Inheritance Act</li>
+        </ul>
+
+        <h4>Trust Disputes</h4>
+        <ul>
+          <li>Trustee removal applications</li>
+          <li>Beneficiary rights enforcement</li>
+          <li>Trust variation applications</li>
+          <li>Breach of trust claims</li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+
+  <!-- ===== WHY ESTATE PLANNING MATTERS ===== -->
+  <div class="comparison-section">
+    <h2 class="section-title reveal">Why Estate Planning Matters</h2>
+
+    <div class="comparison-grid">
+      <div class="comparison-card negative reveal-left">
+        <h3>Without a Will</h3>
+        <ul>
+          <li>Estate administration delays of 18&#8211;24 months or more</li>
+          <li>Increased legal costs and executor fees</li>
+          <li>Family disputes over asset distribution</li>
+          <li>Courts appoint guardians&#8212;possibly not who you'd choose</li>
+          <li>Business disruption and potential failure</li>
+          <li>Tax inefficiency and unnecessary estate duty</li>
+        </ul>
+      </div>
+
+      <div class="comparison-card positive reveal-right">
+        <h3>With Proper Planning</h3>
+        <ul>
+          <li>You control who receives your assets and when</li>
+          <li>Your children are protected by guardians you've chosen</li>
+          <li>Tax-efficient structures minimise estate duty</li>
+          <li>Faster estate administration and distribution</li>
+          <li>Privacy through trust structures where appropriate</li>
+          <li>Peace of mind for you and your family</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== THE ESTATE PLANNING PROCESS ===== -->
+  <div class="steps-section">
+    <h2 class="section-title reveal">The Estate Planning Process</h2>
+
+    <ol class="steps-list">
+      <li class="reveal">
+        <div>
+          <strong>Initial Consultation</strong>
+          <span>We meet to discuss your family situation, assets, goals, and concerns. This obligation-free consultation helps us understand your needs and recommend the right approach.</span>
+        </div>
+      </li>
+      <li class="reveal">
+        <div>
+          <strong>Asset and Beneficiary Review</strong>
+          <span>We compile a comprehensive picture of your estate — assets, liabilities, existing policies, retirement funds, and beneficiary nominations — to identify gaps and opportunities.</span>
+        </div>
+      </li>
+      <li class="reveal">
+        <div>
+          <strong>Strategy Development</strong>
+          <span>Based on your goals and estate profile, we develop a customised estate plan that addresses tax efficiency, asset protection, and smooth succession.</span>
+        </div>
+      </li>
+      <li class="reveal">
+        <div>
+          <strong>Document Drafting</strong>
+          <span>We draft your will, trusts, powers of attorney, and other documents with precision and attention to detail — ensuring they are legally enforceable and clearly expressed.</span>
+        </div>
+      </li>
+      <li class="reveal">
+        <div>
+          <strong>Review and Signing</strong>
+          <span>We walk you through every document, explain the implications, answer your questions, and oversee proper execution with the required witnesses.</span>
+        </div>
+      </li>
+      <li class="reveal">
+        <div>
+          <strong>Safekeeping and Updates</strong>
+          <span>Your original documents are stored securely. We schedule regular reviews and contact you when changes in law or life circumstances warrant updates.</span>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <!-- ===== FAQs ===== -->
+  <div class="faq-section">
+    <h2 class="section-title reveal">Estate Planning FAQs</h2>
+
+    <div class="accordion-group">
+
+      <details class="accordion reveal">
+        <summary>Do I really need a will if I don't have much?</summary>
+        <div class="accordion-body">
+          <p>Yes. A will isn't just about distributing wealth — it's about making decisions. Who raises your children if something happens to you? Who handles your affairs? Without a will, these decisions are made by the courts according to a rigid formula that may not reflect your wishes. Even a modest estate benefits from a clear, legally valid will.</p>
+        </div>
+      </details>
+
+      <details class="accordion reveal" data-delay="1">
+        <summary>Can't I just use an online will template?</summary>
+        <div class="accordion-body">
+          <p>Online templates are generic and often don't account for South African legal requirements, your specific marital property regime, or complex family situations. A poorly drafted will can be challenged, declared invalid, or create unintended consequences that cost far more than professional drafting. We've seen many families face expensive litigation because of template wills that didn't properly address their circumstances.</p>
+        </div>
+      </details>
+
+      <details class="accordion reveal" data-delay="2">
+        <summary>What happens if I die without a will?</summary>
+        <div class="accordion-body">
+          <p>If you die without a valid will (intestate), the Intestate Succession Act determines how your assets are distributed. Your spouse and children inherit according to a fixed formula — which may not be what you would have chosen. The process takes longer, costs more, and the Master of the High Court appoints an administrator who may be a stranger to your family.</p>
+        </div>
+      </details>
+
+      <details class="accordion reveal" data-delay="3">
+        <summary>How often should I update my will?</summary>
+        <div class="accordion-body">
+          <p>We recommend reviewing your will every 3–5 years, or whenever a significant life event occurs: marriage, divorce, birth of a child, death of a beneficiary or executor, major asset acquisition or disposal, or relocation. Tax law changes may also necessitate updates to keep your estate plan efficient.</p>
+        </div>
+      </details>
+
+      <details class="accordion reveal" data-delay="4">
+        <summary>Should I appoint a family member or professional executor?</summary>
+        <div class="accordion-body">
+          <p>Both options have merits. A family member may understand your wishes and family dynamics, but estate administration is complex, time-consuming, and has strict legal requirements. A professional executor brings expertise and objectivity, particularly valuable for larger or more complex estates. We often recommend appointing a professional executor with a family member as co-executor for the best of both worlds.</p>
+        </div>
+      </details>
+
+      <details class="accordion reveal" data-delay="5">
+        <summary>What is estate duty and who pays it?</summary>
+        <div class="accordion-body">
+          <p>Estate duty is a tax of 20% on the dutiable value of an estate above R3.5 million (25% above R30 million). It is paid by the estate before assets are distributed to beneficiaries. With proper planning — including trusts, spousal bequests, and insurance — estate duty can be significantly reduced or even eliminated. The first R3.5 million is exempt, and bequests to a surviving spouse are deductible.</p>
+        </div>
+      </details>
+
+      <details class="accordion reveal" data-delay="6">
+        <summary>Can someone challenge my will?</summary>
+        <div class="accordion-body">
+          <p>Yes, a will can be challenged on several grounds: lack of testamentary capacity, undue influence, fraud, forgery, or improper execution. However, a professionally drafted will that follows proper procedures is much harder to challenge. We take every precaution to ensure your will is bulletproof — including thorough documentation of your capacity and intentions.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- ===== ESTATE PLANNING CHECKLIST ===== -->
+  <div class="checklist-section">
+    <h2 class="section-title reveal">Estate Planning Checklist</h2>
+
+    <ul class="checklist">
+      <li class="reveal">I have a valid, up-to-date will</li>
+      <li class="reveal" data-delay="1">I have appointed a capable executor (and a backup)</li>
+      <li class="reveal" data-delay="2">I have appointed guardians for my minor children</li>
+      <li class="reveal" data-delay="3">All my assets are accounted for in my estate plan</li>
+      <li class="reveal" data-delay="4">I have considered whether a trust is appropriate for my situation</li>
+      <li class="reveal" data-delay="5">My life insurance coverage is adequate and beneficiaries are correct</li>
+      <li class="reveal">My retirement fund nominations are up to date</li>
+      <li class="reveal" data-delay="1">I have a power of attorney in place</li>
+      <li class="reveal" data-delay="2">I have a living will with my healthcare wishes</li>
+      <li class="reveal" data-delay="3">My digital assets and online accounts are documented</li>
+      <li class="reveal" data-delay="4">My funeral and burial wishes are recorded</li>
+      <li class="reveal" data-delay="5">My original will is stored safely and my executor knows where it is</li>
+      <li class="reveal">My executor has been informed of their appointment</li>
+      <li class="reveal" data-delay="1">My estate plan has been reviewed in the last 3 years</li>
+    </ul>
+  </div>
+
+  <!-- ===== CTA ===== -->
+  <div class="cta-section reveal">
+    <h2>Don't Leave Your Legacy to Chance</h2>
+    <p>Whether you need a simple will or a comprehensive estate plan, we're here to help you protect what matters most.</p>
+    <p>Call <strong>+27 (10) 085 5185</strong> &nbsp;&middot;&nbsp; WhatsApp <strong>074 990 5872</strong> &nbsp;&middot;&nbsp; Email <strong>info@lindachirwaattorneys.co.za</strong></p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/27749905872" class="cta-btn cta-btn-primary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 1.5a8.5 8.5 0 00-7.4 12.7L1.5 18.5l4.4-1.1A8.5 8.5 0 1010 1.5z" stroke="currentColor" stroke-width="1.3"/><path d="M7.5 6.5c.2-.5.5-.5.7-.5s.5 0 .7.4l.8 2c.1.2 0 .4-.1.6l-.5.5s-.1.2.2.6c.4.5.8.9 1.3 1.1.2.1.4.1.5-.1l.5-.6c.2-.2.3-.2.5-.1l1.5.8c.2.1.3.2.3.4s0 .7-.4 1c-.4.4-.9.5-1.5.5-1-.1-2.5-.8-3.7-2.3-1-1.2-1.4-2.5-1.4-3.2 0-.5.2-.8.5-1.1z" fill="currentColor"/></svg>
+        WhatsApp Us
+      </a>
+      <a href="contact.html" class="cta-btn cta-btn-outline">
+        Contact Us
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 Linda Chirwa Attorneys. All rights reserved. | <a href="index.html">Back to Home</a></p>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/27749905872" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 20 20" fill="none"><path d="M10 1.5a8.5 8.5 0 00-7.4 12.7L1.5 18.5l4.4-1.1A8.5 8.5 0 1010 1.5z" stroke="currentColor" stroke-width="1.3"/><path d="M7.5 6.5c.2-.5.5-.5.7-.5s.5 0 .7.4l.8 2c.1.2 0 .4-.1.6l-.5.5s-.1.2.2.6c.4.5.8.9 1.3 1.1.2.1.4.1.5-.1l.5-.6c.2-.2.3-.2.5-.1l1.5.8c.2.1.3.2.3.4s0 .7-.4 1c-.4.4-.9.5-1.5.5-1-.1-2.5-.8-3.7-2.3-1-1.2-1.4-2.5-1.4-3.2 0-.5.2-.8.5-1.1z" fill="currentColor"/></svg>
+</a>
+
+<script src="site.js"></script>
+</body>
+</html>
