@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Linda Chirwa Attorneys</title>
+<meta name="description" content="Meet Linda Chirwa, Principal Attorney and Founder of Linda Chirwa Attorneys. Discover our leadership, expertise, and client-first philosophy.">
+<!-- ICONS:START -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1A4A2E">
+<!-- ICONS:END -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* Page-specific styles */
+.navbar-right a {
+  font-family: var(--font-display);
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-right a::after {
+  content: ''; position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.navbar-right a:hover { color: var(--white); }
+
+.navbar-right a:hover::after { width: 100%; }
+
+.navbar-right a.active { color: var(--accent); }
+
+.navbar-right a.active::after { width: 100%; }
+
+.mobile-nav a {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 300;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--white); text-decoration: none;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease;
+}
+
+.mobile-nav.open a { opacity: 1; transform: translateY(0); }
+
+.mobile-nav.open a:nth-child(1) { transition-delay: 0.05s; }
+
+.mobile-nav.open a:nth-child(2) { transition-delay: 0.10s; }
+
+.mobile-nav.open a:nth-child(3) { transition-delay: 0.15s; }
+
+.mobile-nav.open a:nth-child(4) { transition-delay: 0.20s; }
+
+.mobile-nav.open a:nth-child(5) { transition-delay: 0.25s; }
+
+.mobile-nav.open a:nth-child(6) { transition-delay: 0.30s; }
+
+.mobile-nav a:hover { color: var(--accent); }
+
+@keyframes heroShift {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.06) translate(-2%, -1%); }
+}
+
+.about-content {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 72px 40px 60px;
+}
+
+.attorney-header {
+  margin-bottom: 56px;
+  position: relative;
+}
+
+.attorney-header::after {
+  content: '';
+  display: block;
+  width: 60px; height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  margin-top: 28px;
+  border-radius: 3px;
+}
+
+.attorney-header h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(28px, 4vw, 42px);
+  color: var(--charcoal);
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+
+.attorney-subtitle {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.attorney-intro {
+  font-size: 16px;
+  color: var(--warm-gray);
+  line-height: 1.85;
+  max-width: 780px;
+}
+
+.attorney-intro strong { color: var(--charcoal); font-weight: 600; }
+
+.section-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--charcoal);
+  margin-bottom: 26px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+  position: relative;
+}
+
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 60px; height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.expertise-section { margin-bottom: 56px; }
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.expertise-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 26px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.expertise-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.expertise-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.expertise-card:hover::before { transform: scaleX(1); }
+
+.expertise-icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--off-white);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+  color: var(--primary);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.4s ease;
+}
+
+.expertise-card:hover .expertise-icon {
+  background: var(--primary);
+  color: var(--white);
+  transform: scale(1.08) rotate(-5deg);
+}
+
+.expertise-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--charcoal);
+  line-height: 1.4;
+}
+
+.qualifications-section { margin-bottom: 56px; }
+
+.qualifications-list { list-style: none; padding: 0; }
+
+.qualifications-list li {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: var(--charcoal);
+  background: var(--white);
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.qualifications-list li:hover {
+  border-color: var(--primary);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.check-icon {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--green-bg);
+  border: 1px solid var(--green-border);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+.philosophy-section { margin-bottom: 56px; }
+
+.philosophy-quote {
+  border-left: 4px solid var(--primary);
+  padding: 32px 36px;
+  background: var(--white);
+  border-radius: 0 10px 10px 0;
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--charcoal);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.philosophy-quote:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.philosophy-quote::before {
+  content: '\201C';
+  font-family: Georgia, serif;
+  font-size: 90px;
+  color: var(--accent);
+  position: absolute;
+  top: 4px; right: 28px;
+  line-height: 1;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.philosophy-quote strong { color: var(--primary); font-weight: 500; }
+
+.approach-section { margin-bottom: 56px; }
+
+.approach-text {
+  font-size: 16px;
+  color: var(--warm-gray);
+  line-height: 1.85;
+}
+
+.approach-text strong { color: var(--charcoal); font-weight: 600; }
+
+.pillars-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.pillar-mini {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pillar-mini::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.pillar-mini:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.pillar-mini:hover::after { transform: scaleX(1); }
+
+.pillar-mini-num {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 28px;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.pillar-mini h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+
+.pillar-mini p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--warm-gray);
+  margin: 0;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  border-radius: 12px;
+  padding: 56px 44px;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 30%, rgba(168,213,181,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 80% at 10% 70%, rgba(168,213,181,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cta-section > * { position: relative; z-index: 1; }
+
+.cta-section h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(22px, 3vw, 30px);
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.cta-section .cta-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 28px;
+  max-width: 480px;
+  margin-left: auto; margin-right: auto;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; flex-wrap: wrap;
+}
+
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-display);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 14px 36px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-btn::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.18) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+}
+
+.cta-btn:hover::before { transform: translateX(120%); }
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+}
+
+.cta-btn-primary {
+  background: var(--white);
+  color: var(--primary);
+}
+
+.cta-btn-primary:hover { background: var(--off-white); }
+
+.cta-btn-secondary {
+  background: rgba(255,255,255,0.15);
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.cta-btn-secondary:hover { background: rgba(255,255,255,0.25); }
+
+@media (max-width: 1024px) {
+  .pillars-strip { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    padding: 48px 24px 40px;
+  }
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+  .pillars-strip {
+    grid-template-columns: 1fr;
+  }
+  .cta-section { padding: 40px 26px; }
+  .philosophy-quote { padding: 22px 24px; font-size: 16px; }
+  .philosophy-quote::before { font-size: 70px; right: 16px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV:START -->
+<header class="navbar" role="banner">
+  <div class="navbar-left">
+    <a href="index.html" aria-label="Linda Chirwa Attorneys Home">
+      <img src="logo.png" alt="Linda Chirwa Attorneys" class="navbar-logo">
+    </a>
+  </div>
+  <nav class="navbar-right" role="navigation" aria-label="Main navigation">
+    <div class="nav-item"><a class="nav-link" href="index.html">Home</a></div>
+    <div class="nav-item"><a class="nav-link active" href="about.html" aria-current="page">About</a></div>
+    <div class="nav-item has-sub">
+      <a class="nav-link" href="practice-areas.html" aria-haspopup="true">Practice Areas<span class="caret" aria-hidden="true"></span></a>
+      <div class="submenu wide">
+        <div class="submenu-group">
+          <h4>For Individuals</h4>
+          <a href="family-law.html">Family Law</a>
+          <a href="wills-estates.html">Wills, Estates &amp; Trusts</a>
+          <a href="conveyancing.html">Property Conveyancing</a>
+          <a href="civil-law.html#delictual">Motor Vehicle &amp; Workplace Injury</a>
+          <a href="criminal-law.html">Criminal Defence</a>
+          <a href="labour-law.html">CCMA &amp; Employment Disputes</a>
+          <a href="immigration.html">Immigration &amp; Permits</a>
+        </div>
+        <div class="submenu-group">
+          <h4>For Businesses</h4>
+          <a href="company-formation.html">Company Formation &amp; Governance</a>
+          <a href="commercial-contracts.html">Contracts &amp; Transactions</a>
+          <a href="mergers-acquisitions.html">Mergers &amp; Acquisitions</a>
+          <a href="civil-law.html#debt">Debt Collection &amp; Litigation</a>
+          <a href="civil-law.html#insolvency">Insolvency &amp; Business Rescue</a>
+          <a href="intellectual-property.html">Intellectual Property</a>
+          <a href="employment-hr.html">Employment &amp; HR Compliance</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item"><a class="nav-link" href="criminal-law.html">Criminal Law</a></div>
+    <div class="nav-item"><a class="nav-link" href="civil-law.html">Civil Litigation</a></div>
+    <div class="nav-item"><a class="nav-link" href="wills-estates.html">Estates</a></div>
+    <div class="nav-item"><a class="nav-link" href="conveyancing.html">Conveyancing</a></div>
+    <div class="nav-item"><a class="nav-link" href="resources.html">Resources</a></div>
+    <div class="nav-item has-sub">
+      <a class="nav-link" href="contact.html" aria-haspopup="true">Contact<span class="caret" aria-hidden="true"></span></a>
+      <div class="submenu align-right">
+        <a href="contact.html#office-gauteng">Gauteng: Head Office</a>
+        <a href="contact.html#office-west-rand">Gauteng: West Rand</a>
+        <a href="contact.html#office-kzn">KwaZulu-Natal</a>
+        <a href="contact.html#office-north-west">North West</a>
+        <a href="contact.html#office-western-cape">Western Cape</a>
+        <a href="contact.html#office-departments">Department Emails</a>
+        <a href="contact.html#contactForm">Send an Enquiry</a>
+      </div>
+    </div>
+  </nav>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="index.html">Home</a>
+  <a href="about.html" class="active">About</a>
+  <details>
+    <summary>Practice Areas</summary>
+    <div class="mobile-sub">
+      <a href="practice-areas.html">All Practice Areas</a>
+      <h4>For Individuals</h4>
+      <a href="family-law.html">Family Law</a>
+      <a href="wills-estates.html">Wills, Estates &amp; Trusts</a>
+      <a href="conveyancing.html">Property Conveyancing</a>
+      <a href="civil-law.html#delictual">Motor Vehicle &amp; Workplace Injury</a>
+      <a href="criminal-law.html">Criminal Defence</a>
+      <a href="labour-law.html">CCMA &amp; Employment Disputes</a>
+      <a href="immigration.html">Immigration &amp; Permits</a>
+      <h4>For Businesses</h4>
+      <a href="company-formation.html">Company Formation &amp; Governance</a>
+      <a href="commercial-contracts.html">Contracts &amp; Transactions</a>
+      <a href="mergers-acquisitions.html">Mergers &amp; Acquisitions</a>
+      <a href="civil-law.html#debt">Debt Collection &amp; Litigation</a>
+      <a href="civil-law.html#insolvency">Insolvency &amp; Business Rescue</a>
+      <a href="intellectual-property.html">Intellectual Property</a>
+      <a href="employment-hr.html">Employment &amp; HR Compliance</a>
+    </div>
+  </details>
+  <a href="criminal-law.html">Criminal Law</a>
+  <a href="civil-law.html">Civil Litigation</a>
+  <a href="wills-estates.html">Estates</a>
+  <a href="conveyancing.html">Conveyancing</a>
+  <a href="resources.html">Resources</a>
+  <details>
+    <summary>Contact</summary>
+    <div class="mobile-sub">
+      <a href="contact.html">Contact Overview</a>
+      <a href="contact.html#office-gauteng">Gauteng: Head Office</a>
+      <a href="contact.html#office-west-rand">Gauteng: West Rand</a>
+      <a href="contact.html#office-kzn">KwaZulu-Natal</a>
+      <a href="contact.html#office-north-west">North West</a>
+      <a href="contact.html#office-western-cape">Western Cape</a>
+      <a href="contact.html#office-departments">Department Emails</a>
+      <a href="contact.html#contactForm">Send an Enquiry</a>
+    </div>
+  </details>
+</div>
+<!-- NAV:END -->
+
+<!-- Page Header -->
+<section class="page-header">
+  <h1>Our Leadership</h1>
+  <p>The vision, expertise, and standards that shape every matter we handle at Linda Chirwa Attorneys.</p>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <span class="current">About Us</span>
+  </div>
+</section>
+
+<!-- Main Content -->
+<div class="about-content">
+
+  <!-- Principal Attorney -->
+  <div class="attorney-header reveal">
+    <h2>Linda Chirwa</h2>
+    <p class="attorney-subtitle">Principal Attorney &middot; Founder and Managing Partner</p>
+    <p class="attorney-intro">
+      Linda Chirwa founded the firm on a simple but demanding principle: <strong>legal excellence should not be a privilege reserved for those who can afford it.</strong> Under her leadership, Linda Chirwa Attorneys has grown from a single practice into a multi-regional firm serving individuals and businesses across Gauteng, KwaZulu-Natal, North West, and the Western Cape — without losing the responsiveness of a boutique practice. She remains actively involved in complex matters and personally mentors the next generation of attorneys within the firm.
+    </p>
+  </div>
+
+  <!-- Areas of Expertise -->
+  <div class="expertise-section">
+    <h3 class="section-heading reveal">Areas of Expertise</h3>
+    <div class="expertise-grid">
+      <div class="expertise-card reveal" data-delay="1">
+        <div class="expertise-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 4h14M3 8h14M3 12h10M3 16h7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Civil and Commercial Litigation</h3>
+      </div>
+      <div class="expertise-card reveal" data-delay="2">
+        <div class="expertise-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M7 7h6M7 10h6M7 13h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Business Law and Corporate Governance</h3>
+      </div>
+      <div class="expertise-card reveal" data-delay="3">
+        <div class="expertise-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Strategic Legal Planning</h3>
+      </div>
+      <div class="expertise-card reveal" data-delay="4">
+        <div class="expertise-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 16V7l6-4 6 4v9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16v-5h4v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Legal Practice Management</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Qualifications -->
+  <div class="qualifications-section">
+    <h3 class="section-heading reveal">Qualifications</h3>
+    <ul class="qualifications-list">
+      <li class="reveal" data-delay="1">
+        <span class="check-icon">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        LLB (Bachelor of Laws)
+      </li>
+      <li class="reveal" data-delay="2">
+        <span class="check-icon">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Admitted Attorney of the High Court of South Africa
+      </li>
+      <li class="reveal" data-delay="3">
+        <span class="check-icon">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Member: Law Society of South Africa
+      </li>
+    </ul>
+  </div>
+
+  <!-- Philosophy -->
+  <div class="philosophy-section">
+    <h3 class="section-heading reveal">Philosophy</h3>
+    <blockquote class="philosophy-quote reveal">
+      Legal excellence must be paired with <strong>accessibility</strong>. Every client deserves representation that is both expert and compassionate, strategic and practical.
+    </blockquote>
+  </div>
+
+  <!-- Linda's Approach -->
+  <div class="approach-section">
+    <h3 class="section-heading reveal">Linda&rsquo;s Approach</h3>
+    <p class="approach-text reveal">
+      Linda believes in hands-on leadership. She stays actively involved in complex matters, mentors the firm&rsquo;s attorneys personally, and holds every piece of advice to the same standard: <strong>is it legally sound, practically useful, honestly priced, and clearly explained?</strong> That vision shapes how the firm operates at every level — from the first consultation to the final outcome.
+    </p>
+
+    <div class="pillars-strip">
+      <div class="pillar-mini reveal" data-delay="1">
+        <div class="pillar-mini-num">01</div>
+        <h4>Hands-On Leadership</h4>
+        <p>Direct involvement in the matters that matter most.</p>
+      </div>
+      <div class="pillar-mini reveal" data-delay="2">
+        <div class="pillar-mini-num">02</div>
+        <h4>Client-First Philosophy</h4>
+        <p>Every decision measured against your outcome, not ours.</p>
+      </div>
+      <div class="pillar-mini reveal" data-delay="3">
+        <div class="pillar-mini-num">03</div>
+        <h4>Mentoring the Next Generation</h4>
+        <p>Building attorneys who carry the same standard forward.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section reveal">
+    <h2>Work With Linda Chirwa Attorneys</h2>
+    <p class="cta-sub">Whether it&rsquo;s a single consultation or a complex, long-running matter — you&rsquo;ll get the same direct, honest attention.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="cta-btn cta-btn-primary">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M2 6l8 5 8-5" stroke="currentColor" stroke-width="1.4"/></svg>
+        Contact Us
+      </a>
+      <a href="https://wa.me/27749905872" class="cta-btn cta-btn-secondary" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M10 1.5a8.5 8.5 0 00-7.4 12.7L1.5 18.5l4.4-1.1A8.5 8.5 0 1010 1.5z" stroke="currentColor" stroke-width="1.4"/><path d="M7.5 6.5c.2-.5.5-.5.7-.5s.5 0 .7.4l.8 2c.1.2 0 .4-.1.6l-.5.5s-.1.2.2.6c.4.5.8.9 1.3 1.1.2.1.4.1.5-.1l.5-.6c.2-.2.3-.2.5-.1l1.5.8c.2.1.3.2.3.4s0 .7-.4 1c-.4.4-.9.5-1.5.5-1-.1-2.5-.8-3.7-2.3-1-1.2-1.4-2.5-1.4-3.2 0-.5.2-.8.5-1.1z" fill="currentColor"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 Linda Chirwa Attorneys. All rights reserved. | <a href="index.html">Back to Home</a></p>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/27749905872" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 20 20" fill="none"><path d="M10 1.5a8.5 8.5 0 00-7.4 12.7L1.5 18.5l4.4-1.1A8.5 8.5 0 1010 1.5z" stroke="currentColor" stroke-width="1.3"/><path d="M7.5 6.5c.2-.5.5-.5.7-.5s.5 0 .7.4l.8 2c.1.2 0 .4-.1.6l-.5.5s-.1.2.2.6c.4.5.8.9 1.3 1.1.2.1.4.1.5-.1l.5-.6c.2-.2.3-.2.5-.1l1.5.8c.2.1.3.2.3.4s0 .7-.4 1c-.4.4-.9.5-1.5.5-1-.1-2.5-.8-3.7-2.3-1-1.2-1.4-2.5-1.4-3.2 0-.5.2-.8.5-1.1z" fill="currentColor"/></svg>
+</a>
+
+<script src="site.js"></script>
+</body>
+</html>

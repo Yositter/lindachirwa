@@ -46,4 +46,45 @@
   } else {
     revealEls.forEach(function(el) { el.classList.add('visible'); });
   }
+
+  // ---------- Counter animation (stat bands) ----------
+  var counters = document.querySelectorAll('.counter');
+  var statsEl = document.getElementById('stats');
+  var counterDone = false;
+  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+  if (statsEl && counters.length && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !counterDone) {
+          counterDone = true;
+          counters.forEach(function(c) {
+            var target = parseFloat(c.getAttribute('data-target')) || 0;
+            var start = null;
+            var duration = 1600;
+            function step(ts) {
+              if (!start) start = ts;
+              var p = Math.min((ts - start) / duration, 1);
+              c.textContent = Math.round(target * easeOutCubic(p));
+              if (p < 1) requestAnimationFrame(step);
+              else c.textContent = target;
+            }
+            requestAnimationFrame(step);
+          });
+        }
+      });
+    }, { threshold: 0.3 }).observe(statsEl);
+  } else if (counters.length) {
+    counters.forEach(function(c) { c.textContent = c.getAttribute('data-target'); });
+  }
+
+  // ---------- Open an accordion when linked to by #id ----------
+  function openHashTarget() {
+    var el = location.hash ? document.getElementById(location.hash.slice(1)) : null;
+    if (el && el.tagName === 'DETAILS') {
+      el.open = true;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+  window.addEventListener('hashchange', openHashTarget);
+  openHashTarget();
 })();
