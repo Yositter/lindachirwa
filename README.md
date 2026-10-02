@@ -26,6 +26,7 @@ A static website: plain HTML, CSS and JavaScript, plus two PHP form handlers. Th
 | `consent.js` | Cookie consent banner and the blocking of maps and videos until visitors allow them. |
 | `contact-handler.php` | Receives the contact form and emails it. |
 | `whistleblower-handler.php` | Receives whistleblower reports and emails them to a separate mailbox. |
+| `images/avatars/` | Initials avatars for the home page testimonials (SVG). |
 | `logo.png`, `favicon*.png`, `favicon.ico`, `apple-touch-icon.png`, `android-chrome-*.png`, `site.webmanifest` | Logo and icons. |
 | `sitemap.xml`, `robots.txt` | Search engine files. Generated, see below. |
 | `scripts/` | The maintenance scripts. Not part of the live site. |
@@ -167,7 +168,7 @@ Upload everything in the repository **except**:
 - `.gitignore`
 - `README.md`
 
-That leaves the HTML pages, the four CSS files, the two JavaScript files, the two PHP files, the images and icons, `site.webmanifest`, `sitemap.xml` and `robots.txt`. Put them all in the site's web root (often `public_html`), with `index.html` at the top level. The icon links use absolute paths such as `/favicon-32x32.png`, so the files must sit at the root of the domain, not in a sub-folder.
+That leaves the HTML pages, the four CSS files, the two JavaScript files, the two PHP files, the `images/` folder, the logo and icons, `site.webmanifest`, `sitemap.xml` and `robots.txt`. Put them all in the site's web root (often `public_html`), with `index.html` at the top level. The icon links use absolute paths such as `/favicon-32x32.png`, so the files must sit at the root of the domain, not in a sub-folder.
 
 ### Steps
 
@@ -220,7 +221,7 @@ These items were flagged while the site was built and still need a decision or a
 
 **Placeholder claims.** The stat bands on service pages repeat claims such as a 24-hour response, written cost estimates and direct attorney access. Confirm the firm can keep every one of them.
 
-**Pages that link out.** The home page testimonial photos load from an outside image service. Replace them with your own images, or remove the photos, before launch.
+**Testimonials.** The home page shows client testimonials with initials avatars (`images/avatars/`), not photos. Before launch, confirm that each testimonial is genuine, that the client agreed to it being published, and that publishing it is permitted under the Legal Practice Council's rules on attorney advertising. Remove any that cannot be verified.
 
 ## Troubleshooting
 
