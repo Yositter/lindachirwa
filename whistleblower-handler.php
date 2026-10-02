@@ -109,7 +109,7 @@ if ($safestContact !== 'Do not contact me' && filter_var($contact, FILTER_VALIDA
 }
 
 // ── Send ───────────────────────────────────────────────────────
-$sent = @mail($recipientEmail, $subject, $body, $headers);
+$sent = @mail($recipientEmail, $subject, $body, rtrim($headers));
 
 if ($sent) {
     echo json_encode([

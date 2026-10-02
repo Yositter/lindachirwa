@@ -2,6 +2,32 @@
    Edit navigation, header, footer and base tokens here; every page picks them up.
    Page-specific styles stay in each page. */
 
+/* ===== FONTS (self-hosted, SIL Open Font License, see fonts/) ===== */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(fonts/raleway-latin-wght-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(fonts/raleway-latin-wght-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(fonts/inter-latin-wght-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -15,8 +41,8 @@
   --charcoal: #1A1A1A;
   --warm-gray: #4A4A4A;
   --border: #E2E6DE;
-  --font-display: 'Raleway', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: 'Raleway', 'Segoe UI', Arial, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', Arial, sans-serif;
   --red: #C53030;
   --green-bg: #F0FFF4;
   --green-border: #9AE6B4;
@@ -103,7 +129,7 @@ body {
 .submenu.align-right { left: auto; right: 0; transform: translate(0, 8px); }
 .nav-item:hover > .submenu.align-right,
 .nav-item:focus-within > .submenu.align-right { transform: translate(0, 0); }
-.submenu-group h4 {
+.submenu-title {
   font-family: var(--font-display);
   font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -160,7 +186,7 @@ body {
 .mobile-nav > a:hover, .mobile-nav summary:hover, .mobile-nav a.active { color: var(--accent); }
 .mobile-nav details { width: 100%; text-align: center; }
 .mobile-sub { display: flex; flex-direction: column; gap: 4px; padding: 14px 0 4px; }
-.mobile-sub h4 {
+.mobile-sub .submenu-title {
   font-family: var(--font-display);
   font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--accent); margin: 10px 0 2px;
@@ -208,7 +234,7 @@ body {
   margin-top: 22px; font-size: 12px;
   animation: fadeUp 0.9s ease 0.3s both;
 }
-.breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
 .breadcrumb a:hover { color: var(--accent); }
 .breadcrumb span { color: rgba(255,255,255,0.3); }
 .breadcrumb .current { color: rgba(255,255,255,0.75); }
@@ -255,8 +281,9 @@ body {
   padding: 44px 40px 32px;
   text-align: center;
 }
-.footer p { font-size: 12px; color: rgba(255,255,255,0.35); }
-.footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer p { font-size: 12px; color: rgba(255,255,255,0.62); }
+.footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+.footer p a { text-decoration: underline; text-underline-offset: 2px; }
 .footer a:hover { color: var(--accent); }
 
 /* ===== FLOATING WHATSAPP ===== */
@@ -308,7 +335,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   display: flex; justify-content: center; flex-wrap: wrap;
   gap: 8px 20px; margin-bottom: 16px;
 }
-.footer-legal-links a { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.25s ease; }
+.footer-legal-links a { font-size: 12px; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.25s ease; }
 .footer-legal-links a:hover, .footer-legal-links a.active { color: var(--accent); }
 
 /* ===== COOKIE CONSENT (consent.js) ===== */
@@ -420,3 +447,15 @@ body.cc-lock { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .cc-banner, .cc-overlay, .cc-btn, .cc-switch, .cc-switch::after { transition: none !important; }
 }
+
+/* ===== SKIP LINK & MAIN LANDMARK ===== */
+.skip-link {
+  position: absolute; left: 16px; top: -64px; z-index: 2000;
+  background: var(--white); color: var(--primary);
+  font-family: var(--font-display); font-weight: 600; font-size: 14px;
+  padding: 10px 18px; border-radius: 4px; box-shadow: var(--shadow-md);
+  text-decoration: none; transition: top 0.2s ease;
+}
+.skip-link:focus { top: 12px; }
+main:focus { outline: none; }
+.navbar-brand { display: inline-flex; }

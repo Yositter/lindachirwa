@@ -13,7 +13,7 @@ import datetime
 from xml.sax.saxutils import escape
 
 from site_config import BASE
-EXCLUDE = set()           # e.g. {'whistleblower.html'}
+EXCLUDE = {'404.html'}     # pages kept out of the sitemap
 DISALLOW = ['/contact-handler.php', '/whistleblower-handler.php']
 
 # Listing order. Pages not named here are appended alphabetically.

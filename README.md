@@ -9,27 +9,33 @@ A static website: plain HTML, CSS and JavaScript, plus two PHP form handlers. Th
 3. [Everyday tasks](#everyday-tasks)
 4. [Settings you may need to change](#settings-you-may-need-to-change)
 5. [Deploying](#deploying)
-6. [After each deploy](#after-each-deploy)
-7. [Before the site goes live for the first time](#before-the-site-goes-live-for-the-first-time)
-8. [Troubleshooting](#troubleshooting)
+6. [Server configuration](#server-configuration)
+7. [After each deploy](#after-each-deploy)
+8. [Before the site goes live for the first time](#before-the-site-goes-live-for-the-first-time)
+9. [Quality checks](#quality-checks)
+10. [Troubleshooting](#troubleshooting)
 
 ## What is in the repository
 
 | Path | What it is |
 |---|---|
-| `*.html` | The 22 pages. Each page is a complete HTML file. |
+| `*.html` | The 22 pages, plus `404.html` (shown for any missing address). Each page is a complete HTML file. |
 | `site.css` | Shared styles: colours, fonts, navigation, header, footer, cookie banner. |
 | `service-page.css` | Components used by the service pages (accordions, steps, checklists, call-to-action). |
 | `legal-page.css` | Components used by the cookie, privacy and terms pages. |
 | `forms.css` | Form styles, shared by the contact and whistleblower pages. |
 | `site.js` | Mobile menu, scroll animations, counters, and opening an accordion from a `#link`. |
 | `consent.js` | Cookie consent banner and the blocking of maps and videos until visitors allow them. |
+| `home.js`, `contact.js`, `whistleblower.js` | Page scripts: the home page loader, tabs and dot navigation, and the two forms. |
+| `fonts/` | The Raleway and Inter typefaces, served from the site itself, with their licences (SIL Open Font Licence). |
 | `contact-handler.php` | Receives the contact form and emails it. |
 | `whistleblower-handler.php` | Receives whistleblower reports and emails them to a separate mailbox. |
 | `images/avatars/` | Initials avatars for the home page testimonials (SVG). |
-| `logo.png`, `favicon*.png`, `favicon.ico`, `apple-touch-icon.png`, `android-chrome-*.png`, `site.webmanifest` | Logo and icons. |
+| `logo.png`, `favicon*.png`, `favicon.ico`, `apple-touch-icon.png`, `android-chrome-*.png`, `site.webmanifest` | Logo and icons. `logo.png` is a compressed 360 x 161 copy of `scripts/assets/logo-original.png`. |
+| `og-image.jpg` | The 1200 x 630 preview image shown when a page is shared on WhatsApp, LinkedIn or Facebook. |
 | `sitemap.xml`, `robots.txt` | Search engine files. Generated, see below. |
-| `scripts/` | The maintenance scripts. Not part of the live site. |
+| `.htaccess` | Apache settings: HTTPS, redirects, the 404 page, security headers, compression and caching. A hidden file, so switch on "show hidden files" in your file manager. |
+| `scripts/` | The maintenance scripts and the original logo. Not part of the live site. |
 
 Pages by group:
 
@@ -44,7 +50,7 @@ Three ideas explain almost everything.
 
 **1. Shared styles live in the CSS files.** Change a colour or the header style once in `site.css` and every page follows. Each page also has a small `<style>` block at the top for styles that only that page needs.
 
-**2. Shared page parts are written by a script.** The navigation, the favicon tags, the footer legal links and the cookie banner script appear on every page, so they are generated from one place. In each HTML file you will see marker comments like this:
+**2. Shared page parts are written by a script.** The navigation, the search and sharing tags in the `<head>`, the footer legal links and the cookie banner script appear on every page, so they are generated from one place. In each HTML file you will see marker comments like this:
 
 ```html
 <!-- NAV:START -->
@@ -54,6 +60,15 @@ Three ideas explain almost everything.
 
 There are four pairs: `NAV`, `ICONS`, `LEGAL` and `CONSENT`. Anything between a pair is overwritten when you run `scripts/sync-shared.py`. Edit the script, not the pages. Keep the marker comments in place on every page, including new ones.
 
+The `ICONS` block holds more than icons. The script reads each page's `<title>`, `<meta name="description">` and breadcrumb and writes from them:
+
+- the canonical address, so search engines index one address per page;
+- Open Graph and Twitter tags, which control the title, text and image shown when a page is shared;
+- structured data (JSON-LD): the firm's details on the home, about and contact pages, and a breadcrumb trail on every other page;
+- preload hints for the two font files.
+
+The script also stamps every link to a CSS or JavaScript file with a short fingerprint, for example `site.css?v=0f77c137`. The fingerprint changes whenever the file changes, which lets browsers cache these files for a year and still pick up every update.
+
 **3. Eight service pages are generated from one content file.** The wording for the family, labour, immigration, company, contracts, M&A, IP and employment pages, and the card text on `practice-areas.html`, lives in `scripts/practice_content.py`. The other pages were written by hand and are edited directly.
 
 ## Everyday tasks
@@ -62,7 +77,13 @@ You need Python 3.9 or newer on your computer. No packages to install. Run every
 
 ### Edit text on a hand-written page
 
-Open the HTML file, change the text, save. If you changed a page title or description, nothing else is needed.
+Open the HTML file, change the text, save. If you changed the page's `<title>`, its description or its breadcrumb, run `python3 scripts/sync-shared.py` so the sharing tags and structured data match.
+
+Keep titles under 60 characters and descriptions between 120 and 160, in the form `Topic | Linda Chirwa Attorneys`. Every page must have a different title and description.
+
+### Edit a CSS or JavaScript file
+
+Save the file, then run `python3 scripts/sync-shared.py`. This refreshes the fingerprint on every page. Skip it and returning visitors keep the old file for up to a year.
 
 ### Edit a generated service page
 
@@ -115,7 +136,7 @@ Key places: the contact page (sidebar and quick bar), the home page (hero, call-
 
 ### Change the logo or icons
 
-Replace `logo.png` with a new file of the same name. The icon files (`favicon-16x16.png`, `favicon-32x32.png`, `favicon.ico`, `apple-touch-icon.png`, `android-chrome-192x192.png`, `android-chrome-512x512.png`) were cut from the logo as a stopgap. Replace them with clean artwork of the scales alone when you have it, keeping the same file names and sizes.
+Replace `logo.png` with a new file of the same name, 360 pixels wide and compressed (TinyPNG or similar), and keep a full-size copy in `scripts/assets/`. If its proportions differ from 360 x 161, update the `width` and `height` on the logo in `scripts/sync-shared.py` and in the footer of `index.html`, then run `sync-shared.py`. Update `og-image.jpg` too if the brand changes. The icon files (`favicon-16x16.png`, `favicon-32x32.png`, `favicon.ico`, `apple-touch-icon.png`, `android-chrome-192x192.png`, `android-chrome-512x512.png`) were cut from the logo as a stopgap. Replace them with clean artwork of the scales alone when you have it, keeping the same file names and sizes.
 
 ### Update the sitemap
 
@@ -137,13 +158,13 @@ It prints `out of date:` with a list of pages and exits with an error if any pag
 
 ### Preview the site on your computer
 
-Opening files directly works for most checks, but cookies, forms and the consent banner need a local web server:
+Use a local web server rather than opening the files directly. Home links point to `./`, which a browser opening plain files shows as a folder listing, and cookies and the consent banner need a server:
 
 ```
 python3 -m http.server 8000
 ```
 
-Then browse to `http://localhost:8000`. The contact forms will not send mail locally, because they need a PHP-enabled server.
+Then browse to `http://localhost:8000`. The contact forms will not send mail locally, because they need a PHP-enabled server. The `.htaccess` rules apply only on Apache, so redirects and the 404 page work on the live host, not in this preview.
 
 ## Settings you may need to change
 
@@ -153,7 +174,10 @@ Then browse to `http://localhost:8000`. The contact forms will not send mail loc
 | `GA_ID` | `consent.js` (top of the file) | Your Google Analytics 4 measurement ID, for example `G-ABC123XYZ9`. While it is empty, no analytics code loads and the analytics option is hidden in the cookie preferences. |
 | `$recipientEmail`, `$ccEmail` | `contact-handler.php` | Where enquiries go. Currently `admin@` with a copy to `info@`. |
 | `$recipientEmail` | `whistleblower-handler.php` | Where whistleblower reports go. Must be a mailbox that only the designated recipient reads. |
-| `EXCLUDE` | `scripts/build-sitemap.py` | Page names to keep out of the sitemap. |
+| `EXCLUDE` | `scripts/build-sitemap.py` | Page names to keep out of the sitemap. `404.html` is listed. |
+| `ORGANIZATION` | `scripts/sync-shared.py` | The firm's address, phone numbers, email, hours and regional offices, as given to search engines. Keep it in step with the contact page. |
+| `NOINDEX` | `scripts/sync-shared.py` | Pages that search engines must not index. Currently `404.html`. |
+| `Content-Security-Policy` | `.htaccess` | The outside services the browser may load. Add a host here before embedding anything new, for example a YouTube video. |
 
 ## Deploying
 
@@ -168,16 +192,16 @@ Upload everything in the repository **except**:
 - `.gitignore`
 - `README.md`
 
-That leaves the HTML pages, the four CSS files, the two JavaScript files, the two PHP files, the `images/` folder, the logo and icons, `site.webmanifest`, `sitemap.xml` and `robots.txt`. Put them all in the site's web root (often `public_html`), with `index.html` at the top level. The icon links use absolute paths such as `/favicon-32x32.png`, so the files must sit at the root of the domain, not in a sub-folder.
+That leaves the HTML pages, the four CSS files, the five JavaScript files, the two PHP files, `.htaccess`, the `images/` and `fonts/` folders, the logo, `og-image.jpg` and icons, `site.webmanifest`, `sitemap.xml` and `robots.txt`. Put them all in the site's web root (often `public_html`), with `index.html` at the top level. The icon links and the 404 page use absolute paths such as `/favicon-32x32.png`, so the files must sit at the root of the domain, not in a sub-folder. `.htaccess` refuses to serve the excluded files even if they are uploaded by mistake.
 
 ### Steps
 
 1. Run `python3 scripts/sync-shared.py --check` and `python3 scripts/build-sitemap.py` on your computer.
-2. Upload the files with SFTP or your host's file manager, replacing the old copies.
-3. Make sure the site is served over HTTPS. The cookie banner and the canonical tags assume it.
+2. Make sure an SSL certificate is active for the domain (cPanel: SSL/TLS Status, AutoSSL). `.htaccess` sends every visitor to HTTPS.
+3. Upload the files with SFTP or your host's file manager, replacing the old copies.
 4. Follow the checklist below.
 
-If the host redirects `www` to the bare domain, or the reverse, make sure it matches `BASE`.
+`.htaccess` redirects `www` to the bare domain, matching `BASE`. If you change `BASE` to the `www` address, change that rule too.
 
 ### Email delivery
 
@@ -187,6 +211,21 @@ Both handlers use PHP's `mail()` function, which is the simplest option but depe
 - The handlers send from `website@lindachirwaattorneys.co.za`. Create that mailbox, or ask the host which sender addresses are allowed.
 - The contact handler copies `info@` with a `Cc:` header. Some hosts block this. If `admin@` receives the message but `info@` does not, remove the `Cc:` line in `contact-handler.php` and forward `admin@` to `info@` in the mailbox settings instead.
 - If forms become unreliable, move to an SMTP service. That is a change to the two PHP files only.
+
+## Server configuration
+
+`.htaccess` is written for Apache, which almost every cPanel host runs (LiteSpeed reads it the same way). It does the following:
+
+| Area | Behaviour |
+|---|---|
+| Redirects | `http://` to `https://`, `www.` to the bare domain, and `/index.html` to `/`, each as a permanent (301) redirect. Certificate checks under `/.well-known/` are left alone so AutoSSL can renew. |
+| Missing pages | Any unknown address returns status 404 with `404.html`. The 404 page tells search engines not to index it. |
+| Access | No folder listings. `scripts/`, hidden files and `.py`, `.md` and similar files return 404. |
+| Security headers | HSTS (over HTTPS only), a Content Security Policy, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` and `Permissions-Policy`. |
+| Compression | HTML, CSS, JavaScript, SVG, XML and JSON are sent gzipped. |
+| Caching | HTML and form responses are always revalidated. CSS, JavaScript and fonts are cached for a year (safe because of the fingerprints). Images and icons for a month. Sitemap and robots for a day. |
+
+The Content Security Policy allows the site's own files, plus Google Maps and Facebook video frames (loaded only after consent) and Google Analytics (loaded only if `GA_ID` is set and the visitor consents). Anything else, for example a YouTube embed or a chat widget, is blocked until its host is added to the policy.
 
 ## After each deploy
 
@@ -198,6 +237,9 @@ Spend five minutes on this. It catches most problems.
 - [ ] Submit one test report through the whistleblower form. Confirm it reaches only the whistleblower mailbox. Delete the test report afterwards.
 - [ ] The cookie banner appears on a first visit. After choosing Reject, the map on the contact page and the videos on the resources page show a placeholder and do not load.
 - [ ] `https://your-domain/sitemap.xml` and `https://your-domain/robots.txt` open in a browser.
+- [ ] `http://www.your-domain/about.html` ends up at `https://your-domain/about.html`.
+- [ ] `https://your-domain/no-such-page` shows the "Page Not Found" page with the full navigation.
+- [ ] `https://your-domain/README.md` and `https://your-domain/scripts/` show "Page Not Found", not the file.
 - [ ] A phone-width view of the home page and one service page looks right.
 
 ## Before the site goes live for the first time
@@ -215,21 +257,45 @@ These items were flagged while the site was built and still need a decision or a
 
 **Mailboxes.** Create `whistleblower@lindachirwaattorneys.co.za` before the whistleblower page goes live, and make sure only the designated recipient can read it. Without it, reports are lost without any error.
 
-**Fonts.** Typefaces load from Google Fonts before a visitor chooses anything in the cookie banner. They set no cookies, but they send the visitor's IP address to Google, and the Cookie Policy says so. Downloading the font files and serving them from the site removes this.
-
 **Icons.** Replace the stopgap icons with clean artwork (see above).
 
 **Placeholder claims.** The stat bands on service pages repeat claims such as a 24-hour response, written cost estimates and direct attorney access. Confirm the firm can keep every one of them.
 
 **Testimonials.** The home page shows client testimonials with initials avatars (`images/avatars/`), not photos. Before launch, confirm that each testimonial is genuine, that the client agreed to it being published, and that publishing it is permitted under the Legal Practice Council's rules on attorney advertising. Remove any that cannot be verified.
 
+**External links.** The resources page and the legal pages link to government, court and browser-help sites (justice.gov.za, concourt.org.za, saflii.org, inforegulator.org.za and others). Click each one once before launch; government sites move documents without notice.
+
+**Search Console.** After launch, verify the domain in Google Search Console and Bing Webmaster Tools and submit `https://lindachirwaattorneys.co.za/sitemap.xml`. Create or claim the firm's Google Business Profile for each office, using exactly the addresses and phone numbers on the contact page.
+
+**Structured data.** Paste the home page address into Google's Rich Results Test (search.google.com/test/rich-results) once the site is live. It should find a `LegalService` and a `WebSite` item with no errors.
+
+## Quality checks
+
+Run these before a major release. Lighthouse is built into Chrome (Developer Tools, Lighthouse tab); test in an incognito window, mobile mode.
+
+| Check | Target |
+|---|---|
+| Lighthouse Accessibility, Best Practices, SEO | 100 on every page |
+| Lighthouse Performance (mobile) | 90 or above |
+| Titles | Unique, under 60 characters |
+| Descriptions | Unique, 120 to 160 characters |
+| Headings | One `<h1>` per page, no skipped levels |
+| Images | Every `<img>` has `alt` text and `width` and `height` |
+| securityheaders.com | Grade A |
+
 ## Troubleshooting
+
+**The site shows "500 Internal Server Error" after uploading `.htaccess`.** The host does not allow one of the settings. Delete the line `Options -Indexes` first and test again. If the error remains, rename `.htaccess` to `htaccess.off` and ask the host which directives they permit.
+
+**A map, video or new widget shows a blank box.** The Content Security Policy in `.htaccess` blocks hosts it does not list. Open the browser's developer tools; the console names the blocked host. Add it to the right directive (`frame-src` for embeds, `script-src` for scripts).
+
+**A style or script change does not show.** Run `python3 scripts/sync-shared.py` and upload the HTML pages again, so they point at the new fingerprint.
 
 **The navigation looks wrong, or a page is missing from it.** Run `python3 scripts/sync-shared.py`. If a page is skipped with the message `markers missing`, add the four marker pairs (`NAV`, `ICONS`, `LEGAL`, `CONSENT`) to it, copying them from another page.
 
 **My edit disappeared.** You edited a generated part. For navigation, footer links, icons or the consent script, edit `scripts/sync-shared.py`. For the eight generated service pages, edit `scripts/practice_content.py`. Then re-run the scripts.
 
-**A link goes nowhere.** Check the file name for typos, and for `#` links check that the target accordion has that `id`.
+**A link goes nowhere.** Check the file name for typos, and for `#` links check that the target accordion has that `id`. Link to the home page as `./`, never `index.html`, so visitors land on the canonical address without a redirect.
 
 **The cookie banner never shows.** It remembers earlier choices in a cookie called `cookie_consent`. Clear that cookie, or use a private window. Cookies do not work when a page is opened as a local file, so use `python3 -m http.server` for testing.
 
@@ -241,7 +307,7 @@ These items were flagged while the site was built and still need a decision or a
 
 | Script | Run it when | What it does |
 |---|---|---|
-| `scripts/sync-shared.py` | You change the navigation, footer links, icons, base address or consent script, or add a page | Rewrites the four marked blocks in every HTML page. `--check` only reports. |
+| `scripts/sync-shared.py` | You change the navigation, footer links, a page title or description, any CSS or JavaScript file, the base address or the consent script, or add a page | Rewrites the four marked blocks in every HTML page and refreshes the CSS and JavaScript fingerprints. `--check` only reports. |
 | `scripts/build-practice-pages.py` | You edit `scripts/practice_content.py` | Regenerates the eight service pages and `practice-areas.html`. Run `sync-shared.py` afterwards. |
 | `scripts/build-sitemap.py` | You add, remove or edit pages | Regenerates `sitemap.xml` and `robots.txt`. |
 | `scripts/site_config.py` | The live address changes | Holds `BASE`, used by the scripts above. |

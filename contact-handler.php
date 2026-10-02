@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact Form Handler, v2
+ * Contact Form Handler, v2.1
  * Linda Chirwa Attorneys
  *
  * Receives POST submissions, validates, sanitizes, and emails to the firm.
@@ -33,33 +33,43 @@ if (!empty($_POST[$honeypotField])) {
     exit;
 }
 
-// Helper: safe POST fetch + sanitize
-function post_str($key, $filter = FILTER_SANITIZE_SPECIAL_CHARS) {
-    $val = filter_input(INPUT_POST, $key, $filter);
-    return trim($val ?? '');
+// Helpers. The email is plain text, so values are cleaned rather than HTML-encoded:
+// tags are removed and control characters stripped (which also blocks header injection).
+function clean_line($val, $max = 200) {
+    $val = is_string($val) ? strip_tags($val) : '';
+    $val = preg_replace('/[\x00-\x1F\x7F]+/', ' ', $val);
+    return mb_substr(trim($val), 0, $max);
+}
+function post_str($key, $max = 200) {
+    return clean_line($_POST[$key] ?? '', $max);
 }
 
 // Collect and sanitize fields
-$name           = post_str('name');
-$email          = post_str('email', FILTER_SANITIZE_EMAIL);
-$phone          = post_str('phone');
+$name           = post_str('name', 120);
+$email          = post_str('email', 254);
+$phone          = post_str('phone', 40);
 $service        = post_str('service');
 $matter_type    = post_str('matter_type');
 $office         = post_str('office');
 $urgency        = post_str('urgency');
-$incident_date  = post_str('incident_date');
+$incident_date  = post_str('incident_date', 40);
 $opposing_party = post_str('opposing_party');
 $budget_range   = post_str('budget_range');
 $referral       = post_str('referral');
 $contact_pref   = post_str('contact_pref');
 $consent        = post_str('consent');
-$message        = post_str('message');
+
+// Free text: keep line breaks, drop tags and other control characters, cap length.
+$message = isset($_POST['message']) && is_string($_POST['message']) ? $_POST['message'] : '';
+$message = strip_tags($message);
+$message = preg_replace('/[^\P{C}\n\r\t]+/u', '', $message) ?? '';
+$message = mb_substr(trim($message), 0, 8000);
 
 // Multi-select: documents_available[]
 $documents = [];
 if (!empty($_POST['documents_available']) && is_array($_POST['documents_available'])) {
-    foreach ($_POST['documents_available'] as $doc) {
-        $clean = trim(filter_var($doc, FILTER_SANITIZE_SPECIAL_CHARS));
+    foreach (array_slice($_POST['documents_available'], 0, 20) as $doc) {
+        $clean = clean_line($doc, 100);
         if ($clean !== '') $documents[] = $clean;
     }
 }
@@ -93,7 +103,7 @@ if (!empty($errors)) {
 }
 
 // Build email
-$subject = $subjectPrefix . ' ' . $name . ' | ' . ($service ?: 'General Enquiry');
+$subject = mb_encode_mimeheader($subjectPrefix . ' ' . $name . ' | ' . ($service ?: 'General Enquiry'), 'UTF-8', 'B', "\r\n");
 
 $line = str_repeat('-', 48);
 
@@ -131,16 +141,18 @@ $body .= "UA:        " . ($_SERVER['HTTP_USER_AGENT'] ?? 'unknown') . "\n";
 $headers  = "From: website@lindachirwaattorneys.co.za\r\n";
 $headers .= "Reply-To: {$email}\r\n";
 $headers .= "Cc: {$ccEmail}\r\n";
-$headers .= "X-Mailer: LindaChirwaContactForm/2.0\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$headers .= "Content-Transfer-Encoding: 8bit\r\n";
+$headers .= "X-Mailer: LindaChirwaContactForm/2.1";
 
 // Send
-$sent = @mail($recipientEmail, $subject, $body, $headers);
+$sent = @mail($recipientEmail, $subject, $body, rtrim($headers));
 
 if ($sent) {
     echo json_encode([
         'success' => true,
-        'message' => 'Thank you, ' . htmlspecialchars($name) . '. Your enquiry has been received. We\'ll be in touch within 24 hours.'
+        'message' => 'Thank you, ' . $name . '. Your enquiry has been received. We will be in touch within 24 hours.'
     ]);
 } else {
     http_response_code(500);

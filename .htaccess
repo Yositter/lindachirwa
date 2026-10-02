@@ -1,0 +1,102 @@
+# Linda Chirwa Attorneys: Apache configuration for the live site.
+# Upload this file to the web root (public_html) alongside the HTML pages.
+# Every block is wrapped in <IfModule> so a host without a module ignores it
+# rather than returning a 500 error. See README.md, "Server configuration".
+
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+AddDefaultCharset utf-8
+
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType application/manifest+json .webmanifest
+  AddCharset utf-8 .css .js .json .webmanifest .xml .txt
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Redirects and access rules
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # www to the bare domain, always over HTTPS.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301,NE]
+
+  # HTTP to HTTPS. Certificate checks under /.well-known/ stay on HTTP.
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteCond %{REQUEST_URI} !^/\.well-known/
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
+  # One address for the home page: /index.html redirects to /.
+  RewriteCond %{THE_REQUEST} \s/+index\.html[\s?]
+  RewriteRule ^index\.html$ https://%{HTTP_HOST}/ [L,R=301]
+
+  # Never serve source, tooling or hidden files, even if uploaded by mistake.
+  RewriteRule ^scripts(/|$) - [R=404,L]
+  RewriteRule (^|/)\.(?!well-known/) - [R=404,L]
+  RewriteRule \.(py|pyc|md|sh|log|ini|bak|sql|lock)$ - [R=404,L]
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Security headers
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  # Sent over HTTPS only. Browsers then refuse plain HTTP for a year, so keep
+  # the SSL certificate renewing (cPanel AutoSSL does this automatically).
+  Header always set Strict-Transport-Security "max-age=31536000" "expr=%{HTTPS} == 'on'"
+  # Google and Facebook entries cover the consent-gated map and video embeds
+  # and, if GA_ID is set in consent.js, Google Analytics. Nothing loads from
+  # either provider before the visitor consents.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; font-src 'self'; frame-src https://www.google.com https://maps.google.com https://www.facebook.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+  Header unset X-Powered-By
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Compression
+# ---------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml
+  AddOutputFilterByType DEFLATE application/javascript text/javascript application/json
+  AddOutputFilterByType DEFLATE application/manifest+json image/svg+xml image/x-icon image/vnd.microsoft.icon
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Caching
+# CSS and JS links carry a ?v= content hash written by scripts/sync-shared.py,
+# so browsers may keep them for a year. HTML is always revalidated.
+# ---------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 1 day"
+  ExpiresByType text/xml "access plus 1 day"
+  ExpiresByType text/plain "access plus 1 day"
+  ExpiresByType application/manifest+json "access plus 1 week"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 month"
+  ExpiresByType image/vnd.microsoft.icon "access plus 1 month"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(html|php)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>

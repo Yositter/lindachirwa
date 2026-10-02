@@ -139,10 +139,10 @@
   animation: expandIn 0.35s cubic-bezier(.2,.7,.3,1) both;
 }
 @keyframes expandIn {
-  from { opacity: 0; transform: translateY(-6px); }
-  to   { opacity: 1; transform: translateY(0); }
+from { opacity: 0; transform: translateY(-6px); }
+to { opacity: 1; transform: translateY(0); }
 }
-.accordion-body h4 {
+.accordion-body h3, .accordion-body h4 {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 13px;
@@ -151,7 +151,7 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
-.accordion-body h4:first-child { margin-top: 0; }
+.accordion-body h3:first-child, .accordion-body h4:first-child { margin-top: 0; }
 .accordion-body ul {
   margin: 8px 0 16px 20px;
 }
@@ -243,7 +243,7 @@
   transition: transform 0.3s ease;
 }
 .feature-card:hover .feature-dot { transform: scale(1.4); }
-.feature-card h4 {
+.feature-card h3, .feature-card h4 {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 15px;
@@ -438,19 +438,19 @@
 
 /* ===== SERVICE PAGE RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .stat-band-inner { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.stat-band-inner { grid-template-columns: repeat(2, 1fr); gap: 28px; }
 }
 @media (max-width: 768px) {
-  .content-wrap { padding: 48px 24px 40px; }
-  .cta-section { padding: 40px 26px; }
-  .stat-band { padding: 44px 24px; }
-  .section-title { font-size: 22px; }
-  .steps-list li { gap: 16px; }
-  .steps-list li::before { min-width: 38px; height: 38px; font-size: 15px; }
-  .callout { padding: 32px 24px; }
+.content-wrap { padding: 48px 24px 40px; }
+.cta-section { padding: 40px 26px; }
+.stat-band { padding: 44px 24px; }
+.section-title { font-size: 22px; }
+.steps-list li { gap: 16px; }
+.steps-list li::before { min-width: 38px; height: 38px; font-size: 15px; }
+.callout { padding: 32px 24px; }
 }
 @media (max-width: 480px) {
-  .stat-band-inner { grid-template-columns: 1fr; }
+.stat-band-inner { grid-template-columns: 1fr; }
 }
 
 /* ===== RELATED SERVICES ===== */
@@ -468,3 +468,12 @@
   transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
 }
 .related-links a:hover { border-color: var(--primary); background: rgba(168,213,181,0.18); transform: translateY(-2px); }
+
+/* ===== LINKS INSIDE TEXT ===== */
+.intro-text a, .accordion-body a, .steps-list a, .checklist a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.25s ease;
+}
+.intro-text a:hover, .accordion-body a:hover, .steps-list a:hover, .checklist a:hover { color: var(--primary-light); }

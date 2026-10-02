@@ -25,7 +25,7 @@
   padding: 22px 20px;
   box-shadow: var(--shadow-sm);
 }
-.legal-toc h4 {
+.legal-toc-title {
   font-family: var(--font-display);
   font-size: 11px; font-weight: 600;
   letter-spacing: 0.12em; text-transform: uppercase;
@@ -96,7 +96,7 @@
   margin: 20px 0 28px;
   box-shadow: var(--shadow-sm);
 }
-.legal-notice h4 {
+.legal-notice .legal-notice-title {
   font-family: var(--font-display);
   font-weight: 600; font-size: 14px;
   color: var(--primary);
@@ -104,9 +104,10 @@
   text-transform: uppercase; letter-spacing: 0.04em;
 }
 .legal-notice p { font-size: 14px; }
+.legal-notice .legal-notice-title { line-height: 1.4; }
 .legal-notice p:last-child { margin-bottom: 0; }
 .legal-notice.warning { border-left-color: var(--red); }
-.legal-notice.warning h4 { color: var(--red); }
+.legal-notice.warning .legal-notice-title { color: var(--red); }
 
 /* Data tables (cookies, retention) */
 .legal-table-wrap {

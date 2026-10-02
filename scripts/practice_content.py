@@ -12,8 +12,8 @@ PAGES = {}
 # ---------------------------------------------------------------- Family law
 PAGES['family-law.html'] = dict(
     nav_title='Family Law',
-    title='Family Law | Divorce, Children, Maintenance & Protection Orders | Linda Chirwa Attorneys',
-    meta='Divorce, child care and contact, maintenance and protection orders in South Africa. Honest advice, settlement first, litigation when needed. Linda Chirwa Attorneys.',
+    title='Family Law &amp; Divorce Attorneys | Linda Chirwa Attorneys',
+    meta='Divorce, child care and contact, maintenance and protection orders in South Africa. Honest advice, settlement first, and litigation when it is needed.',
     h1='Family Law',
     lead='Divorce, children, maintenance and protection orders, handled with discretion and a clear plan from the first consultation.',
     intro='Family disputes are emotional, and they are often urgent. Decisions made in the first weeks, about where the children live, who stays in the home and what is agreed in writing, tend to shape the outcome for years. **We give you a clear picture of your options and the likely costs before you commit, and we aim to settle a matter where that protects you and your children.** Where a matter has to be fought, we appear in the Magistrates\' Courts, the Regional Courts and the High Court.',
@@ -104,7 +104,7 @@ PAGES['family-law.html'] = dict(
 # ---------------------------------------------------------------- Labour law
 PAGES['labour-law.html'] = dict(
     nav_title='CCMA & Employment Disputes',
-    title='CCMA & Employment Disputes | Unfair Dismissal, Retrenchment | Linda Chirwa Attorneys',
+    title='CCMA &amp; Unfair Dismissal Attorneys | Linda Chirwa Attorneys',
     meta='Unfair dismissal, retrenchment, unfair labour practices and CCMA representation in South Africa, for employees and employers. Linda Chirwa Attorneys.',
     h1='CCMA & Employment Disputes',
     lead='Representation for employees and employers in dismissals, unfair labour practices and retrenchments, at the CCMA and in the Labour Court.',
@@ -205,7 +205,7 @@ PAGES['labour-law.html'] = dict(
 # ---------------------------------------------------------------- Immigration
 PAGES['immigration.html'] = dict(
     nav_title='Immigration & Permits',
-    title='Immigration & Permits | Visas, Permanent Residence, Citizenship | Linda Chirwa Attorneys',
+    title='Immigration, Visas &amp; Permits | Linda Chirwa Attorneys',
     meta='Visas, permanent residence, citizenship and appeals for South Africa. Careful applications, clear timelines and honest advice. Linda Chirwa Attorneys.',
     h1='Immigration & Permits',
     lead='Visas, permanent residence, citizenship and appeals, prepared carefully so your application is complete the first time.',
@@ -304,7 +304,7 @@ PAGES['immigration.html'] = dict(
 # ---------------------------------------------------------------- Company formation
 PAGES['company-formation.html'] = dict(
     nav_title='Company Formation & Governance',
-    title='Company Formation & Governance | CIPC Registration, Shareholders | Linda Chirwa Attorneys',
+    title='Company Registration &amp; Governance | Linda Chirwa Attorneys',
     meta='Company registration with CIPC, shareholders\' agreements, directors\' duties and annual compliance for South African businesses. Linda Chirwa Attorneys.',
     h1='Company Formation & Governance',
     lead='Register the right structure, set the rules between shareholders in writing, and keep the company compliant.',
@@ -400,7 +400,7 @@ PAGES['company-formation.html'] = dict(
 # ---------------------------------------------------------------- Commercial contracts
 PAGES['commercial-contracts.html'] = dict(
     nav_title='Contracts & Transactions',
-    title='Commercial Contracts & Transactions | Drafting and Review | Linda Chirwa Attorneys',
+    title='Commercial Contracts | Linda Chirwa Attorneys',
     meta='Drafting, reviewing and negotiating commercial contracts in South Africa, from supply and service agreements to leases and suretyships. Linda Chirwa Attorneys.',
     h1='Contracts & Transactions',
     lead='Contracts drafted and reviewed so the deal on paper matches the deal you made, and holds up if it is tested.',
@@ -492,7 +492,7 @@ PAGES['commercial-contracts.html'] = dict(
 # ---------------------------------------------------------------- M&A
 PAGES['mergers-acquisitions.html'] = dict(
     nav_title='Mergers & Acquisitions',
-    title='Mergers & Acquisitions | Business Sales, Due Diligence | Linda Chirwa Attorneys',
+    title='Mergers &amp; Acquisitions | Linda Chirwa Attorneys',
     meta='Buying or selling a business in South Africa: sale of business and share sale agreements, due diligence, approvals and closing. Linda Chirwa Attorneys.',
     h1='Mergers & Acquisitions',
     lead='Buying or selling a business, structured and documented so the price you agree is the price you get.',
@@ -584,7 +584,7 @@ PAGES['mergers-acquisitions.html'] = dict(
 # ---------------------------------------------------------------- IP
 PAGES['intellectual-property.html'] = dict(
     nav_title='Intellectual Property',
-    title='Intellectual Property | Trade Marks, Copyright, Patents | Linda Chirwa Attorneys',
+    title='Intellectual Property &amp; Trade Marks | Linda Chirwa Attorneys',
     meta='Trade mark registration, copyright, patents, designs, licensing and enforcement in South Africa. Protect your brand and ideas. Linda Chirwa Attorneys.',
     h1='Intellectual Property',
     lead='Protect your brand, your creative work and your inventions, and act when someone copies them.',
@@ -677,7 +677,7 @@ PAGES['intellectual-property.html'] = dict(
 # ---------------------------------------------------------------- Employment & HR
 PAGES['employment-hr.html'] = dict(
     nav_title='Employment & HR Compliance',
-    title='Employment & HR Compliance | Contracts, Discipline, Policies | Linda Chirwa Attorneys',
+    title='Employment &amp; HR Compliance | Linda Chirwa Attorneys',
     meta='Employment contracts, HR policies, disciplinary processes, retrenchments and compliance advice for South African employers. Linda Chirwa Attorneys.',
     h1='Employment & HR Compliance',
     lead='Practical employment advice for employers: contracts, policies, discipline and compliance that stand up at the CCMA.',

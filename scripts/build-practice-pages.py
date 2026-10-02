@@ -17,16 +17,12 @@ from practice_content import PAGES, HUB, RELATED_LABELS
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
-WA_SVG = ('<svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 1.5a8.5 8.5 0 00-7.4 12.7L1.5 18.5l4.4-1.1A8.5 8.5 0 1010 1.5z" stroke="currentColor" stroke-width="1.3"/>'
+WA_SVG = ('<svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 1.5a8.5 8.5 0 00-7.4 12.7L1.5 18.5l4.4-1.1A8.5 8.5 0 1010 1.5z" stroke="currentColor" stroke-width="1.3"/>'
           '<path d="M7.5 6.5c.2-.5.5-.5.7-.5s.5 0 .7.4l.8 2c.1.2 0 .4-.1.6l-.5.5s-.1.2.2.6c.4.5.8.9 1.3 1.1.2.1.4.1.5-.1l.5-.6c.2-.2.3-.2.5-.1l1.5.8c.2.1.3.2.3.4s0 .7-.4 1c-.4.4-.9.5-1.5.5-1-.1-2.5-.8-3.7-2.3-1-1.2-1.4-2.5-1.4-3.2 0-.5.2-.8.5-1.1z" fill="currentColor"/></svg>')
 WA_FLOAT = WA_SVG.replace('width="18" height="18"', 'width="28" height="28"')
 
-FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
-         '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-         '<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">')
-
-FOOTER = ('<footer class="footer">\n<!-- LEGAL:START -->\n<!-- LEGAL:END -->\n'
-          '  <p>&copy; 2026 Linda Chirwa Attorneys. All rights reserved. | <a href="index.html">Back to Home</a></p>\n</footer>')
+FOOTER = ('</main>\n\n<footer class="footer">\n<!-- LEGAL:START -->\n<!-- LEGAL:END -->\n'
+          '  <p>&copy; 2026 Linda Chirwa Attorneys. All rights reserved. | <a href="./">Back to Home</a></p>\n</footer>')
 
 TAIL = ('<script src="site.js"></script>\n<!-- CONSENT:START -->\n<!-- CONSENT:END -->\n</body>\n</html>\n')
 
@@ -43,17 +39,17 @@ def attr(text):
 
 def head(title, meta, extra_css=''):
     style = f'<style>\n{extra_css}</style>\n' if extra_css else ''
-    return (f'<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n'
+    return (f'<!DOCTYPE html>\n<html lang="en-ZA">\n<head>\n<meta charset="UTF-8">\n'
             f'<meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
             f'<title>{fix(title)}</title>\n<meta name="description" content="{attr(meta)}">\n'
-            f'<!-- ICONS:START -->\n<!-- ICONS:END -->\n{FONTS}\n'
+            f'<!-- ICONS:START -->\n<!-- ICONS:END -->\n'
             f'<link rel="stylesheet" href="site.css">\n<link rel="stylesheet" href="service-page.css">\n{style}</head>\n<body>\n\n'
-            f'<!-- NAV:START -->\n<!-- NAV:END -->\n')
+            f'<!-- NAV:START -->\n<!-- NAV:END -->\n\n<main id="main" tabindex="-1">\n')
 
 
 def page_header(h1, lead, crumb):
     return (f'\n<section class="page-header">\n  <h1>{fix(h1)}</h1>\n  <p>{fix(lead)}</p>\n'
-            f'  <div class="breadcrumb">\n    <a href="index.html">Home</a>\n    <span>/</span>\n'
+            f'  <div class="breadcrumb">\n    <a href="./">Home</a>\n    <span>/</span>\n'
             f'    <a href="practice-areas.html">Practice Areas</a>\n    <span>/</span>\n'
             f'    <span class="current">{fix(crumb)}</span>\n  </div>\n</section>\n')
 
@@ -69,7 +65,7 @@ def accordion(i, area):
            f'      <summary>{fix(title)}</summary>', '      <div class="accordion-body">',
            f'        <p>{fix(intro)}</p>']
     for heading, items in groups:
-        out.append(f'\n        <h4>{fix(heading)}</h4>\n        <ul>')
+        out.append(f'\n        <h3>{fix(heading)}</h3>\n        <ul>')
         out += [f'          <li>{fix(x)}</li>' for x in items]
         out.append('        </ul>')
     if closing:
@@ -163,11 +159,11 @@ HUB_CSS = '''.practice-section { margin-bottom: 56px; }
 
 
 def build_hub():
-    title = 'Practice Areas | Linda Chirwa Attorneys, Conveyancers & Notaries'
+    title = 'Practice Areas | Linda Chirwa Attorneys'
     meta = 'All practice areas of Linda Chirwa Attorneys: family, estates, property, notarial, criminal, civil, labour, immigration, company, contracts, M&A, IP and HR.'
     h = head(title, meta, HUB_CSS)
     h += ('\n<section class="page-header">\n  <h1>Practice Areas</h1>\n  <p>Legal services for individuals, families and businesses across Gauteng, KwaZulu-Natal, North West and the Western Cape.</p>\n'
-          '  <div class="breadcrumb">\n    <a href="index.html">Home</a>\n    <span>/</span>\n    <span class="current">Practice Areas</span>\n  </div>\n</section>\n')
+          '  <div class="breadcrumb">\n    <a href="./">Home</a>\n    <span>/</span>\n    <span class="current">Practice Areas</span>\n  </div>\n</section>\n')
     h += ('\n<div class="content-wrap">\n\n  <p class="intro-text reveal">\n    We are attorneys, conveyancers and notaries, and most clients come to us with a matter that touches more than one of these areas. '
           '<strong>Choose the area closest to your problem, or contact us and we will point you to the right attorney.</strong> '
           'Every first consultation is confidential and comes with an honest view of your options and the likely cost.\n  </p>\n\n')
