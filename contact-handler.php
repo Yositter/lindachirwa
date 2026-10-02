@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact Form Handler — v2
+ * Contact Form Handler, v2
  * Linda Chirwa Attorneys
  *
  * Receives POST submissions, validates, sanitizes, and emails to the firm.
@@ -8,7 +8,7 @@
  *
  * v2 additions: matter_type, opposing_party, incident_date, documents_available[],
  *               budget_range, referral, contact_pref, consent
- * All new fields are optional — the handler remains backward-compatible.
+ * All new fields are optional; the handler remains backward-compatible.
  */
 
 // Only accept POST
@@ -93,9 +93,9 @@ if (!empty($errors)) {
 }
 
 // ── Build email ────────────────────────────────────────────────
-$subject = $subjectPrefix . ' ' . $name . ' — ' . ($service ?: 'General Enquiry');
+$subject = $subjectPrefix . ' ' . $name . ' | ' . ($service ?: 'General Enquiry');
 
-$line = str_repeat('─', 48);
+$line = str_repeat('-', 48);
 
 $body  = "NEW WEBSITE ENQUIRY\n";
 $body .= str_repeat('=', 48) . "\n\n";
