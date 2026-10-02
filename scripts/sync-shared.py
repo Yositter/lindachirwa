@@ -7,6 +7,7 @@ Each page marks the blocks it shares with comment markers:
 
     <!-- ICONS:START --> ... <!-- ICONS:END -->   favicon + manifest tags
     <!-- LEGAL:START --> ... <!-- LEGAL:END -->   footer links to the legal pages
+    <!-- CONSENT:START --> ... <!-- CONSENT:END -->   cookie consent script
     <!-- NAV:START -->   ... <!-- NAV:END -->     desktop nav + mobile nav
 
 Edit NAV_ITEMS / PRACTICE_AREAS / OFFICES below, run this script, and every
@@ -18,6 +19,8 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+
+CONSENT = '<script src="consent.js" defer></script>'
 
 ICONS = '''<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -39,6 +42,7 @@ def build_legal(page):
     for text, href in LEGAL_LINKS:
         cls = ' class="active"' if href == page else ''
         rows.append(f'  <a href="{href}"{cls}>{text}</a>')
+    rows.append('  <a href="cookies.html#manage" data-cookie-settings>Cookie Settings</a>')
     return '<div class="footer-legal-links">\n' + '\n'.join(rows) + '\n</div>'
 
 
@@ -159,7 +163,8 @@ def main():
         new, ok_nav = replace_block(text, 'NAV', build_nav(path.name))
         new, ok_icons = replace_block(new, 'ICONS', ICONS)
         new, ok_legal = replace_block(new, 'LEGAL', build_legal(path.name))
-        if not (ok_nav and ok_icons and ok_legal):
+        new, ok_consent = replace_block(new, 'CONSENT', CONSENT)
+        if not (ok_nav and ok_icons and ok_legal and ok_consent):
             print(f'skip  {path.name} (markers missing)')
             continue
         if new != text:
