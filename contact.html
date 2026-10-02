@@ -9,191 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --primary: #1A4A2E;
-  --primary-light: #2D6B45;
-  --primary-dark: #0E2E1A;
-  --primary-rich: #1C5C38;
-  --accent: #A8D5B5;
-  --white: #FFFFFF;
-  --off-white: #F5F7F2;
-  --charcoal: #1A1A1A;
-  --warm-gray: #4A4A4A;
-  --border: #E2E6DE;
-  --font-display: 'Raleway', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --red: #C53030;
-  --green-bg: #F0FFF4;
-  --green-border: #9AE6B4;
-  --shadow-sm: 0 2px 8px rgba(26,74,46,0.06);
-  --shadow-md: 0 6px 24px rgba(26,74,46,0.08);
-  --shadow-lg: 0 16px 48px rgba(26,74,46,0.12);
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--font-body);
-  color: var(--charcoal);
-  line-height: 1.6;
-  background: var(--off-white);
-  overflow-x: hidden;
-}
-
-/* ===== NAVBAR ===== */
-.navbar {
-  position: sticky;
-  top: 0;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  z-index: 1000;
-  background: var(--primary);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-}
-.navbar-left { display: flex; align-items: center; gap: 16px; }
-.navbar-logo { height: 48px; width: auto; display: block; filter: brightness(0) invert(1); }
-.navbar-right { display: flex; align-items: center; gap: 24px; }
-.navbar-right a {
-  font-family: var(--font-display);
-  font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.8);
-  text-decoration: none;
-  position: relative;
-  transition: color 0.3s ease;
-}
-.navbar-right a::after {
-  content: ''; position: absolute; bottom: -4px; left: 0;
-  width: 0; height: 1px; background: var(--accent);
-  transition: width 0.3s ease;
-}
-.navbar-right a:hover { color: var(--white); }
-.navbar-right a:hover::after { width: 100%; }
-.navbar-right a.active { color: var(--accent); }
-.navbar-right a.active::after { width: 100%; }
-.mobile-toggle {
-  display: none; flex-direction: column; gap: 5px;
-  cursor: pointer; background: none; border: none; padding: 8px;
-}
-.mobile-toggle span {
-  display: block; width: 24px; height: 1.5px;
-  background: var(--white);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 5px); }
-.mobile-toggle.active span:nth-child(2) { opacity: 0; }
-.mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); }
-.mobile-nav {
-  display: none; position: fixed; inset: 0;
-  background: rgba(14, 46, 26, 0.98);
-  z-index: 999;
-  flex-direction: column; align-items: center; justify-content: center;
-  gap: 28px; opacity: 0; visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-}
-.mobile-nav.open { opacity: 1; visibility: visible; }
-.mobile-nav a {
-  font-family: var(--font-display);
-  font-size: 18px; font-weight: 300; letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--white); text-decoration: none;
-  opacity: 0; transform: translateY(12px);
-  transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease;
-}
-.mobile-nav.open a { opacity: 1; transform: translateY(0); }
-.mobile-nav.open a:nth-child(1) { transition-delay: 0.05s; }
-.mobile-nav.open a:nth-child(2) { transition-delay: 0.10s; }
-.mobile-nav.open a:nth-child(3) { transition-delay: 0.15s; }
-.mobile-nav.open a:nth-child(4) { transition-delay: 0.20s; }
-.mobile-nav.open a:nth-child(5) { transition-delay: 0.25s; }
-.mobile-nav.open a:nth-child(6) { transition-delay: 0.30s; }
-.mobile-nav a:hover { color: var(--accent); }
-
-/* ===== PAGE HEADER ===== */
-.page-header {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
-  padding: 72px 40px 60px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.page-header::before {
-  content: ''; position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 70% 60% at 80% 30%, rgba(168,213,181,0.10) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 80% at 10% 70%, rgba(168,213,181,0.06) 0%, transparent 60%);
-  pointer-events: none;
-}
-.page-header > * { position: relative; z-index: 1; }
-.page-header h1 {
-  font-family: var(--font-display);
-  font-weight: 200;
-  font-size: clamp(32px, 5vw, 56px);
-  color: var(--white);
-  letter-spacing: 0.03em;
-  margin-bottom: 14px;
-  animation: fadeUp 0.9s ease both;
-}
-.page-header p {
-  font-size: 16px;
-  color: rgba(255,255,255,0.7);
-  max-width: 620px;
-  margin: 0 auto;
-  animation: fadeUp 0.9s ease 0.15s both;
-}
-.breadcrumb {
-  display: flex; justify-content: center; gap: 8px;
-  margin-top: 22px; font-size: 12px;
-  animation: fadeUp 0.9s ease 0.3s both;
-}
-.breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
-.breadcrumb a:hover { color: var(--accent); }
-.breadcrumb span { color: rgba(255,255,255,0.3); }
-.breadcrumb .current { color: rgba(255,255,255,0.75); }
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== REVEAL ON SCROLL ===== */
-.reveal {
-  opacity: 0; transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(.2,.7,.3,1), transform 0.7s cubic-bezier(.2,.7,.3,1);
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-left {
-  opacity: 0; transform: translateX(-32px);
-  transition: opacity 0.7s cubic-bezier(.2,.7,.3,1), transform 0.7s cubic-bezier(.2,.7,.3,1);
-}
-.reveal-left.visible { opacity: 1; transform: translateX(0); }
-.reveal-right {
-  opacity: 0; transform: translateX(32px);
-  transition: opacity 0.7s cubic-bezier(.2,.7,.3,1), transform 0.7s cubic-bezier(.2,.7,.3,1);
-}
-.reveal-right.visible { opacity: 1; transform: translateX(0); }
-.reveal[data-delay="1"] { transition-delay: 0.08s; }
-.reveal[data-delay="2"] { transition-delay: 0.16s; }
-.reveal[data-delay="3"] { transition-delay: 0.24s; }
-.reveal[data-delay="4"] { transition-delay: 0.32s; }
-.reveal[data-delay="5"] { transition-delay: 0.40s; }
-.reveal[data-delay="6"] { transition-delay: 0.48s; }
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal, .reveal-left, .reveal-right,
-  .page-header h1, .page-header p, .breadcrumb {
-    opacity: 1 !important; transform: none !important;
-    transition: none !important; animation: none !important;
-  }
-  .testimonial-card::before { animation: none !important; }
-}
-
+/* Contact page only */
 /* ===== QUICK CONTACT BAR ===== */
 .quick-bar {
   background: var(--white);
@@ -755,46 +573,11 @@ body {
   color: var(--primary);
 }
 
-/* ===== FOOTER ===== */
-.footer {
-  background: var(--charcoal);
-  padding: 44px 40px 32px;
-  text-align: center;
-}
-.footer p { font-size: 12px; color: rgba(255,255,255,0.35); }
-.footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
-.footer a:hover { color: var(--accent); }
 
-/* ===== FLOATING WHATSAPP ===== */
-.wa-float {
-  position: fixed;
-  bottom: 24px; right: 24px;
-  z-index: 950;
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  background: #25D366;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--white);
-  text-decoration: none;
-  box-shadow: 0 8px 24px rgba(37,211,102,0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: waPulse 2.4s ease-in-out infinite;
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-card::before { animation: none !important; }
 }
-.wa-float:hover {
-  transform: scale(1.08);
-  box-shadow: 0 12px 32px rgba(37,211,102,0.55);
-  animation-play-state: paused;
-}
-@keyframes waPulse {
-  0%, 100% { box-shadow: 0 8px 24px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.4); }
-  50% { box-shadow: 0 8px 24px rgba(37,211,102,0.4), 0 0 0 14px rgba(37,211,102,0); }
-}
-
-/* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .navbar-right { display: none; }
-  .mobile-toggle { display: flex; }
-  .mobile-nav { display: flex; }
   .quick-bar-inner { grid-template-columns: 1fr 1fr; }
   .next-grid { grid-template-columns: 1fr; gap: 32px; }
 }
@@ -805,25 +588,16 @@ body {
     gap: 48px;
   }
   .form-row { grid-template-columns: 1fr; }
-  .page-header { padding: 56px 24px 44px; }
   .quick-bar { padding: 20px 24px; }
   .quick-bar-inner { grid-template-columns: 1fr; gap: 12px; }
-  .navbar { padding: 0 20px; }
-  .navbar-logo { height: 38px; }
-  .footer { padding: 32px 24px; }
   .next-steps, .contact-testimonial { padding-left: 24px; padding-right: 24px; }
   .next-steps-inner { padding: 32px 24px; }
   .testimonial-card { padding: 32px 28px 32px 72px; }
   .testimonial-card::before { font-size: 72px; left: 20px; }
   .testimonial-card blockquote { font-size: 16px; }
-  .wa-float { bottom: 18px; right: 18px; width: 50px; height: 50px; }
-}
-
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
 }
 </style>
+
 </head>
 <body>
 
@@ -835,12 +609,46 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     </a>
   </div>
   <nav class="navbar-right" role="navigation" aria-label="Main navigation">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="criminal-law.html">Criminal Law</a>
-    <a href="wills-estates.html">Estates</a>
-    <a href="resources.html">Resources</a>
-    <a href="contact.html" class="active">Contact</a>
+    <div class="nav-item"><a class="nav-link" href="index.html">Home</a></div>
+    <div class="nav-item"><a class="nav-link" href="about.html">About</a></div>
+    <div class="nav-item has-sub">
+      <a class="nav-link" href="practice-areas.html" aria-haspopup="true">Practice Areas<span class="caret" aria-hidden="true"></span></a>
+      <div class="submenu wide">
+        <div class="submenu-group">
+          <h4>For Individuals</h4>
+          <a href="family-law.html">Family Law</a>
+          <a href="wills-estates.html">Wills, Estates &amp; Trusts</a>
+          <a href="property-conveyancing.html">Property Conveyancing</a>
+          <a href="personal-injury.html">Motor Vehicle &amp; Workplace Injury</a>
+          <a href="criminal-law.html">Criminal Defence</a>
+          <a href="labour-law.html">CCMA &amp; Employment Disputes</a>
+          <a href="immigration.html">Immigration &amp; Permits</a>
+        </div>
+        <div class="submenu-group">
+          <h4>For Businesses</h4>
+          <a href="company-formation.html">Company Formation &amp; Governance</a>
+          <a href="commercial-contracts.html">Contracts &amp; Transactions</a>
+          <a href="mergers-acquisitions.html">Mergers &amp; Acquisitions</a>
+          <a href="debt-collection.html">Debt Collection &amp; Litigation</a>
+          <a href="business-rescue.html">Insolvency &amp; Business Rescue</a>
+          <a href="intellectual-property.html">Intellectual Property</a>
+          <a href="employment-hr.html">Employment &amp; HR Compliance</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item"><a class="nav-link" href="resources.html">Resources</a></div>
+    <div class="nav-item has-sub">
+      <a class="nav-link active" href="contact.html" aria-haspopup="true" aria-current="page">Contact<span class="caret" aria-hidden="true"></span></a>
+      <div class="submenu align-right">
+        <a href="#office-gauteng">Gauteng: Head Office</a>
+        <a href="#office-west-rand">Gauteng: West Rand</a>
+        <a href="#office-kzn">KwaZulu-Natal</a>
+        <a href="#office-north-west">North West</a>
+        <a href="#office-western-cape">Western Cape</a>
+        <a href="#office-departments">Department Emails</a>
+        <a href="contact.html#contactForm">Send an Enquiry</a>
+      </div>
+    </div>
   </nav>
   <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -851,10 +659,42 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 <div class="mobile-nav" id="mobileNav" aria-hidden="true">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
-  <a href="criminal-law.html">Criminal Law</a>
-  <a href="wills-estates.html">Estates</a>
+  <details>
+    <summary>Practice Areas</summary>
+    <div class="mobile-sub">
+      <a href="practice-areas.html">All Practice Areas</a>
+      <h4>For Individuals</h4>
+      <a href="family-law.html">Family Law</a>
+      <a href="wills-estates.html">Wills, Estates &amp; Trusts</a>
+      <a href="property-conveyancing.html">Property Conveyancing</a>
+      <a href="personal-injury.html">Motor Vehicle &amp; Workplace Injury</a>
+      <a href="criminal-law.html">Criminal Defence</a>
+      <a href="labour-law.html">CCMA &amp; Employment Disputes</a>
+      <a href="immigration.html">Immigration &amp; Permits</a>
+      <h4>For Businesses</h4>
+      <a href="company-formation.html">Company Formation &amp; Governance</a>
+      <a href="commercial-contracts.html">Contracts &amp; Transactions</a>
+      <a href="mergers-acquisitions.html">Mergers &amp; Acquisitions</a>
+      <a href="debt-collection.html">Debt Collection &amp; Litigation</a>
+      <a href="business-rescue.html">Insolvency &amp; Business Rescue</a>
+      <a href="intellectual-property.html">Intellectual Property</a>
+      <a href="employment-hr.html">Employment &amp; HR Compliance</a>
+    </div>
+  </details>
   <a href="resources.html">Resources</a>
-  <a href="contact.html">Contact</a>
+  <details open>
+    <summary>Contact</summary>
+    <div class="mobile-sub">
+      <a href="contact.html" class="active">Contact Overview</a>
+      <a href="#office-gauteng">Gauteng: Head Office</a>
+      <a href="#office-west-rand">Gauteng: West Rand</a>
+      <a href="#office-kzn">KwaZulu-Natal</a>
+      <a href="#office-north-west">North West</a>
+      <a href="#office-western-cape">Western Cape</a>
+      <a href="#office-departments">Department Emails</a>
+      <a href="contact.html#contactForm">Send an Enquiry</a>
+    </div>
+  </details>
 </div>
 
 <!-- Page Header -->
@@ -1100,7 +940,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     <h2>Our Offices</h2>
     <p>Four provinces. One standard of service.</p>
 
-    <div class="office-card">
+    <div class="office-card" id="office-gauteng">
       <div class="office-card-header">
         <h3>Gauteng — Head Office</h3>
         <span class="office-badge">Head Office</span>
@@ -1113,7 +953,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
       </span>
     </div>
 
-    <div class="office-card">
+    <div class="office-card" id="office-west-rand">
       <div class="office-card-header">
         <h3>Gauteng — West Rand</h3>
       </div>
@@ -1121,28 +961,28 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
       <p><a href="mailto:admin@lindachirwaattorneys.co.za">admin@lindachirwaattorneys.co.za</a></p>
     </div>
 
-    <div class="office-card">
+    <div class="office-card" id="office-kzn">
       <div class="office-card-header">
         <h3>KwaZulu-Natal</h3>
       </div>
       <p><a href="tel:0331085203">033 108 5203</a></p>
     </div>
 
-    <div class="office-card">
+    <div class="office-card" id="office-north-west">
       <div class="office-card-header">
         <h3>North West</h3>
       </div>
       <p><a href="tel:0181085352">018 108 5352</a></p>
     </div>
 
-    <div class="office-card">
+    <div class="office-card" id="office-western-cape">
       <div class="office-card-header">
         <h3>Western Cape</h3>
       </div>
       <p><a href="tel:0210544906">021 054 4906</a></p>
     </div>
 
-    <div class="office-card">
+    <div class="office-card" id="office-departments">
       <div class="office-card-header">
         <h3>Department Emails</h3>
       </div>
@@ -1234,53 +1074,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   <svg width="28" height="28" viewBox="0 0 20 20" fill="none"><path d="M10 1.5a8.5 8.5 0 00-7.4 12.7L1.5 18.5l4.4-1.1A8.5 8.5 0 1010 1.5z" stroke="currentColor" stroke-width="1.3"/><path d="M7.5 6.5c.2-.5.5-.5.7-.5s.5 0 .7.4l.8 2c.1.2 0 .4-.1.6l-.5.5s-.1.2.2.6c.4.5.8.9 1.3 1.1.2.1.4.1.5-.1l.5-.6c.2-.2.3-.2.5-.1l1.5.8c.2.1.3.2.3.4s0 .7-.4 1c-.4.4-.9.5-1.5.5-1-.1-2.5-.8-3.7-2.3-1-1.2-1.4-2.5-1.4-3.2 0-.5.2-.8.5-1.1z" fill="currentColor"/></svg>
 </a>
 
+<script src="site.js"></script>
 <script>
 (function() {
   'use strict';
-
-  // ---------- Mobile nav ----------
-  var toggle = document.getElementById('mobileToggle');
-  var mobileNav = document.getElementById('mobileNav');
-  if (toggle && mobileNav) {
-    toggle.addEventListener('click', function() {
-      var open = mobileNav.classList.contains('open');
-      mobileNav.classList.toggle('open');
-      toggle.classList.toggle('active');
-      toggle.setAttribute('aria-expanded', !open);
-      mobileNav.setAttribute('aria-hidden', open);
-      document.body.style.overflow = open ? '' : 'hidden';
-    });
-    mobileNav.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() {
-        mobileNav.classList.remove('open');
-        toggle.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    });
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
-        mobileNav.classList.remove('open');
-        toggle.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-  }
-
-  // ---------- Reveal on scroll ----------
-  var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-  if ('IntersectionObserver' in window) {
-    var ro = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          ro.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(function(el) { ro.observe(el); });
-  } else {
-    revealEls.forEach(function(el) { el.classList.add('visible'); });
-  }
 
   // ---------- Form ----------
   var form = document.getElementById('contactForm');
