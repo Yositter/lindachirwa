@@ -21,25 +21,25 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 header('Content-Type: application/json');
 
-// ── Configuration ──────────────────────────────────────────────
+// Configuration
 $recipientEmail = 'admin@lindachirwaattorneys.co.za';
 $ccEmail        = 'info@lindachirwaattorneys.co.za';
 $subjectPrefix  = '[Website Enquiry]';
 $honeypotField  = 'website_url';
 
-// ── Honeypot check (spam filter) ───────────────────────────────
+// Honeypot check (spam filter)
 if (!empty($_POST[$honeypotField])) {
     echo json_encode(['success' => true, 'message' => 'Thank you for your message.']);
     exit;
 }
 
-// ── Helper: safe POST fetch + sanitize ─────────────────────────
+// Helper: safe POST fetch + sanitize
 function post_str($key, $filter = FILTER_SANITIZE_SPECIAL_CHARS) {
     $val = filter_input(INPUT_POST, $key, $filter);
     return trim($val ?? '');
 }
 
-// ── Collect and sanitize fields ────────────────────────────────
+// Collect and sanitize fields
 $name           = post_str('name');
 $email          = post_str('email', FILTER_SANITIZE_EMAIL);
 $phone          = post_str('phone');
@@ -64,7 +64,7 @@ if (!empty($_POST['documents_available']) && is_array($_POST['documents_availabl
     }
 }
 
-// ── Validation ─────────────────────────────────────────────────
+// Validation
 $errors = [];
 
 if ($name === '') {
@@ -92,7 +92,7 @@ if (!empty($errors)) {
     exit;
 }
 
-// ── Build email ────────────────────────────────────────────────
+// Build email
 $subject = $subjectPrefix . ' ' . $name . ' | ' . ($service ?: 'General Enquiry');
 
 $line = str_repeat('-', 48);
@@ -134,7 +134,7 @@ $headers .= "Cc: {$ccEmail}\r\n";
 $headers .= "X-Mailer: LindaChirwaContactForm/2.0\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-// ── Send ───────────────────────────────────────────────────────
+// Send
 $sent = @mail($recipientEmail, $subject, $body, $headers);
 
 if ($sent) {
