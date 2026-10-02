@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whistleblower &amp; Speak-Up Channel | Linda Chirwa Attorneys</title>
+<meta name="description" content="A confidential channel for reporting unlawful, unethical, or improper conduct. Protected under the Protected Disclosures Act 26 of 2000.">
+<!-- ICONS:START -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1A4A2E">
+<!-- ICONS:END -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="forms.css">
+<style>
+/* Whistleblower page only */
+.wb-wrap { max-width: 1100px; margin: 0 auto; padding: 64px 40px 60px; }
+
+.wb-notice {
+  background: var(--white);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 10px 10px 0;
+  padding: 28px 32px;
+  margin-bottom: 48px;
+  box-shadow: var(--shadow-sm);
+  max-width: 900px;
+}
+.wb-notice h2 { font-family: var(--font-display); font-weight: 600; font-size: 18px; color: var(--primary); margin-bottom: 10px; }
+.wb-notice p { font-size: 15px; color: var(--warm-gray); line-height: 1.8; margin-bottom: 10px; }
+.wb-notice p:last-child { margin-bottom: 0; }
+.wb-notice strong { color: var(--charcoal); font-weight: 600; }
+.wb-notice a { color: var(--primary); }
+
+.wb-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: start; }
+
+.wb-info h2, .wb-form-col h2, .qualifies h2 {
+  font-family: var(--font-display);
+  font-weight: 600; font-size: 24px;
+  color: var(--charcoal);
+  margin-bottom: 20px; padding-bottom: 12px;
+  position: relative;
+}
+.wb-info h2::after, .wb-form-col h2::after, .qualifies h2::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 60px; height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 3px;
+}
+.wb-info p { font-size: 15px; color: var(--warm-gray); line-height: 1.8; margin-bottom: 16px; }
+.wb-info strong { color: var(--charcoal); font-weight: 600; }
+.wb-info h3 { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--charcoal); margin: 28px 0 12px; }
+.wb-info ul { list-style: none; padding: 0; margin: 0 0 20px; }
+.wb-info ul li {
+  font-size: 14.5px; color: var(--warm-gray); line-height: 1.7;
+  padding: 10px 0 10px 26px; position: relative;
+  border-bottom: 1px solid var(--border);
+}
+.wb-info ul li:last-child { border-bottom: none; }
+.wb-info ul li::before {
+  content: ''; position: absolute; left: 0; top: 17px;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+}
+
+.wb-assurance {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  border-radius: 12px; padding: 32px 28px; color: var(--white);
+  margin-top: 24px; position: relative; overflow: hidden;
+}
+.wb-assurance::before {
+  content: ''; position: absolute; top: -40%; right: -20%;
+  width: 220px; height: 220px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(168,213,181,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.wb-assurance > * { position: relative; z-index: 1; }
+.wb-assurance h3 { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--white); margin: 0 0 12px; }
+.wb-assurance p { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.75; margin-bottom: 10px; }
+.wb-assurance p:last-child { margin-bottom: 0; }
+.wb-assurance strong { color: var(--white); }
+
+.wb-form-col h2 { margin-bottom: 8px; }
+.wb-form-col > p { font-size: 14px; color: var(--warm-gray); margin: 16px 0 24px; line-height: 1.7; }
+.wb-form {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 28px;
+  box-shadow: var(--shadow-sm);
+}
+.wb-form .form-submit { width: 100%; }
+
+.qualifies {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 30px;
+  margin-top: 56px;
+  max-width: 900px;
+  box-shadow: var(--shadow-sm);
+}
+.qualifies h2 { font-size: 22px; }
+.qualifies p { font-size: 15px; color: var(--warm-gray); line-height: 1.8; margin-bottom: 14px; }
+.qualifies ul { list-style: disc; padding-left: 22px; margin: 12px 0 16px; }
+.qualifies ul li { font-size: 14.5px; color: var(--warm-gray); line-height: 1.75; margin-bottom: 8px; }
+
+@media (max-width: 1024px) {
+  .wb-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+@media (max-width: 768px) {
+  .wb-wrap { padding: 48px 24px 40px; }
+  .wb-form { padding: 26px 22px; }
+  .qualifies { padding: 26px 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV:START -->
+<header class="navbar" role="banner">
+  <div class="navbar-left">
+    <a href="index.html" aria-label="Linda Chirwa Attorneys Home">
+      <img src="logo.png" alt="Linda Chirwa Attorneys" class="navbar-logo">
+    </a>
+  </div>
+  <nav class="navbar-right" role="navigation" aria-label="Main navigation">
+    <div class="nav-item"><a class="nav-link" href="index.html">Home</a></div>
+    <div class="nav-item"><a class="nav-link" href="about.html">About</a></div>
+    <div class="nav-item has-sub">
+      <a class="nav-link" href="practice-areas.html" aria-haspopup="true">Practice Areas<span class="caret" aria-hidden="true"></span></a>
+      <div class="submenu wide">
+        <div class="submenu-group">
+          <h4>For Individuals</h4>
+          <a href="family-law.html">Family Law</a>
+          <a href="wills-estates.html">Wills, Estates &amp; Trusts</a>
+          <a href="conveyancing.html">Property Conveyancing</a>
+          <a href="notarial-services.html">Notarial Services (ANCs, Bonds, Apostille)</a>
+          <a href="civil-law.html#delictual">Motor Vehicle &amp; Workplace Injury</a>
+          <a href="criminal-law.html">Criminal Defence</a>
+          <a href="labour-law.html">CCMA &amp; Employment Disputes</a>
+          <a href="immigration.html">Immigration &amp; Permits</a>
+        </div>
+        <div class="submenu-group">
+          <h4>For Businesses</h4>
+          <a href="company-formation.html">Company Formation &amp; Governance</a>
+          <a href="commercial-contracts.html">Contracts &amp; Transactions</a>
+          <a href="mergers-acquisitions.html">Mergers &amp; Acquisitions</a>
+          <a href="civil-law.html#debt">Debt Collection &amp; Litigation</a>
+          <a href="civil-law.html#insolvency">Insolvency &amp; Business Rescue</a>
+          <a href="intellectual-property.html">Intellectual Property</a>
+          <a href="employment-hr.html">Employment &amp; HR Compliance</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item"><a class="nav-link" href="criminal-law.html">Criminal</a></div>
+    <div class="nav-item"><a class="nav-link" href="civil-law.html">Civil</a></div>
+    <div class="nav-item"><a class="nav-link" href="wills-estates.html">Estates</a></div>
+    <div class="nav-item"><a class="nav-link" href="conveyancing.html">Conveyancing</a></div>
+    <div class="nav-item"><a class="nav-link" href="notarial-services.html">Notarial</a></div>
+    <div class="nav-item"><a class="nav-link" href="resources.html">Resources</a></div>
+    <div class="nav-item has-sub">
+      <a class="nav-link" href="contact.html" aria-haspopup="true">Contact<span class="caret" aria-hidden="true"></span></a>
+      <div class="submenu align-right">
+        <a href="contact.html#office-gauteng">Gauteng: Head Office</a>
+        <a href="contact.html#office-west-rand">Gauteng: West Rand</a>
+        <a href="contact.html#office-kzn">KwaZulu-Natal</a>
+        <a href="contact.html#office-north-west">North West</a>
+        <a href="contact.html#office-western-cape">Western Cape</a>
+        <a href="contact.html#office-departments">Department Emails</a>
+        <a href="contact.html#contactForm">Send an Enquiry</a>
+      </div>
+    </div>
+  </nav>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <details>
+    <summary>Practice Areas</summary>
+    <div class="mobile-sub">
+      <a href="practice-areas.html">All Practice Areas</a>
+      <h4>For Individuals</h4>
+      <a href="family-law.html">Family Law</a>
+      <a href="wills-estates.html">Wills, Estates &amp; Trusts</a>
+      <a href="conveyancing.html">Property Conveyancing</a>
+      <a href="notarial-services.html">Notarial Services (ANCs, Bonds, Apostille)</a>
+      <a href="civil-law.html#delictual">Motor Vehicle &amp; Workplace Injury</a>
+      <a href="criminal-law.html">Criminal Defence</a>
+      <a href="labour-law.html">CCMA &amp; Employment Disputes</a>
+      <a href="immigration.html">Immigration &amp; Permits</a>
+      <h4>For Businesses</h4>
+      <a href="company-formation.html">Company Formation &amp; Governance</a>
+      <a href="commercial-contracts.html">Contracts &amp; Transactions</a>
+      <a href="mergers-acquisitions.html">Mergers &amp; Acquisitions</a>
+      <a href="civil-law.html#debt">Debt Collection &amp; Litigation</a>
+      <a href="civil-law.html#insolvency">Insolvency &amp; Business Rescue</a>
+      <a href="intellectual-property.html">Intellectual Property</a>
+      <a href="employment-hr.html">Employment &amp; HR Compliance</a>
+    </div>
+  </details>
+  <a href="criminal-law.html">Criminal Law</a>
+  <a href="civil-law.html">Civil Litigation</a>
+  <a href="wills-estates.html">Estates</a>
+  <a href="conveyancing.html">Conveyancing</a>
+  <a href="notarial-services.html">Notarial Services</a>
+  <a href="resources.html">Resources</a>
+  <details>
+    <summary>Contact</summary>
+    <div class="mobile-sub">
+      <a href="contact.html">Contact Overview</a>
+      <a href="contact.html#office-gauteng">Gauteng: Head Office</a>
+      <a href="contact.html#office-west-rand">Gauteng: West Rand</a>
+      <a href="contact.html#office-kzn">KwaZulu-Natal</a>
+      <a href="contact.html#office-north-west">North West</a>
+      <a href="contact.html#office-western-cape">Western Cape</a>
+      <a href="contact.html#office-departments">Department Emails</a>
+      <a href="contact.html#contactForm">Send an Enquiry</a>
+    </div>
+  </details>
+</div>
+<!-- NAV:END -->
+
+<section class="page-header">
+  <h1>Whistleblower &amp; Speak-Up Channel</h1>
+  <p>A confidential way to report unlawful, unethical, or improper conduct — protected under South African law.</p>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <span class="current">Whistleblower</span>
+  </div>
+</section>
+
+<div class="wb-wrap">
+
+  <div class="wb-notice reveal">
+    <h2>Speak up. Safely.</h2>
+    <p>If you have witnessed or become aware of <strong>unlawful conduct, unethical behaviour, fraud, corruption, or any other serious wrongdoing</strong> — in your workplace, in a business you deal with, or in an organisation you're connected to — you have the right to report it. This page provides a confidential channel to do so.</p>
+    <p>Reports may be made <strong>anonymously</strong>. You do not have to give your name. Where you do identify yourself, your identity will be protected to the fullest extent permitted by law.</p>
+  </div>
+
+  <div class="wb-grid">
+
+    <div class="wb-info reveal-left">
+      <h2>What this channel is for</h2>
+      <p>This channel exists to receive reports of conduct that is illegal, unethical, or seriously improper. It is not a general complaints channel, and it is not a substitute for legal advice on your personal matter.</p>
+
+      <h3>Reportable conduct includes:</h3>
+      <ul>
+        <li>Criminal offences (fraud, theft, bribery, corruption)</li>
+        <li>Contraventions of law by an employer or organisation</li>
+        <li>Endangering the health or safety of any individual</li>
+        <li>Environmental damage or disregard for environmental law</li>
+        <li>Unfair discrimination</li>
+        <li>Concealment of any of the above</li>
+        <li>Serious misconduct or abuse of authority</li>
+        <li>Breaches of professional or fiduciary duty</li>
+      </ul>
+
+      <h3>How we handle your report</h3>
+      <p>Every report submitted through this channel is reviewed by a designated recipient within the firm. We will:</p>
+      <ul>
+        <li>Acknowledge receipt where contact details are provided;</li>
+        <li>Assess the report and, where appropriate, refer it to the relevant authority (the SAPS, the Public Protector, the Companies and Intellectual Property Commission, or another regulator);</li>
+        <li>Take reasonable steps to protect your identity;</li>
+        <li>Keep you informed of the outcome where possible.</li>
+      </ul>
+
+      <div class="wb-assurance">
+        <h3>Your legal protection</h3>
+        <p>Under the <strong>Protected Disclosures Act 26 of 2000</strong>, employees who make protected disclosures in good faith are protected from occupational detriment — including dismissal, suspension, demotion, or harassment.</p>
+        <p>The Protected Disclosures Amendment Act of 2017 extended these protections and consolidated the process for making and handling disclosures.</p>
+        <p>If you suffer retaliation for making a report, you may have a separate legal claim. Contact us.</p>
+      </div>
+    </div>
+
+    <div class="wb-form-col reveal-right">
+      <h2>Submit a Report</h2>
+      <p>All fields marked with <span style="color: var(--red);">*</span> are required. You may leave optional fields blank — including your name if you wish to remain anonymous. The form handler does not record your IP address or browser details, although your web host's standard server logs may still record connection data.</p>
+
+      <div id="wbFormMessage" class="form-message" role="status" aria-live="polite"></div>
+
+      <form id="wbForm" action="whistleblower-handler.php" method="POST" class="wb-form" novalidate>
+
+        <div class="hp-field" aria-hidden="true">
+          <label for="wb_website_url">Leave blank</label>
+          <input type="text" name="wb_website_url" id="wb_website_url" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="wb_org">Organisation or entity involved <span class="required">*</span></label>
+          <input type="text" name="organisation" id="wb_org" class="form-input" placeholder="e.g. company name, government department" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="wb_category">Type of conduct <span class="required">*</span></label>
+            <select name="category" id="wb_category" class="form-select" required>
+              <option value="">Select one…</option>
+              <option value="Criminal offence (fraud, theft, bribery, corruption)">Criminal offence (fraud, theft, bribery, corruption)</option>
+              <option value="Contravention of law by an employer">Contravention of law by an employer</option>
+              <option value="Health or safety endangerment">Health or safety endangerment</option>
+              <option value="Environmental damage">Environmental damage</option>
+              <option value="Unfair discrimination">Unfair discrimination</option>
+              <option value="Concealment of wrongdoing">Concealment of wrongdoing</option>
+              <option value="Serious misconduct or abuse of authority">Serious misconduct or abuse of authority</option>
+              <option value="Other">Other serious wrongdoing</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="wb_urgency">Urgency</label>
+            <select name="urgency" id="wb_urgency" class="form-select">
+              <option value="">Select urgency…</option>
+              <option value="Ongoing / immediate risk">Ongoing — immediate risk</option>
+              <option value="Recent, still relevant">Recent — still relevant</option>
+              <option value="Historic">Historic</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="wb_description">Describe what happened <span class="required">*</span></label>
+          <textarea name="description" id="wb_description" class="form-textarea" placeholder="Include as much detail as you can: what happened, when, where, who was involved, and any evidence that exists. Do not include sensitive personal information about yourself if you wish to remain anonymous." required></textarea>
+          <p class="form-hint">If you have documents, photographs, or other evidence, you can mention them here — we will arrange a secure way for you to submit them.</p>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="wb_name">Your name <span class="optional">(optional — leave blank to remain anonymous)</span></label>
+            <input type="text" name="name" id="wb_name" class="form-input" placeholder="Leave blank for anonymous report" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="wb_contact">Contact method <span class="optional">(optional)</span></label>
+            <input type="text" name="contact" id="wb_contact" class="form-input" placeholder="Email or phone — only if you want a reply" autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="wb_safest_contact">Safest way to reach you <span class="optional">(optional)</span></label>
+          <select name="safest_contact" id="wb_safest_contact" class="form-select">
+            <option value="">Prefer not to say</option>
+            <option value="Email only">Email only</option>
+            <option value="Phone call (discreet)">Phone call (discreet)</option>
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="Do not contact me">Do not contact me — anonymous report only</option>
+          </select>
+        </div>
+
+        <div class="consent-row">
+          <input type="checkbox" name="consent" id="wb_consent" value="yes" required>
+          <label for="wb_consent">
+            I confirm that, to the best of my knowledge, the information in this report is true and given in good faith. I understand that this form does not create an attorney–client relationship.
+          </label>
+        </div>
+
+        <button type="submit" class="form-submit" id="wbSubmitBtn">
+          <span class="btn-text">Submit Confidential Report</span>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="qualifies reveal">
+    <h2>What makes a disclosure "protected"?</h2>
+    <p>For a disclosure to qualify for protection under the Protected Disclosures Act, certain conditions must generally be met:</p>
+    <ul>
+      <li>The disclosure must relate to one of the categories of wrongdoing listed above.</li>
+      <li>It must be made to an appropriate person or body — for example, a legal advisor, an employer, a member of the Cabinet or Executive Council, the Public Protector, the Auditor-General, or another prescribed body.</li>
+      <li>The person making the disclosure must reasonably believe that the information is substantially true.</li>
+      <li>The disclosure must not be made for personal gain.</li>
+    </ul>
+    <p>Making a report <strong>in good faith</strong> — even if the concern turns out not to be substantiated — generally preserves your protection. Making a report <strong>knowingly falsely or with malice</strong> may expose you to legal consequences.</p>
+    <p>If you are unsure whether your situation qualifies, you can submit the report and let us assess it — or contact us first for a confidential discussion.</p>
+  </div>
+
+  <div class="wb-notice reveal" style="margin-top: 40px;">
+    <h2>Prefer not to use a web form?</h2>
+    <p>You can also report directly:</p>
+    <p><strong>Email:</strong> <a href="mailto:whistleblower@lindachirwaattorneys.co.za">whistleblower@lindachirwaattorneys.co.za</a> — mark your email <strong>CONFIDENTIAL — WHISTLEBLOWER</strong>.</p>
+    <p><strong>Phone:</strong> <a href="tel:+27100855185">+27 (10) 085 5185</a></p>
+    <p><strong>Post:</strong> The Designated Recipient — Whistleblower Channel, Linda Chirwa Attorneys, Block C, Stoneridge Office Park, Greenstone, Modderfontein, Johannesburg, Gauteng, 1609</p>
+    <p style="margin-top: 14px;">If your disclosure concerns a matter in which any attorney at this firm is involved, please state that in your report so we can refer it to an independent attorney.</p>
+  </div>
+
+</div>
+
+<footer class="footer">
+<!-- LEGAL:START -->
+<div class="footer-legal-links">
+  <a href="cookies.html">Cookie Policy</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-of-use.html">Terms of Use</a>
+  <a href="whistleblower.html" class="active">Whistleblower</a>
+</div>
+<!-- LEGAL:END -->
+  <p>&copy; 2026 Linda Chirwa Attorneys. All rights reserved. | <a href="index.html">Back to Home</a></p>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  var form = document.getElementById('wbForm');
+  var msgEl = document.getElementById('wbFormMessage');
+  var submitBtn = document.getElementById('wbSubmitBtn');
+  if (!form) return;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    msgEl.className = 'form-message';
+    msgEl.style.display = 'none';
+    msgEl.textContent = '';
+
+    var org = form.querySelector('#wb_org');
+    var cat = form.querySelector('#wb_category');
+    var desc = form.querySelector('#wb_description');
+    var consent = form.querySelector('#wb_consent');
+    var errors = [];
+
+    [org, cat, desc].forEach(function(f) { f.classList.remove('error'); });
+
+    if (!org.value.trim()) { errors.push('Please name the organisation involved.'); org.classList.add('error'); }
+    if (!cat.value) { errors.push('Please select the type of conduct.'); cat.classList.add('error'); }
+    if (!desc.value.trim()) { errors.push('Please describe what happened.'); desc.classList.add('error'); }
+    if (consent && !consent.checked) { errors.push('Please confirm your declaration.'); }
+
+    if (errors.length > 0) {
+      msgEl.className = 'form-message error';
+      msgEl.textContent = errors.join(' ');
+      msgEl.style.display = 'block';
+      msgEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+
+    fetch(form.action, { method: 'POST', body: new FormData(form) })
+      .then(function(res) {
+        return res.json().then(function(data) { return { ok: res.ok, data: data }; });
+      })
+      .then(function(result) {
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
+
+        if (result.data.success) {
+          msgEl.className = 'form-message success';
+          msgEl.textContent = result.data.message;
+          msgEl.style.display = 'block';
+          form.reset();
+        } else {
+          msgEl.className = 'form-message error';
+          msgEl.textContent = result.data.message || 'Something went wrong. Please try again.';
+          msgEl.style.display = 'block';
+        }
+        msgEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      })
+      .catch(function() {
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
+        msgEl.className = 'form-message error';
+        msgEl.textContent = 'Network error. If your report is urgent, please email whistleblower@lindachirwaattorneys.co.za directly.';
+        msgEl.style.display = 'block';
+        msgEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+  });
+})();
+</script>
+</body>
+</html>

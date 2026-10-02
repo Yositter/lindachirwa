@@ -6,6 +6,7 @@ Usage (from the repository root):  python3 scripts/sync-shared.py
 Each page marks the blocks it shares with comment markers:
 
     <!-- ICONS:START --> ... <!-- ICONS:END -->   favicon + manifest tags
+    <!-- LEGAL:START --> ... <!-- LEGAL:END -->   footer links to the legal pages
     <!-- NAV:START -->   ... <!-- NAV:END -->     desktop nav + mobile nav
 
 Edit NAV_ITEMS / PRACTICE_AREAS / OFFICES below, run this script, and every
@@ -24,6 +25,22 @@ ICONS = '''<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#1A4A2E">'''
+
+LEGAL_LINKS = [
+    ('Cookie Policy', 'cookies.html'),
+    ('Privacy Policy', 'privacy-policy.html'),
+    ('Terms of Use', 'terms-of-use.html'),
+    ('Whistleblower', 'whistleblower.html'),
+]
+
+
+def build_legal(page):
+    rows = []
+    for text, href in LEGAL_LINKS:
+        cls = ' class="active"' if href == page else ''
+        rows.append(f'  <a href="{href}"{cls}>{text}</a>')
+    return '<div class="footer-legal-links">\n' + '\n'.join(rows) + '\n</div>'
+
 
 # (mobile label, href, submenu key or None, short desktop label or None)
 NAV_ITEMS = [
@@ -141,7 +158,8 @@ def main():
         text = path.read_text(encoding='utf-8')
         new, ok_nav = replace_block(text, 'NAV', build_nav(path.name))
         new, ok_icons = replace_block(new, 'ICONS', ICONS)
-        if not (ok_nav and ok_icons):
+        new, ok_legal = replace_block(new, 'LEGAL', build_legal(path.name))
+        if not (ok_nav and ok_icons and ok_legal):
             print(f'skip  {path.name} (markers missing)')
             continue
         if new != text:
