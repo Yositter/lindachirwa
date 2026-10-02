@@ -20,6 +20,9 @@ DISALLOW = ['/contact-handler.php', '/whistleblower-handler.php']
 ORDER = [
     'index.html', 'about.html', 'criminal-law.html', 'civil-law.html',
     'wills-estates.html', 'conveyancing.html', 'notarial-services.html',
+    'practice-areas.html', 'family-law.html', 'labour-law.html', 'immigration.html',
+    'company-formation.html', 'commercial-contracts.html', 'mergers-acquisitions.html',
+    'intellectual-property.html', 'employment-hr.html',
     'resources.html', 'contact.html', 'whistleblower.html',
     'privacy-policy.html', 'terms-of-use.html', 'cookies.html',
 ]

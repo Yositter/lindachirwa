@@ -105,9 +105,12 @@ def links(items, indent):
 
 
 def build_nav(page):
+    # Service pages that sit only under the Practice Areas menu highlight that menu.
+    top_level = {h for _, h, _, _ in NAV_ITEMS}
+    practice_only = {h.split('#')[0] for items in PRACTICE_AREAS.values() for _, h in items} - top_level
     desktop, mobile = [], []
     for label, href, sub, short in NAV_ITEMS:
-        active = href == page
+        active = href == page or (sub == 'practice' and page in practice_only)
         dlabel = short or label
         cls = 'nav-link active' if active else 'nav-link'
         cur = ' aria-current="page"' if active else ''
